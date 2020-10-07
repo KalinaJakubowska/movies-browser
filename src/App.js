@@ -3,11 +3,13 @@ import {HashRouter, Switch, Route, Redirect} from "react-router-dom";
 import {
   WidthContainer,
   NavContainer,
+  NavContainerRight,
   List,
   ListItem,
   Nav,
   StyledNavLink,
   Title,
+  Input,
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import PeoplePage from "./features/people/PersonPage";
@@ -16,21 +18,25 @@ import {ReactComponent as TitleLogo} from "./assets/camera-logo.svg";
 function App() {
   return (
     <HashRouter>
-      <nav>
+      <main>
         <Nav>
           <WidthContainer>
             <NavContainer>
-              <Title>
-                <TitleLogo /> Movie Browser
-              </Title>
-              <List>
-                <ListItem>
-                  <StyledNavLink to="/movies">Movies</StyledNavLink>
-                </ListItem>
-                <ListItem>
-                  <StyledNavLink to="/people">People</StyledNavLink>
-                </ListItem>
-              </List>
+              <NavContainer>
+                <TitleLogo />
+                <Title>Movie Browser</Title>
+                <List>
+                  <ListItem>
+                    <StyledNavLink to="/movies">Movies</StyledNavLink>
+                  </ListItem>
+                  <ListItem>
+                    <StyledNavLink to="/people">People</StyledNavLink>
+                  </ListItem>
+                </List>
+              </NavContainer>
+              <NavContainerRight>
+                <Input placeholder="Search for movies..." />
+              </NavContainerRight>
             </NavContainer>
           </WidthContainer>
         </Nav>
@@ -47,7 +53,7 @@ function App() {
             </Route>
           </Switch>
         </WidthContainer>
-      </nav>
+      </main>
     </HashRouter>
   );
 }
