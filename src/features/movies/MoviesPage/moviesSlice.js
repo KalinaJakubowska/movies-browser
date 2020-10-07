@@ -5,6 +5,7 @@ const moviesSlice = createSlice({
     initialState: {
         popularMovies: [],
         loading: false,
+        activePage: 1,
     },
     reducers: {
         fetchPopularMovies: state => {
@@ -17,6 +18,9 @@ const moviesSlice = createSlice({
         fetchPopularMoviesError: state => {
             state.loading = false;
         },
+        setActivePage: (state, { payload: pageNumber }) => {
+            state.activePage = pageNumber;
+        },
     },
 });
 
@@ -24,8 +28,10 @@ export const {
     fetchPopularMovies,
     fetchPopularMoviesSuccess,
     fetchPopularMoviesError,
+    setActivePage,
 } = moviesSlice.actions;
 export const selectPopularMovies = state => state.movies.popularMovies;
 export const selectLoading = state => state.movies.loading;
+export const selectActivePage = state => state.movies.activePage;
 
 export default moviesSlice.reducer;
