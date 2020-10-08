@@ -1,7 +1,10 @@
 export const theme = {
   colors: {
-    Mercury: "#E5E5E5",
-    Black: "#000000",
-    Waterloo: "#7E839A",
+    mercury: "#E5E5E5",
+    black: "#000000",
+    waterloo: "#7E839A",
+    tan: "#F5F5FA",
+    cornsilk: "#E4E6F0",
+    white: "#FFFFFF",
   },
 };
