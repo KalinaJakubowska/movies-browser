@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Loading from "../../../common/Loading";
 import BottomNavbar from "../../BottomNavbar";
 import MovieTile from "../../MovieTile";
 import {
@@ -24,7 +25,7 @@ const MoviesPage = () => {
     return (
         <>
             {isLoading
-                ? "loading"
+                ? <Loading/>
                 : (
                     <>
                         <MoviesContainer>
