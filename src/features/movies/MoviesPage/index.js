@@ -10,6 +10,7 @@ import {
     selectActivePage,
 } from "./moviesSlice";
 import { MoviesContainer } from "./styled";
+import Header from "./../../../common/Header";
 
 const MoviesPage = () => {
     const popularMovies = useSelector(selectPopularMovies);
@@ -24,8 +25,10 @@ const MoviesPage = () => {
 
     return (
         <>
+            <Header>Popular movies</Header>
+
             {isLoading
-                ? <Loading/>
+                ? <Loading />
                 : (
                     <>
                         <MoviesContainer>

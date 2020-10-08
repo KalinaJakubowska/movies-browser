@@ -9,6 +9,7 @@ export const Tile = styled.div`
     background-color: ${({ theme }) => theme.colors.white};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
+    color: ${({ theme }) => theme.colors.woodsmoke};
 `
 
 export const Image = styled.img`
@@ -16,6 +17,7 @@ export const Image = styled.img`
     height: 434px;
     width: 292px;
     border-radius: 5px;
+    margin-bottom: 16px;
 `
 
 export const DetailsContainer = styled.div`
