@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BottomNavbar from "../../BottomNavbar";
+import MovieTile from "../../MovieTile";
 import {
     fetchPopularMovies,
     selectPopularMovies,
     selectLoading,
     selectActivePage,
 } from "./moviesSlice";
+import { MoviesContainer } from "./styled";
 
 const MoviesPage = () => {
     const popularMovies = useSelector(selectPopularMovies);
@@ -24,10 +26,12 @@ const MoviesPage = () => {
             {isLoading
                 ? "loading"
                 : (
-                    <div>
-                        {popularMovies.map(movie => <p key={movie.id}>{movie.title}</p>)}
+                    <MoviesContainer>
+                        {popularMovies.map(movie =>
+                            <MovieTile key={movie.id} movieInfo={movie}></MovieTile>
+                        )}
                         <BottomNavbar />
-                    </div>
+                    </MoviesContainer>
                 )
             }
         </>
