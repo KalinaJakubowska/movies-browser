@@ -1,12 +1,12 @@
 import { takeEvery, call, put, delay } from "redux-saga/effects";
 import { getPopularMovies } from "./getPopularMovies";
 import {
-    fetchPopularMovies,
     fetchPopularMoviesError,
     fetchPopularMoviesSuccess,
+    setActivePage,
 } from "./moviesSlice";
 
-function* fetchExampleTasksHandler() {
+function* fetchPopularMoviesHandler() {
     try {
         yield delay(500);
         const popularMovies = yield call(getPopularMovies);
@@ -17,6 +17,6 @@ function* fetchExampleTasksHandler() {
     }
 };
 
-export function* watchFetchPopularMovies() {
-    yield takeEvery(fetchPopularMovies.type, fetchExampleTasksHandler);
+export function* watchSetActivePage() {
+    yield takeEvery(setActivePage.type, fetchPopularMoviesHandler);
 };

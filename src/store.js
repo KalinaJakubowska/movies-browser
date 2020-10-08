@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import moviesReducer from "./features/movies/MoviesPage/moviesSlice";
 import createSagaMiddleware from "redux-saga";
-import { watchFetchPopularMovies } from "./features/movies/MoviesPage/moviesSaga"
+import { watchSetActivePage } from "./features/movies/MoviesPage/moviesSaga"
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -12,6 +12,6 @@ const store = configureStore({
     middleware: [sagaMiddleware],
 });
 
-sagaMiddleware.run(watchFetchPopularMovies);
+sagaMiddleware.run(watchSetActivePage);
 
 export default store;
