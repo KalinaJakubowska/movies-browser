@@ -6,13 +6,15 @@ const moviesSlice = createSlice({
         popularMovies: [],
         loading: false,
         activePage: 1,
+        numberPages: undefined,
     },
     reducers: {
         fetchPopularMovies: state => {
             state.loading = true;
         },
         fetchPopularMoviesSuccess: (state, { payload: popularMovies }) => {
-            state.popularMovies = popularMovies;
+            state.popularMovies = popularMovies.results;
+            state.numberPages = popularMovies.total_pages;
             state.loading = false;
         },
         fetchPopularMoviesError: state => {
@@ -33,5 +35,6 @@ export const {
 export const selectPopularMovies = state => state.movies.popularMovies;
 export const selectLoading = state => state.movies.loading;
 export const selectActivePage = state => state.movies.activePage;
+export const selectNumberPages = state => state.movies.numberPages;
 
 export default moviesSlice.reducer;
