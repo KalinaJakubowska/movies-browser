@@ -4,24 +4,25 @@ import Loading from "../../../common/Loading";
 import BottomNavbar from "../../BottomNavbar";
 import MovieTile from "../../MovieTile";
 import {
-    fetchPopularMovies,
     selectPopularMovies,
     selectLoading,
-    selectActivePage,
+    setActivePage,
 } from "./moviesSlice";
 import { MoviesContainer } from "./styled";
 import Header from "./../../../common/Header";
+import { usePageParameter } from "../../pageParameters";
 
 const MoviesPage = () => {
-    const popularMovies = useSelector(selectPopularMovies);
-    const isLoading = useSelector(selectLoading);
-    const activePage = useSelector(selectActivePage);
-
-    const dispatch = useDispatch();
+    const urlPageNumber = usePageParameter("page");
 
     useEffect(() => {
-        dispatch(fetchPopularMovies());
-    }, [activePage])
+        dispatch(setActivePage(+urlPageNumber || 1))
+    }, [])
+
+    const popularMovies = useSelector(selectPopularMovies);
+    const isLoading = useSelector(selectLoading);
+
+    const dispatch = useDispatch();
 
     return (
         <>
