@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {NavLink} from "react-router-dom";
-import {inputLogo} from "./assets/input-logo.svg";
+import {ReactComponent as InputIcon} from "./assets/input-logo.svg";
 
 const activeClassName = "link-active";
 
@@ -71,12 +71,19 @@ export const Input = styled.input`
   border: 1px solid ${({theme}) => theme.colors.cornsilk};
   border-radius: 33px;
   padding-left: 64px;
-  background: url(${inputLogo}) no-repeat scroll 7px 7px;
-
-  /* Image doesn't show, work in progress */
 
   background-color: white;
   &:focus {
     outline: none;
   }
+`;
+
+export const InputBox = styled.div`
+  position: relative;
+`;
+
+export const StyledInputIcon = styled(InputIcon)`
+  position: absolute;
+  left: 27px;
+  top: 14px;
 `;

@@ -10,6 +10,8 @@ import {
   StyledNavLink,
   Title,
   Input,
+  InputBox,
+  StyledInputIcon,
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import PeoplePage from "./features/people/PersonPage";
@@ -35,7 +37,10 @@ function App() {
                 </List>
               </NavContainer>
               <NavContainerRight>
-                <Input placeholder="Search for movies..." />
+                <InputBox>
+                  <Input placeholder="Search for movies..." />
+                  <StyledInputIcon />
+                </InputBox>
               </NavContainerRight>
             </NavContainer>
           </WidthContainer>
