@@ -3,12 +3,12 @@ import { getPopularMovies } from "./getPopularMovies";
 import {
     fetchPopularMovies,
     fetchPopularMoviesError,
-    fetchPopularMoviesSuccess
+    fetchPopularMoviesSuccess,
 } from "./moviesSlice";
 
 function* fetchExampleTasksHandler() {
     try {
-        yield delay(1000);
+        yield delay(500);
         const popularMovies = yield call(getPopularMovies);
         yield put(fetchPopularMoviesSuccess(popularMovies.results));
     } catch (error) {
@@ -19,4 +19,4 @@ function* fetchExampleTasksHandler() {
 
 export function* watchFetchPopularMovies() {
     yield takeEvery(fetchPopularMovies.type, fetchExampleTasksHandler);
-}
+};
