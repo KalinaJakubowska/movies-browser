@@ -15,6 +15,7 @@ export const Image = styled.img`
     display: block;
     height: 434px;
     width: 292px;
+    border-radius: 5px;
 `
 
 export const DetailsContainer = styled.div`
