@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectActivePage, selectNumberPages, setActivePage } from "../movies/MoviesPage/moviesSlice";
-import { Button, PageCounter, Number } from "./styled";
+import { Container, Button, PageCounter, Number } from "./styled";
 
 const BottomNavbar = () => {
     const activePage = useSelector(selectActivePage);
@@ -9,7 +9,7 @@ const BottomNavbar = () => {
     const dispatch = useDispatch();
 
     return (
-        <div>
+        <Container>
             <Button
                 disabled={activePage === 1} onClick={() =>
                     dispatch(setActivePage(1))}
@@ -37,7 +37,7 @@ const BottomNavbar = () => {
             >
                 {"Last >"}
             </Button>
-        </div>
+        </Container>
     );
 };
 
