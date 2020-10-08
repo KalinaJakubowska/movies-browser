@@ -6,5 +6,6 @@ export const theme = {
     tan: "#F5F5FA",
     cornsilk: "#E4E6F0",
     white: "#FFFFFF",
+    woodsmoke: "#18181B",
   },
 };
