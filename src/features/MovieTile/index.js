@@ -9,10 +9,9 @@ import {
 } from "./styled";
 
 const MovieTile = ({ movieInfo }) => {
-    console.log(movieInfo)
     return (
         <Tile>
-            <Image src={movieInfo.poster_path} alt={`Plakat filmu ${movieInfo.title}`} />
+            <Image src={`https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`} alt={`Plakat filmu ${movieInfo.title}`} />
             <DetailsContainer>
                 <Container>
                     <Title>{movieInfo.title}
