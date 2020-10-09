@@ -11,7 +11,7 @@ import {
 import noPosterImage from "./../../assets/noPosterImage.svg"
 
 const MovieTile = ({ movieInfo }) => {
-    console.log(movieInfo)
+
     return (
         <Tile>
             <Image
