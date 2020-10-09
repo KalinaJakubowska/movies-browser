@@ -1,5 +1,5 @@
 import React from "react";
-import {HashRouter, Switch, Route, Redirect} from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import {
   WidthContainer,
   NavContainer,
@@ -15,9 +15,10 @@ import {
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import PeoplePage from "./features/people/PersonPage";
-import {ReactComponent as TitleLogo} from "./assets/camera-logo.svg";
+import { ReactComponent as TitleLogo } from "./assets/camera-logo.svg";
 
 function App() {
+
   return (
     <HashRouter>
       <main>

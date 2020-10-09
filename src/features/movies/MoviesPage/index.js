@@ -13,16 +13,15 @@ import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 
 const MoviesPage = () => {
-    const urlPageNumber = usePageParameter("page");
-
-    useEffect(() => {
-        dispatch(setActivePage(+urlPageNumber || 1))
-    }, [])
-
+    const urlPageNumber = +usePageParameter("page");
     const popularMovies = useSelector(selectPopularMovies);
     const isLoading = useSelector(selectLoading);
 
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
+    }, [])
 
     return (
         <>
