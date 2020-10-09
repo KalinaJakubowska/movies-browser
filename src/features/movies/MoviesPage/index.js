@@ -13,7 +13,7 @@ import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 
 const MoviesPage = () => {
-    const urlPageNumber = usePageParameter("page");
+    const urlPageNumber = +usePageParameter("page");
     const popularMovies = useSelector(selectPopularMovies);
     const isLoading = useSelector(selectLoading);
 
