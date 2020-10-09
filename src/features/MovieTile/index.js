@@ -1,15 +1,17 @@
 import React from "react";
+import Ratings from "../Ratings";
 import {
     Tile,
     Image,
     Title,
     Year,
     DetailsContainer,
-    Container
+    Container,
 } from "./styled";
 import noPosterImage from "./../../assets/noPosterImage.svg"
 
 const MovieTile = ({ movieInfo }) => {
+    console.log(movieInfo)
     return (
         <Tile>
             <Image
@@ -31,10 +33,13 @@ const MovieTile = ({ movieInfo }) => {
                     }
                     <div >Types</div>
                 </Container>
-                <div >Ratings</div>
+                <Ratings
+                    voteAverage={movieInfo.vote_average}
+                    voteCount={movieInfo.vote_count}
+                />
             </DetailsContainer>
         </Tile >
     );
-}
+};
 
 export default MovieTile;
