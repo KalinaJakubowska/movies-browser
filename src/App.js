@@ -30,10 +30,10 @@ function App() {
                 <Title>Movie Browser</Title>
                 <List>
                   <ListItem>
-                    <StyledNavLink to="/movies">Movies</StyledNavLink>
+                    <StyledNavLink to="/movies">MOVIES</StyledNavLink>
                   </ListItem>
                   <ListItem>
-                    <StyledNavLink to="/people">People</StyledNavLink>
+                    <StyledNavLink to="/people">PEOPLE</StyledNavLink>
                   </ListItem>
                 </List>
               </NavContainerLeft>
