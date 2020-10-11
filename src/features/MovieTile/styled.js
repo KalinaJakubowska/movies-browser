@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Tile = styled.div`
+export const Tile = styled(Link)`
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     width:324px;
