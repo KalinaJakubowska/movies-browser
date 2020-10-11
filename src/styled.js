@@ -53,6 +53,8 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
   activeClassName,
 }))`
   text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
   color: ${({theme}) => theme.colors.white};
   padding: 13px 24px;
   margin: 0 10px;
@@ -61,11 +63,18 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     border: 1px solid ${({theme}) => theme.colors.white};
     border-radius: 33px;
   }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin: 0 3px;
+  }
 `;
 
 export const Title = styled.p`
   color: ${({theme}) => theme.colors.white};
   font-size: 24px;
+  font-weight: 500;
   padding-left: 16px;
   margin: 0;
   display: flex;
