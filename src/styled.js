@@ -23,6 +23,12 @@ export const NavContainer = styled.div`
   min-height: inherit;
   justify-content: space-between;
   padding: 0 10px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+`;
+
+export const NavContainerLeft = styled(NavContainer)`
+  flex-wrap: nowrap;
 `;
 
 export const NavContainerRight = styled(NavContainer)`
@@ -63,6 +69,10 @@ export const Title = styled.p`
   padding-left: 16px;
   margin: 0;
   display: flex;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    font-size: 13px;
+  }
 `;
 
 export const Input = styled.input`

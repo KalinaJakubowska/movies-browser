@@ -1,9 +1,10 @@
 import React from "react";
-import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import {HashRouter, Switch, Route, Redirect} from "react-router-dom";
 import {
   WidthContainer,
   NavContainer,
   NavContainerRight,
+  NavContainerLeft,
   List,
   ListItem,
   Nav,
@@ -15,17 +16,16 @@ import {
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import PeoplePage from "./features/people/PersonPage";
-import { ReactComponent as TitleLogo } from "./assets/camera-logo.svg";
+import {ReactComponent as TitleLogo} from "./assets/camera-logo.svg";
 
 function App() {
-
   return (
     <HashRouter>
       <main>
         <Nav>
           <WidthContainer>
             <NavContainer>
-              <NavContainer>
+              <NavContainerLeft>
                 <TitleLogo />
                 <Title>Movie Browser</Title>
                 <List>
@@ -36,7 +36,7 @@ function App() {
                     <StyledNavLink to="/people">People</StyledNavLink>
                   </ListItem>
                 </List>
-              </NavContainer>
+              </NavContainerLeft>
               <NavContainerRight>
                 <InputBox>
                   <Input placeholder="Search for movies..." />
