@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "69d278832bda78c9269d1f9d0bbf6083",
+    "revision": "6d7a05a337af6d19802c57883b288799",
     "url": "/movie-browser/index.html"
   },
   {
-    "revision": "9553088807ad0a232ebe",
-    "url": "/movie-browser/static/js/2.367754af.chunk.js"
+    "revision": "068f37a8c0346e22bd6d",
+    "url": "/movie-browser/static/js/2.10697369.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/movie-browser/static/js/2.367754af.chunk.js.LICENSE.txt"
+    "url": "/movie-browser/static/js/2.10697369.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c6b40e2c8f3f9d108ea2",
-    "url": "/movie-browser/static/js/main.44c1a239.chunk.js"
+    "revision": "aed1158ac42180ff925d",
+    "url": "/movie-browser/static/js/main.aa0884e4.chunk.js"
   },
   {
     "revision": "940b2a428110daf5a21e",
@@ -30,5 +30,13 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d057d55a6dfeb6dda7520b7d0b0b632c",
     "url": "/movie-browser/static/media/loadingCircle.d057d55a.svg"
+  },
+  {
+    "revision": "e8d1851c036078a6439c14f40feda04a",
+    "url": "/movie-browser/static/media/noPosterImage.e8d1851c.svg"
+  },
+  {
+    "revision": "b489e61393b0ed1bb8e71ee82f0e4821",
+    "url": "/movie-browser/static/media/star.b489e613.svg"
   }
 ]);
