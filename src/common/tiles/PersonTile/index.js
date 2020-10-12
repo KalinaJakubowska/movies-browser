@@ -4,10 +4,11 @@ import {
     PersonImage,
     PersonDetailsContainer,
     PersonName,
+    Subtitle,
 } from "./styled";
 import noProfileImage from "./../../../assets/noPosterImage.svg"
 
-const PersonTile = ({ profile_path, id, name }) => {
+const PersonTile = ({ profile_path, id, name, subtitle = "" }) => {
     return (
         <PersonWrapper to={`/people/person/${id}`}>
             <PersonImage
@@ -22,8 +23,10 @@ const PersonTile = ({ profile_path, id, name }) => {
                     {name &&
                         <PersonName>{name}</PersonName>
                     }
+                    {subtitle &&
+                        <Subtitle>{subtitle}</Subtitle>
+                    }
                 </>
-
             </PersonDetailsContainer>
         </PersonWrapper >
     );
