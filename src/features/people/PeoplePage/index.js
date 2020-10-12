@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../../common/Loading";
 import BottomNavbar from "../../BottomNavbar";
 import {
+    resetState,
     selectList,
     selectLoading,
     setActivePage,
@@ -18,6 +19,10 @@ const PeoplePage = () => {
 
     useEffect(() => {
         dispatch(setActivePath("popularPeople"));
+
+        return () => {
+            dispatch(resetState());
+        };
     }, []);
 
     const urlPageNumber = +usePageParameter("page");
@@ -39,7 +44,7 @@ const PeoplePage = () => {
                     <>
                         <PeopleContainer>
                             {popularPeople.map(person =>
-                                <PersonTile key={person.id} personInfo={person}/>
+                                <PersonTile key={person.id} personInfo={person} />
                             )}
                         </PeopleContainer>
                         <BottomNavbar />

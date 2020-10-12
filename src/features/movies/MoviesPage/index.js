@@ -8,6 +8,7 @@ import {
     selectLoading,
     setActivePage,
     setActivePath,
+    resetState,
 } from "../../listSlice";
 import { TileContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
@@ -18,6 +19,10 @@ const MoviesPage = () => {
 
     useEffect(() => {
         dispatch(setActivePath("popularMovies"));
+
+        return () => {
+            dispatch(resetState());
+        };
     }, []);
 
     const urlPageNumber = +usePageParameter("page");
