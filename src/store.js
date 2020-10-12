@@ -1,17 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
-import moviesReducer from "./features/movies/MoviesPage/moviesSlice";
+import listReducer from "./features/listSlice";
+import itemReducer from "./features/itemSlice";
 import createSagaMiddleware from "redux-saga";
-import { watchSetActivePage } from "./features/movies/MoviesPage/moviesSaga"
+import rootSaga from "./rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer: {
-        movies: moviesReducer,
+        list: listReducer,
+        item: itemReducer,
     },
     middleware: [sagaMiddleware],
 });
 
-sagaMiddleware.run(watchSetActivePage);
+sagaMiddleware.run(rootSaga);
 
 export default store;

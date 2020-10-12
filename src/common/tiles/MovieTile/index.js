@@ -1,19 +1,18 @@
 import React from "react";
-import Ratings from "../Ratings";
+import Ratings from "./../../Ratings";
 import {
-    Tile,
+    Wrapper,
     Image,
     Title,
     Year,
-    DetailsContainer,
     Container,
-} from "./styled";
-import noPosterImage from "./../../assets/noPosterImage.svg"
+    DetailsContainer,
+} from "./../tileStyles";
+import noPosterImage from "./../../../assets/noPosterImage.svg"
 
 const MovieTile = ({ movieInfo }) => {
-
     return (
-        <Tile>
+        <Wrapper to={`/movies/movie/${movieInfo.id}`}>
             <Image
                 src={movieInfo.poster_path
                     ? `https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`
@@ -38,7 +37,7 @@ const MovieTile = ({ movieInfo }) => {
                     voteCount={movieInfo.vote_count}
                 />
             </DetailsContainer>
-        </Tile >
+        </Wrapper >
     );
 };
 

@@ -16,7 +16,9 @@ import {
   StyledTitleLogo,
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
-import PeoplePage from "./features/people/PersonPage";
+import MoviePage from "./features/movies/MoviePage";
+import PeoplePage from "./features/people/PeoplePage";
+import PersonPage from "./features/people/PersonPage";
 
 function App() {
   return (
@@ -48,8 +50,14 @@ function App() {
         </Nav>
         <WidthContainer>
           <Switch>
+            <Route path="/movies/movie/:id">
+              <MoviePage />
+            </Route>
             <Route path="/movies">
               <MoviesPage />
+            </Route>
+            <Route path="/people/person/:id">
+              <PersonPage />
             </Route>
             <Route path="/people">
               <PeoplePage />

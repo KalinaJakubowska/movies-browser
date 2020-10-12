@@ -2,26 +2,37 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../../common/Loading";
 import BottomNavbar from "../../BottomNavbar";
-import MovieTile from "../../MovieTile";
+import MovieTile from "../../../common/tiles/MovieTile";
 import {
-    selectPopularMovies,
+    selectList,
     selectLoading,
     setActivePage,
-} from "./moviesSlice";
-import { MoviesContainer } from "./styled";
+    setActivePath,
+    resetState,
+} from "../../listSlice";
+import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 
 const MoviesPage = () => {
-    const urlPageNumber = +usePageParameter("page");
-    const popularMovies = useSelector(selectPopularMovies);
-    const isLoading = useSelector(selectLoading);
-
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(setActivePath("popularMovies"));
+
+        return () => {
+            dispatch(resetState());
+        };
+    }, []);
+
+    const urlPageNumber = +usePageParameter("page");
+    const popularMovies = useSelector(selectList);
+    const isLoading = useSelector(selectLoading);
+
+
+    useEffect(() => {
         dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
-    }, [])
+    }, [urlPageNumber]);
 
     return (
         <>
@@ -31,11 +42,11 @@ const MoviesPage = () => {
                 ? <Loading />
                 : (
                     <>
-                        <MoviesContainer>
+                        <MovieContainer>
                             {popularMovies.map(movie =>
                                 <MovieTile key={movie.id} movieInfo={movie}></MovieTile>
                             )}
-                        </MoviesContainer>
+                        </MovieContainer>
                         <BottomNavbar />
                     </>
                 )
