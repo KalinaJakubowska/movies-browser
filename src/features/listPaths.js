@@ -1,6 +1,6 @@
 const listPaths = {
     popularMovies: "/movie/popular",
-    popularPeople: "/people/popular",
+    popularPeople: "/person/popular",
 };
 
 export default listPaths;
