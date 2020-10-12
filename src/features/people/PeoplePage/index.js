@@ -39,7 +39,7 @@ const PeoplePage = () => {
                     <>
                         <PeopleContainer>
                             {popularPeople.map(person =>
-                                <PersonTile personInfo={person}/>
+                                <PersonTile key={person.id} personInfo={person}/>
                             )}
                         </PeopleContainer>
                         <BottomNavbar />
