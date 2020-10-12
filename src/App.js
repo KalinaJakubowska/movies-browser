@@ -15,7 +15,7 @@ import {
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import MoviePage from "./features/movies/MoviePage";
-import PeoplePage from "./features/people/PersonPage";
+import PeoplePage from "./features/people/PeoplePage";
 import { ReactComponent as TitleLogo } from "./assets/camera-logo.svg";
 
 function App() {
