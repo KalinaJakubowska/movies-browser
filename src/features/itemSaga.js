@@ -6,21 +6,19 @@ import {
     fetchItemSuccess,
     setItemId,
 } from "./itemSlice";
-import language from "../common/language";
-import apiKey from "../common/apiKey";
 
 function* fetchItemHandler() {
-    const id = store.getState().item.itemId;
-    const activePath = store.getState().item.activePath;
+    const activeItemPath = store.getState().item.activeItemPath;
+    const activeExtraPath = store.getState().item.activeExtraPath;
+
     try {
         yield delay(500);
-        const itemData = yield call(() => getApiData(
-            `https://api.themoviedb.org/3${activePath}/${id}?api_key=${apiKey}&language=${language}`
-        ));
-        yield put(fetchItemSuccess(itemData));
+        const itemData = yield call(() => getApiData(activeItemPath));
+        const extraData = yield call(() => getApiData(activeExtraPath));
+        yield put(fetchItemSuccess(itemData, extraData));
     } catch (error) {
         yield put(fetchItemError());
-        yield call(alert, "Coś poszło nie tak");
+        yield call(alert, error);
     }
 };
 
