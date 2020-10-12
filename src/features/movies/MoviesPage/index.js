@@ -9,7 +9,7 @@ import {
     setActivePage,
     setActivePath,
 } from "../../listSlice";
-import { MoviesContainer } from "./styled";
+import { TileContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 
@@ -37,11 +37,11 @@ const MoviesPage = () => {
                 ? <Loading />
                 : (
                     <>
-                        <MoviesContainer>
+                        <TileContainer>
                             {popularMovies.map(movie =>
                                 <MovieTile key={movie.id} movieInfo={movie}></MovieTile>
                             )}
-                        </MoviesContainer>
+                        </TileContainer>
                         <BottomNavbar />
                     </>
                 )

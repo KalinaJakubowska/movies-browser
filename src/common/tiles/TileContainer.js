@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MoviesContainer = styled.div`
+export const TileContainer = styled.div`
     width: 1368px;
     margin: 24px auto 40px;
     display: grid;
