@@ -9,4 +9,7 @@ export const theme = {
     woodsmoke: "#18181B",
     mineShaft: "#333333",
   },
+  breakpoints: {
+    mobile: "450",
+  },
 };
