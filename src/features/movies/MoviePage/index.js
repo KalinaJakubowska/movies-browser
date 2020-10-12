@@ -11,6 +11,8 @@ import {
 } from "../../itemSlice";
 import language from "./../../../common/language";
 import apiKey from "./../../../common/apiKey";
+import { PeopleContainer } from "../../../common/tiles/TileContainer";
+import PersonTile from "../../../common/tiles/PersonTile";
 
 const MoviePage = () => {
     const { id } = useParams();
@@ -35,7 +37,17 @@ const MoviePage = () => {
                 <>
                     <div> {movieData.title}</div>
                     <div>kafel</div>
-                    <div>cast</div>
+
+                    <PeopleContainer>
+                        {castCrewData.cast.map(({ profile_path, id, character }) =>
+                            <PersonTile
+                                key={id}
+                                profile_path={profile_path}
+                                id={id}
+                                name={character}
+                            />
+                        )}
+                    </PeopleContainer>
                     <div>crew</div>
                 </>
             }
