@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import listPaths from "./listPaths";
+import listPaths from "../common/listPaths";
 
 const listSlice = createSlice({
     name: "people",
