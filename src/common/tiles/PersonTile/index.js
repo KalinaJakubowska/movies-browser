@@ -9,7 +9,7 @@ import noProfileImage from "./../../../assets/noPosterImage.svg"
 
 const PersonPage = ({ personInfo }) => {
     return (
-        <PersonTile to={`/movies/movie/${personInfo.id}`}>
+        <PersonTile to={`/people/person/${personInfo.id}`}>
             <PersonImage
                 src={personInfo.profile_path
                     ? `https://image.tmdb.org/t/p/w342${personInfo.profile_path}`
