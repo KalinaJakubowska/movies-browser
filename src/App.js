@@ -13,10 +13,10 @@ import {
   Input,
   InputBox,
   StyledInputIcon,
+  StyledTitleLogo,
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import PeoplePage from "./features/people/PersonPage";
-import {ReactComponent as TitleLogo} from "./assets/camera-logo.svg";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
           <WidthContainer>
             <NavContainer>
               <NavContainerLeft>
-                <TitleLogo />
+                <StyledTitleLogo />
                 <Title>Movie Browser</Title>
                 <List>
                   <ListItem>
