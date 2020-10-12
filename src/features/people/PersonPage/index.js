@@ -1,10 +1,10 @@
 import React from "react";
 
-const PeoplePage = () => {
+const PersonPage = () => {
 
     return (
-        <p>People page</p>
+        <p>Person page</p>
     );
 };
 
-export default PeoplePage;
+export default PersonPage;

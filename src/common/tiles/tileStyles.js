@@ -22,13 +22,6 @@ export const Image = styled.img`
     margin-bottom: 16px;
 `
 
-export const DetailsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
-`
-
 export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr;
@@ -44,5 +37,12 @@ export const Title = styled.div`
 export const Year = styled.div`
     font-size: 16px;
     line-height: 150%;
-    color: ${({ theme }) => theme.colors.Waterloo}
+    color: ${({ theme }) => theme.colors.Waterloo};
+`
+
+export const DetailsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
 `

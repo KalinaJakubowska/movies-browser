@@ -15,7 +15,8 @@ import {
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import MoviePage from "./features/movies/MoviePage";
-import PeoplePage from "./features/people/PersonPage";
+import PeoplePage from "./features/people/PeoplePage";
+import PersonPage from "./features/people/PersonPage";
 import { ReactComponent as TitleLogo } from "./assets/camera-logo.svg";
 
 function App() {
@@ -54,6 +55,9 @@ function App() {
             </Route>
             <Route path="/movies">
               <MoviesPage />
+            </Route>
+            <Route path="/people/person/:id">
+              <PersonPage />
             </Route>
             <Route path="/people">
               <PeoplePage />

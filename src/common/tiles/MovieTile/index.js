@@ -1,14 +1,14 @@
 import React from "react";
-import Ratings from "../Ratings";
+import Ratings from "./../../Ratings";
 import {
     Tile,
     Image,
     Title,
     Year,
-    DetailsContainer,
     Container,
-} from "./styled";
-import noPosterImage from "./../../assets/noPosterImage.svg"
+    DetailsContainer,
+} from "./../tileStyles";
+import noPosterImage from "./../../../assets/noPosterImage.svg"
 
 const MovieTile = ({ movieInfo }) => {
     return (
