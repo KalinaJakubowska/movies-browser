@@ -15,7 +15,7 @@ function* fetchItemHandler() {
         yield delay(500);
         const itemData = yield call(() => getApiData(activeItemPath));
         const extraData = yield call(() => getApiData(activeExtraPath));
-        yield put(fetchItemSuccess(itemData, extraData));
+        yield put(fetchItemSuccess({ itemData, extraData }));
     } catch (error) {
         yield put(fetchItemError());
         yield call(alert, error);

@@ -15,7 +15,7 @@ const itemSlice = createSlice({
             state.loading = true;
             state.itemId = id;
         },
-        fetchItemSuccess: (state, { payload: itemData, extraData }) => {
+        fetchItemSuccess: (state, { payload: { itemData, extraData } }) => {
             state.itemData = itemData;
             state.extraData = extraData;
             state.loading = false;
