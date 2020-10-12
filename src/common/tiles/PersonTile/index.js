@@ -12,7 +12,7 @@ const PersonPage = ({ personInfo }) => {
         <PersonTile to={`/people/person/${personInfo.id}`}>
             <PersonImage
                 src={personInfo.profile_path
-                    ? `https://image.tmdb.org/t/p/w342${personInfo.profile_path}`
+                    ? `https://image.tmdb.org/t/p/w185${personInfo.profile_path}`
                     : noProfileImage
                 }
                 alt={`Zdjęcie ${personInfo.name}`}
