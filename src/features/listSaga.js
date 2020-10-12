@@ -1,13 +1,13 @@
 import { takeEvery, call, put, delay } from "redux-saga/effects";
-import { getApiData } from "./../../getApiData";
-import store from "./../../../store";
+import { getApiData } from "./getApiData";
+import store from "../store";
 import {
     fetchListError,
     fetchListSuccess,
     setActivePage,
-} from "../../listSlice";
-import apiKey from "./../../../common/apiKey";
-import language from "./../../../common/language";
+} from "./listSlice";
+import apiKey from "../common/apiKey";
+import language from "../common/language";
 
 function* fetchListHandler() {
     const page = store.getState().list.activePage;
