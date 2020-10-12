@@ -1,15 +1,15 @@
 import React from "react";
 import {
-    PersonTile,
+    PersonWrapper,
     PersonImage,
     PersonDetailsContainer,
     PersonName,
 } from "./styled";
 import noProfileImage from "./../../../assets/noPosterImage.svg"
 
-const PersonPage = ({ personInfo }) => {
+const PersonTile = ({ personInfo }) => {
     return (
-        <PersonTile to={`/people/person/${personInfo.id}`}>
+        <PersonWrapper to={`/people/person/${personInfo.id}`}>
             <PersonImage
                 src={personInfo.profile_path
                     ? `https://image.tmdb.org/t/p/w185${personInfo.profile_path}`
@@ -26,8 +26,8 @@ const PersonPage = ({ personInfo }) => {
                 </>
 
             </PersonDetailsContainer>
-        </PersonTile >
+        </PersonWrapper >
     );
 };
 
-export default PersonPage;
+export default PersonTile;
