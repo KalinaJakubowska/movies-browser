@@ -4,17 +4,17 @@ import Loading from "../../../common/Loading";
 import BottomNavbar from "../../BottomNavbar";
 import MovieTile from "../../MovieTile";
 import {
-    selectPopularMovies,
+    selectList,
     selectLoading,
     setActivePage,
-} from "./moviesSlice";
+} from "../../listSlice";
 import { MoviesContainer } from "./styled";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 
 const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
-    const popularMovies = useSelector(selectPopularMovies);
+    const popularMovies = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
 
     const dispatch = useDispatch();
