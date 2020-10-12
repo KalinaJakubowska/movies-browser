@@ -1,33 +1,35 @@
 import React from "react";
 import {
-    PersonTile,
+    PersonWrapper,
     PersonImage,
     PersonDetailsContainer,
     PersonName,
+    Subtitle,
 } from "./styled";
 import noProfileImage from "./../../../assets/noPosterImage.svg"
 
-const PersonPage = ({ personInfo }) => {
+const PersonTile = ({ profile_path, id, name, subtitle = "" }) => {
     return (
-        <PersonTile to={`/people/person/${personInfo.id}`}>
+        <PersonWrapper to={`/people/person/${id}`}>
             <PersonImage
-                src={personInfo.profile_path
-                    ? `https://image.tmdb.org/t/p/w342${personInfo.profile_path}`
+                src={profile_path
+                    ? `https://image.tmdb.org/t/p/w185${profile_path}`
                     : noProfileImage
                 }
-                alt={`Zdjęcie ${personInfo.name}`}
+                alt={`Zdjęcie ${name}`}
             />
             <PersonDetailsContainer>
                 <>
-                    {personInfo.name &&
-                        <PersonName> {personInfo.name}
-                        </PersonName>
+                    {name &&
+                        <PersonName>{name}</PersonName>
+                    }
+                    {subtitle &&
+                        <Subtitle>{subtitle}</Subtitle>
                     }
                 </>
-
             </PersonDetailsContainer>
-        </PersonTile >
+        </PersonWrapper >
     );
 };
 
-export default PersonPage;
+export default PersonTile;

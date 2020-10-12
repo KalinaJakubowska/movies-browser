@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../../common/Loading";
 import BottomNavbar from "../../BottomNavbar";
 import {
+    resetState,
     selectList,
     selectLoading,
     setActivePage,
     setActivePath,
 } from "../../listSlice";
-import { PeopleContainer } from "./styled";
+import { PeopleContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile"
@@ -18,6 +19,10 @@ const PeoplePage = () => {
 
     useEffect(() => {
         dispatch(setActivePath("popularPeople"));
+
+        return () => {
+            dispatch(resetState());
+        };
     }, []);
 
     const urlPageNumber = +usePageParameter("page");
@@ -38,8 +43,13 @@ const PeoplePage = () => {
                 : (
                     <>
                         <PeopleContainer>
-                            {popularPeople.map(person =>
-                                <PersonTile key={person.id} personInfo={person}/>
+                            {popularPeople.map(({ profile_path, id, name }) =>
+                                <PersonTile
+                                    key={id}
+                                    profile_path={profile_path}
+                                    id={id}
+                                    name={name}
+                                />
                             )}
                         </PeopleContainer>
                         <BottomNavbar />

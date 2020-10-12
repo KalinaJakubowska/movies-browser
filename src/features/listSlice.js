@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import listPaths from "./listPaths";
+import listPaths from "../common/listPaths";
 
 const listSlice = createSlice({
     name: "people",
     initialState: {
         list: [],
-        loading: false,
+        loading: true,
         activePage: 1,
         numberPages: undefined,
         activePath: "/movie/popular",
@@ -26,6 +26,13 @@ const listSlice = createSlice({
         setActivePath: (state, { payload: name }) => {
             state.activePath = listPaths[name];
         },
+        resetState: (state) => {
+            state.list = [];
+            state.activePage = undefined;
+            state.activePath = "";
+            state.numberPages = undefined;
+            state.loading = true;
+        }
     },
 });
 
@@ -34,6 +41,7 @@ export const {
     fetchListError,
     setActivePage,
     setActivePath,
+    resetState,
 } = listSlice.actions;
 export const selectList = state => state.list.list;
 export const selectLoading = state => state.list.loading;

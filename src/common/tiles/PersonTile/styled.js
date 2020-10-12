@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Tile, Image, DetailsContainer, Title } from "./../tileStyles";
+import { Wrapper, Image, DetailsContainer, Title } from "./../tileStyles";
 
-export const PersonTile = styled(Tile)`
+export const PersonWrapper = styled(Wrapper)`
     width: 208px;
     height: 339px;
 `;
@@ -19,4 +19,12 @@ export const PersonDetailsContainer = styled(DetailsContainer)`
 
 export const PersonName = styled(Title)`
     text-align: center;
+`;
+
+export const Subtitle = styled.p`
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: ${({theme}) => theme.colors.waterloo};
+    margin: 0;
 `;
