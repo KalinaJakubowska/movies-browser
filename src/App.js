@@ -14,6 +14,7 @@ import {
   StyledInputIcon,
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
+import MoviePage from "./features/movies/MoviePage";
 import PeoplePage from "./features/people/PersonPage";
 import { ReactComponent as TitleLogo } from "./assets/camera-logo.svg";
 
@@ -48,6 +49,9 @@ function App() {
         </Nav>
         <WidthContainer>
           <Switch>
+            <Route path="/movies/movie/:id">
+              <MoviePage />
+            </Route>
             <Route path="/movies">
               <MoviesPage />
             </Route>
