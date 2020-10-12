@@ -25,7 +25,7 @@ const listSlice = createSlice({
         },
         setActivePath: (state, { payload: name }) => {
             state.activePath = listPaths[name];
-        }
+        },
     },
 });
 
