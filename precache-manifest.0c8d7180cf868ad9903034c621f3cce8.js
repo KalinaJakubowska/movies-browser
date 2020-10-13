@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a9778897ceeefa222be97d3317e343d0",
+    "revision": "f0de5b391fe55dfce4f2ece541af0853",
     "url": "/movie-browser/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/movie-browser/static/js/2.4073f298.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f2cf772219dfab68ccd6",
-    "url": "/movie-browser/static/js/main.f0396c02.chunk.js"
+    "revision": "b5a1701223c0b4d5a465",
+    "url": "/movie-browser/static/js/main.e43f2044.chunk.js"
   },
   {
     "revision": "940b2a428110daf5a21e",
