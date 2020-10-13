@@ -7,10 +7,19 @@ export const MovieContainer = styled.div`
   grid-template-columns: repeat(auto-fill, 320px);
   grid-gap: 24px;
   justify-content: center;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    width: 100%;
+    grid-gap: 20px;
+    grid-template-columns: unset;
+  }
+  
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     width: 100%;
     grid-gap: 16px;
+    grid-template-columns: unset;
   }
+
 `;
 
 export const PeopleContainer = styled(MovieContainer)`
