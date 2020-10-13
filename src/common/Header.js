@@ -7,6 +7,10 @@ const Header = styled.h1`
   line-height: 120%;
   color: ${({theme}) => theme.colors.woodsmoke};
 
+  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+    padding-left: 8vw;
+  }
+
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     font-size: 24px;
     margin: 42px 0 18px;
