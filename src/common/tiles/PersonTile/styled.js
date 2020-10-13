@@ -19,7 +19,7 @@ export const PersonDetailsContainer = styled(DetailsContainer)`
 
 export const PersonName = styled(Title)`
     text-align: center;
-    font-size: 18px;
+    font-size: ${({ subtitle }) => subtitle ? "18px" : "22px"};
 `;
 
 export const Subtitle = styled.p`
