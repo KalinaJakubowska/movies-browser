@@ -46,7 +46,8 @@ export const Title = styled.div`
   font-weight: 500;
   font-size: ${({ textLength }) => (textLength > 40)
     ? "18px"
-    : "22px"};
+    : "22px"
+  };
   line-height: 130%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
