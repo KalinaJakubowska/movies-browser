@@ -14,5 +14,5 @@ export const MovieContainer = styled.div`
 `;
 
 export const PeopleContainer = styled(MovieContainer)`
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, 208px);;
 `;
