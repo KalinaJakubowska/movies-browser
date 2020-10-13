@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/movie-browser/static/js/main.d07edadc.chunk.js",
-    "main.js.map": "/movie-browser/static/js/main.d07edadc.chunk.js.map",
+    "main.js": "/movie-browser/static/js/main.f0396c02.chunk.js",
+    "main.js.map": "/movie-browser/static/js/main.f0396c02.chunk.js.map",
     "runtime-main.js": "/movie-browser/static/js/runtime-main.6da0a001.js",
     "runtime-main.js.map": "/movie-browser/static/js/runtime-main.6da0a001.js.map",
     "static/js/2.4073f298.chunk.js": "/movie-browser/static/js/2.4073f298.chunk.js",
     "static/js/2.4073f298.chunk.js.map": "/movie-browser/static/js/2.4073f298.chunk.js.map",
     "index.html": "/movie-browser/index.html",
-    "precache-manifest.3c59a59c19ae5d43f83ebb2799575525.js": "/movie-browser/precache-manifest.3c59a59c19ae5d43f83ebb2799575525.js",
+    "precache-manifest.a986d060e2874068c2850c4aef1fed29.js": "/movie-browser/precache-manifest.a986d060e2874068c2850c4aef1fed29.js",
     "service-worker.js": "/movie-browser/service-worker.js",
     "static/js/2.4073f298.chunk.js.LICENSE.txt": "/movie-browser/static/js/2.4073f298.chunk.js.LICENSE.txt",
     "static/media/camera-logo.af05430f.svg": "/movie-browser/static/media/camera-logo.af05430f.svg",
@@ -19,6 +19,6 @@
   "entrypoints": [
     "static/js/runtime-main.6da0a001.js",
     "static/js/2.4073f298.chunk.js",
-    "static/js/main.d07edadc.chunk.js"
+    "static/js/main.f0396c02.chunk.js"
   ]
 }
