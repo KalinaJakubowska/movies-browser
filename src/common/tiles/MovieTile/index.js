@@ -10,28 +10,27 @@ import {
 } from "./../tileStyles";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
 
-const MovieTile = ({movieInfo}) => {
+const MovieTile = ({ id, poster_path, title, release_date, vote_average, vote_count }) => {
   return (
-    <MovieWrapper to={`/movies/movie/${movieInfo.id}`}>
+    <MovieWrapper to={`/movies/movie/${id}`}>
       <Image
-        src={
-          movieInfo.poster_path
-            ? `https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`
-            : noPosterImage
+        src={poster_path
+          ? `https://image.tmdb.org/t/p/w342${poster_path}`
+          : noPosterImage
         }
-        alt={`Plakat filmu ${movieInfo.title}`}
+        alt={`Plakat filmu ${title}`}
       />
       <DetailsContainer>
         <Container>
-          {movieInfo.title && <Title> {movieInfo.title}</Title>}
-          {movieInfo.release_date && (
-            <Year> {movieInfo.release_date.slice(0, 4)}</Year>
+          {title && <Title> {title}</Title>}
+          {release_date && (
+            <Year> {release_date.slice(0, 4)}</Year>
           )}
           <div>Types</div>
         </Container>
         <Ratings
-          voteAverage={movieInfo.vote_average}
-          voteCount={movieInfo.vote_count}
+          voteAverage={vote_average}
+          voteCount={vote_count}
         />
       </DetailsContainer>
     </MovieWrapper>
