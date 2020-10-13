@@ -7,6 +7,10 @@ export const MovieContainer = styled.div`
   grid-template-columns: repeat(auto-fill, 320px);
   grid-gap: 24px;
   justify-content: center;
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    width: 100%;
+    grid-gap: 16px;
+  }
 `;
 
 export const PeopleContainer = styled(MovieContainer)`
