@@ -17,13 +17,11 @@ export const Wrapper = styled(Link)`
 export const MovieWrapper = styled(Wrapper)`
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     flex-direction: row;
-    width: 90vw;
+    width: 100%;
     height: 260px;
   }
 
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
-    flex-direction: row;
-    width: 90vw;
     height: 201px;
   }
 
