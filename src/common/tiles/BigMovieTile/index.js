@@ -1,5 +1,5 @@
 import React from "react";
-import Ratings from "../../Ratings";
+import Ratings from "../Ratings";
 import {
     BigTileWrapper,
     BigTileHeader,
