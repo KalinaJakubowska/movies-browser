@@ -24,7 +24,6 @@ export const MovieWrapper = styled(Wrapper)`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 201px;
   }
-
 `;
 
 export const Image = styled.img`

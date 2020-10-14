@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import {
   WidthContainer,
@@ -19,8 +19,16 @@ import MoviesPage from "./features/movies/MoviesPage";
 import MoviePage from "./features/movies/MoviePage";
 import PeoplePage from "./features/people/PeoplePage";
 import PersonPage from "./features/people/PersonPage";
+import { useDispatch } from "react-redux";
+import { fetchCommon } from "./common/commonSlice";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCommon());
+  }, [])
+
   return (
     <HashRouter>
       <main>

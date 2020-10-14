@@ -29,7 +29,6 @@ const MoviesPage = () => {
     const popularMovies = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
 
-
     useEffect(() => {
         dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
     }, [urlPageNumber]);
@@ -49,7 +48,7 @@ const MoviesPage = () => {
                                 title,
                                 release_date,
                                 vote_average,
-                                vote_count
+                                vote_count,
                             }) =>
                                 <MovieTile
                                     key={id}

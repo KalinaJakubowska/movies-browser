@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Star, Rate, Votes } from "./styled";
-import star from "../../assets/star.svg";
+import star from "../../../assets/star.svg";
 
 const Ratings = ({ voteAverage, voteCount }) => {
   return (

@@ -8,6 +8,7 @@ export const theme = {
     white: "#FFFFFF",
     woodsmoke: "#18181B",
     mineShaft: "#333333",
+    stormGray: "#74788B",
   },
   breakpoints: {
     mobile: "450",
