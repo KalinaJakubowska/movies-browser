@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled(Link)`
@@ -8,22 +8,20 @@ export const Wrapper = styled(Link)`
   width: 324px;
   height: 650px;
   padding: 16px;
-  background-color: ${({theme}) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
-  color: ${({theme}) => theme.colors.woodsmoke};
+  color: ${({ theme }) => theme.colors.woodsmoke};
 `;
 
 export const MovieWrapper = styled(Wrapper)`
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     flex-direction: row;
-    width: 90vw;
+    width: 100%;
     height: 260px;
   }
-  
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
-    flex-direction: row;
-    width: 90vw;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 201px;
   }
 
@@ -37,13 +35,13 @@ export const Image = styled.img`
   margin-bottom: 16px;
   flex-shrink: 0;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     width: auto;
     height: 230px;
     margin-right: 20px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 169px;
     width: 114px;
     margin-right: 0;
@@ -58,10 +56,13 @@ export const Container = styled.div`
 
 export const Title = styled.div`
   font-weight: 500;
-  font-size: 22px;
+  font-size: ${({ textLength }) => (textLength > 40)
+    ? "18px"
+    : "22px"
+  };
   line-height: 130%;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 16px;
   }
 `;
@@ -69,9 +70,9 @@ export const Title = styled.div`
 export const Year = styled.div`
   font-size: 16px;
   line-height: 150%;
-  color: ${({theme}) => theme.colors.waterloo};
+  color: ${({ theme }) => theme.colors.waterloo};
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 13px;
   }
 `;
@@ -82,7 +83,7 @@ export const DetailsContainer = styled.div`
   flex-grow: 1;
   justify-content: space-between;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     margin-left: 16px;
     justify-content: unset;
   }

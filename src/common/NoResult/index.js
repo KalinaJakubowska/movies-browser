@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header";
-import {StyledPaperPlane, ImageBox} from "./styled";
+import { StyledPaperPlane, ImageBox } from "./styled";
 
 const NoResult = () => {
   return (

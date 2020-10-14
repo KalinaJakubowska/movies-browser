@@ -6,7 +6,7 @@ height: 250px;
 display: flex;
 justify-content: center;
 align-items: center;
-`
+`;
 
 export const Image = styled.img`
     width: 91px;
@@ -24,5 +24,5 @@ export const Image = styled.img`
         to {
             transform: translateX(360deg);
         }
-}
-`
+    }
+`;

@@ -19,12 +19,16 @@ export const PersonDetailsContainer = styled(DetailsContainer)`
 
 export const PersonName = styled(Title)`
     text-align: center;
+    font-size: ${({ subtitle }) => subtitle ? "18px" : "22px"};
 `;
 
 export const Subtitle = styled.p`
-    font-size: 18px;
+    font-size: ${({ textLength }) => (textLength > 20)
+        ? "12px"
+        : "16px"
+    };
     line-height: 150%;
     text-align: center;
-    color: ${({theme}) => theme.colors.waterloo};
+    color: ${({ theme }) => theme.colors.waterloo};
     margin: 0;
 `;

@@ -12,7 +12,7 @@ import {
 import { PeopleContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
-import PersonTile from "./../../../common/tiles/PersonTile"
+import PersonTile from "./../../../common/tiles/PersonTile";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
