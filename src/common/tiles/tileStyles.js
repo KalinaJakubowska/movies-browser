@@ -6,7 +6,6 @@ export const Wrapper = styled(Link)`
   display: flex;
   flex-direction: column;
   width: 324px;
-  height: 650px;
   padding: 16px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
@@ -24,7 +23,6 @@ export const MovieWrapper = styled(Wrapper)`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 201px;
   }
-
 `;
 
 export const Image = styled.img`
