@@ -50,12 +50,7 @@ const MoviePage = () => {
               overview={movieData.overview}
             />
 
-            <Header as="h2">Cast
-              ({castCrewData.cast
-                ? `${castCrewData.cast.length}`
-                : "0"
-              })
-            </Header>
+            <Header as="h2">Cast</Header>
             <PeopleContainer>
               {castCrewData.cast
                 .slice(0, 10)
@@ -70,12 +65,7 @@ const MoviePage = () => {
                 ))}
             </PeopleContainer>
 
-            <Header as="h2">Crew
-              ({castCrewData.crew
-                ? `${castCrewData.crew.length}`
-                : "0"
-              })
-            </Header>
+            <Header as="h2">Crew</Header>
             <PeopleContainer>
               {castCrewData.crew
                 .slice(0, 10)
