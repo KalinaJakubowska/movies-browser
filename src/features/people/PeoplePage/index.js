@@ -12,7 +12,8 @@ import {
 import { PeopleContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
-import PersonTile from "./../../../common/tiles/PersonTile"
+import PersonTile from "./../../../common/tiles/PersonTile";
+import { ComponentWrapper } from "./../../../common/ComponentWrapper";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const PeoplePage = () => {
     }, [urlPageNumber])
 
     return (
-        <>
+        <ComponentWrapper>
             <Header>Popular People</Header>
 
             {isLoading
@@ -56,7 +57,7 @@ const PeoplePage = () => {
                     </>
                 )
             }
-        </>
+        </ComponentWrapper>
     );
 };
 
