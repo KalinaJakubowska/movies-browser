@@ -40,7 +40,8 @@ const BigMovieTile = ({
                 <DetailsWrapper>
                     {production_countries &&
                         <Detail>
-                            <MarkedDetail>Production: </MarkedDetail> {production_countries.map(country => `${country}`)}
+                            <MarkedDetail>Production: </MarkedDetail>
+                            {production_countries.map(country => `${country.name}, `)}
                         </Detail>
                     }
                     {release_date &&
