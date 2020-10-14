@@ -35,6 +35,11 @@ export const NavContainer = styled.div`
 export const NavContainerLeft = styled(NavContainer)`
   flex-wrap: nowrap;
 
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    flex-basis: 80vw;
+    justify-content: space-evenly;
+  }
+
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     flex-basis: 100%;
     justify-content: space-around;
@@ -79,6 +84,12 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     border-radius: 33px;
   }
 
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    font-size: 13px;
+    padding: 11px 18px;
+    margin: 0 3px;
+  }
+
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     font-size: 12px;
     padding: 8px 12px;
@@ -93,6 +104,12 @@ export const Title = styled.p`
   padding-left: 16px;
   margin: 0;
   display: flex;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    font-size: 18px;
+    padding: 10;
+    margin-right: 22px;
+  }
 
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     font-size: 13px;
