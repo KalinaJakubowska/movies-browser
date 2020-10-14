@@ -3,7 +3,7 @@ import { Wrapper, Image, DetailsContainer, Title } from "./../tileStyles";
 
 export const PersonWrapper = styled(Wrapper)`
     width: 208px;
-    height: 339px;
+    min-height: 339px;
 `;
 
 export const PersonImage = styled(Image)`
