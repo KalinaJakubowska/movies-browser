@@ -11,6 +11,7 @@ import {
 } from "../bigTilesStyles";
 import { BigMovieImage } from "./styled";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
+import Types from "../Types";
 
 const BigMovieTile = ({
     poster_path,
@@ -18,7 +19,7 @@ const BigMovieTile = ({
     release_date,
     vote_average,
     vote_count,
-    genres,
+    genre_ids,
     production_countries,
     overview,
 }) => {
@@ -50,7 +51,7 @@ const BigMovieTile = ({
                         </Detail>
                     }
                 </DetailsWrapper>
-                <div>types</div>
+                <Types genre_ids={genre_ids} />
                 <Ratings
                     voteAverage={vote_average}
                     voteCount={vote_count}

@@ -49,6 +49,7 @@ const MoviesPage = () => {
                                 release_date,
                                 vote_average,
                                 vote_count,
+                                genre_ids,
                             }) =>
                                 <MovieTile
                                     key={id}
@@ -58,6 +59,7 @@ const MoviesPage = () => {
                                     release_date={release_date}
                                     vote_average={vote_average}
                                     vote_count={vote_count}
+                                    genre_ids={genre_ids}
                                 ></MovieTile>
                             )}
                         </MovieContainer>

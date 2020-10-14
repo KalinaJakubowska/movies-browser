@@ -45,7 +45,7 @@ const MoviePage = () => {
               release_date={movieData.release_date}
               vote_average={movieData.vote_average}
               vote_count={movieData.vote_count}
-              genres={movieData.genres}
+              genre_ids={movieData.genres && movieData.genres.map(genre => genre.id)}
               production_countries={movieData.production_countries}
               overview={movieData.overview}
             />
