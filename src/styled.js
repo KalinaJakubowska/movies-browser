@@ -12,7 +12,8 @@ export const Nav = styled.nav`
 `;
 
 export const WidthContainer = styled.div`
-  max-width: 1368px;
+  max-width: 1400px;
+  padding: 16px;
   margin: 0 auto;
   min-height: inherit;
 `;
