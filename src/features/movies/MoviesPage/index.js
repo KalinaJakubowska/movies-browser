@@ -49,10 +49,11 @@ const MoviesPage = () => {
                                 title,
                                 release_date,
                                 vote_average,
-                                vote_count
+                                vote_count,
+                                credit_id,
                             }) =>
                                 <MovieTile
-                                    key={id}
+                                    key={credit_id}
                                     id={id}
                                     poster_path={poster_path}
                                     title={title}

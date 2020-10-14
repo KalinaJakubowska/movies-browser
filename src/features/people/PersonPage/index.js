@@ -57,9 +57,10 @@ const PersonPage = () => {
                                 vote_average,
                                 vote_count,
                                 character,
+                                credit_id
                             }) => (
                                     <MovieTile
-                                        key={id}
+                                        key={credit_id}
                                         poster_path={poster_path}
                                         id={id}
                                         title={title}
@@ -82,10 +83,11 @@ const PersonPage = () => {
                                 release_date,
                                 vote_average,
                                 vote_count,
-                                job
+                                job,
+                                credit_id,
                             }) => (
                                     <MovieTile
-                                        key={id}
+                                        key={credit_id}
                                         poster_path={poster_path}
                                         id={id}
                                         title={title}
