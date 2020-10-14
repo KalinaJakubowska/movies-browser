@@ -23,3 +23,23 @@ export const BigPersonDetailsContainer = styled(DetailsContainer)`
     margin-left: 40px;
     justify-content: start;
 `;
+
+export const Detail = styled.div`
+    font-size: 18px;
+    line-height: 120%;
+`;
+
+export const MarkedDetail = styled.span`
+    color: ${({ theme }) => theme.colors.stormGray};
+`;
+
+export const Description = styled.div`
+    font-size: 20px;
+    line-height: 160%;
+`;
+
+export const BirthDetails= styled.div`
+    margin: 24px 0px;
+    display: grid;
+    grid-gap: 8px;
+`;
