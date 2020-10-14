@@ -13,7 +13,6 @@ import {
 import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
-import { ComponentWrapper } from "./../../../common/ComponentWrapper";
 
 const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -36,7 +35,7 @@ const MoviesPage = () => {
     }, [urlPageNumber]);
 
     return (
-        <ComponentWrapper>
+        <>
             <Header>Popular movies</Header>
 
             {isLoading
@@ -67,7 +66,7 @@ const MoviesPage = () => {
                     </>
                 )
             }
-        </ComponentWrapper>
+        </>
     );
 };
 
