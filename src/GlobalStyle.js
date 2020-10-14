@@ -1,4 +1,4 @@
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
    html {
@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
    }
 
    body{
-      background: ${({theme}) => theme.colors.whisper};
+      background: ${({ theme }) => theme.colors.whisper};
       font-family: 'Poppins', sans-serif;
    }
 

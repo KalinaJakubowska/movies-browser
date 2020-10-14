@@ -15,13 +15,13 @@ export const Wrapper = styled(Link)`
 `;
 
 export const MovieWrapper = styled(Wrapper)`
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     flex-direction: row;
     width: 100%;
     height: 260px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 201px;
   }
 
@@ -35,13 +35,13 @@ export const Image = styled.img`
   margin-bottom: 16px;
   flex-shrink: 0;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     width: auto;
     height: 230px;
     margin-right: 20px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 169px;
     width: 114px;
     margin-right: 0;

@@ -8,12 +8,12 @@ export const MovieContainer = styled.div`
   grid-gap: 24px;
   justify-content: center;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     grid-gap: 20px;
     grid-template-columns: unset;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     grid-gap: 16px;
   }
 

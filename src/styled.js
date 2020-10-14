@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
-import {ReactComponent as InputIcon} from "./assets/input-logo.svg";
-import {ReactComponent as TitleLogo} from "./assets/camera-logo.svg";
+import { NavLink } from "react-router-dom";
+import { ReactComponent as InputIcon } from "./assets/input-logo.svg";
+import { ReactComponent as TitleLogo } from "./assets/camera-logo.svg";
 
 const activeClassName = "link-active";
 
 export const Nav = styled.nav`
-  background: ${({theme}) => theme.colors.black};
-  color: ${({theme}) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
   min-height: 94px;
 `;
 
@@ -28,7 +28,7 @@ export const NavContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 auto;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     min-height: 71px;
   }
 `;
@@ -36,12 +36,12 @@ export const NavContainer = styled.div`
 export const NavContainerLeft = styled(NavContainer)`
   flex-wrap: nowrap;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     flex-basis: 80vw;
     justify-content: space-evenly;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     flex-basis: 100%;
     justify-content: space-around;
   }
@@ -50,7 +50,7 @@ export const NavContainerLeft = styled(NavContainer)`
 export const NavContainerRight = styled(NavContainer)`
   justify-content: flex-end;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     flex-basis: 100%;
     justify-content: center;
   }
@@ -76,22 +76,22 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  color: ${({theme}) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.white};
   padding: 13px 24px;
   margin: 0 10px;
 
   &.${activeClassName} {
-    border: 1px solid ${({theme}) => theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: 33px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 13px;
     padding: 11px 18px;
     margin: 0 3px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 12px;
     padding: 8px 12px;
     margin: 0 3px;
@@ -99,20 +99,20 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
 `;
 
 export const Title = styled.p`
-  color: ${({theme}) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.white};
   font-size: 24px;
   font-weight: 500;
   padding-left: 16px;
   margin: 0;
   display: flex;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 18px;
     padding: 10;
     margin-right: 22px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 13px;
     padding: 0;
     margin-right: 19px;
@@ -122,7 +122,7 @@ export const Title = styled.p`
 export const Input = styled.input`
   width: 432px;
   height: 48px;
-  border: 1px solid ${({theme}) => theme.colors.cornsilk};
+  border: 1px solid ${({ theme }) => theme.colors.cornsilk};
   border-radius: 33px;
   padding-left: 64px;
 
@@ -131,7 +131,7 @@ export const Input = styled.input`
     outline: none;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 288px;
     height: 44px;
     padding-left: 40px;
@@ -147,7 +147,7 @@ export const StyledInputIcon = styled(InputIcon)`
   left: 27px;
   top: 14px;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 14px;
     left: 16px;
     top: 15px;
@@ -155,7 +155,7 @@ export const StyledInputIcon = styled(InputIcon)`
 `;
 
 export const StyledTitleLogo = styled(TitleLogo)`
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 12px;
   }
 `;
