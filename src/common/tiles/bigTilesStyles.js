@@ -1,27 +1,30 @@
 import styled from "styled-components";
-import { Wrapper, DetailsContainer } from "./../tileStyles";
+import { Wrapper } from "./tileStyles";
 
-export const BigPersonWrapper = styled(Wrapper)`
+export const BigTileWrapper = styled(Wrapper)`
     flex-direction: row;
     width: 100%;
     padding: 40px;
     margin: 56px auto 64px;
 `;
 
-export const PersonImage = styled.img`
+export const BigTileImage = styled.img`
     width: 399px;
     height: 564px;
+    border-radius: 5px;
 `;
 
-export const PersonName = styled.div`
+export const BigTileHeader = styled.div`
     font-weight: 600;
     font-size: 36px;
     line-height: 120%;
 `;
 
-export const BigPersonDetailsContainer = styled(DetailsContainer)`
+export const BigDetailsContainer = styled.div`
+    display: grid;
+    height: fit-content;
+    grid-gap: 24px;
     margin-left: 40px;
-    justify-content: start;
 `;
 
 export const Detail = styled.div`
@@ -38,8 +41,7 @@ export const Description = styled.div`
     line-height: 160%;
 `;
 
-export const BirthDetails= styled.div`
-    margin: 24px 0px;
+export const DetailsWrapper = styled.div`
     display: grid;
     grid-gap: 8px;
 `;
