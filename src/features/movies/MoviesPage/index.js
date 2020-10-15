@@ -6,32 +6,32 @@ import MovieTile from "../../../common/tiles/MovieTile";
 import {
     selectList,
     selectLoading,
-    setActivePage,
     setActivePath,
     resetState,
 } from "../../listSlice";
 import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
+import apiKey from "../../../common/apiKey";
+import language from "../../../common/language";
 
 const MoviesPage = () => {
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(setActivePath("popularMovies"));
-
-        return () => {
-            dispatch(resetState());
-        };
-    }, []);
-
     const urlPageNumber = +usePageParameter("page");
+    const urlQuery = usePageParameter("search");
     const popularMovies = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
 
     useEffect(() => {
-        dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
-    }, [urlPageNumber]);
+        dispatch(setActivePath(urlQuery
+            ? `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
+            : `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
+        );
+
+        return () => {
+            dispatch(resetState());
+        };
+    }, [urlPageNumber, urlQuery]);
 
     return (
         <>

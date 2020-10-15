@@ -10,9 +10,6 @@ import {
   Nav,
   StyledNavLink,
   Title,
-  Input,
-  InputBox,
-  StyledInputIcon,
   StyledTitleLogo,
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
@@ -21,6 +18,7 @@ import PeoplePage from "./features/people/PeoplePage";
 import PersonPage from "./features/people/PersonPage";
 import { useDispatch } from "react-redux";
 import { fetchCommon } from "./common/commonSlice";
+import Search from "./features/Search";
 
 function App() {
   const dispatch = useDispatch();
@@ -48,10 +46,7 @@ function App() {
                 </List>
               </NavContainerLeft>
               <NavContainerRight>
-                <InputBox>
-                  <Input placeholder="Search for movies..." />
-                  <StyledInputIcon />
-                </InputBox>
+                <Search/>
               </NavContainerRight>
             </NavContainer>
           </WidthContainer>
@@ -78,6 +73,6 @@ function App() {
       </main>
     </HashRouter>
   );
-}
+};
 
 export default App;

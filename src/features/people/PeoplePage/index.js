@@ -13,26 +13,25 @@ import { PeopleContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile";
+import apiKey from "../../../common/apiKey";
+import language from "../../../common/language";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(setActivePath("popularPeople"));
-
-        return () => {
-            dispatch(resetState());
-        };
-    }, []);
-
     const urlPageNumber = +usePageParameter("page");
+    const urlQuery = usePageParameter("search");
     const popularPeople = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
 
-
     useEffect(() => {
-        dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
-    }, [urlPageNumber])
+        dispatch(setActivePath(urlQuery
+            ? `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&language=${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
+            : `https://api.themoviedb.org/3/person/popular?api_key=${apiKey}&language=${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
+        );
+        return () => {
+            dispatch(resetState());
+        };
+    }, [urlPageNumber, urlQuery]);
 
     return (
         <>
