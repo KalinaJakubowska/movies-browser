@@ -9,6 +9,7 @@ import {
   DetailsContainer,
 } from "./../tileStyles";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
+import Types from "./../Types";
 
 const MovieTile = ({
   id,
@@ -18,6 +19,7 @@ const MovieTile = ({
   vote_average,
   vote_count,
   role,
+  genre_ids,
 }) => {
   return (
     <MovieWrapper to={`/movies/movie/${id}`}>
@@ -44,7 +46,7 @@ const MovieTile = ({
               }
             </Year>
           )}
-          <div>Types</div>
+          <Types genre_ids={genre_ids} />
         </Container>
         <Ratings
           voteAverage={vote_average}
