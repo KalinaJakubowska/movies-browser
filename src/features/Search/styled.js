@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as InputIcon } from "./../../assets/input-logo.svg";
+import InputIcon from "./../../assets/input-logo.svg";
 
 export const Input = styled.input`
     width: 432px;
@@ -11,6 +11,12 @@ export const Input = styled.input`
 
     &:focus {
         outline: none;
+    }
+
+    &::placeholder {
+        font-size: 16px;
+        line-height: 150%;
+        color: ${({ theme }) => theme.colors.waterloo};
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
@@ -26,14 +32,23 @@ export const SearchBox = styled.form`
 
 export const StyledLensButton = styled.button`
     position: absolute;
-    width: 19px;
-    height: 19px;
-    left: 27px;
-    top: 14px;
+    width: 24px;
+    height: 24px;
+    background-image: url(${InputIcon});
+    background-size:24px;
+    background-color: transparent;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         height: 14px;
+        width: 14px;
+        background-size:14px;
         left: 16px;
-        top: 15px;
     }
 `;
