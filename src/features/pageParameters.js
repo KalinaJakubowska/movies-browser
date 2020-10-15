@@ -21,7 +21,7 @@ export const useReplacePageParameters = () => {
             }
         });
 
-        history.push(`${location.pathname}?${searchParams.toString()}`);
+        history.push(`${location.pathname.includes("movie") ? "/movies" : "/people"}?${searchParams.toString()}`);
     };
 
     return replacePageParameters;
