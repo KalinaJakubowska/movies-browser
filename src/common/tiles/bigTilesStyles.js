@@ -1,23 +1,11 @@
 import styled from "styled-components";
 import { Wrapper } from "./tileStyles";
 
-export const BigTileWrapper = styled.div`
+export const BigTileWrapper = styled(Wrapper)`
     flex-direction: row;
     width: 100%;
-    height: fit-content;
     padding: 40px;
     margin: 56px auto 64px;
-    display: flex;
-    background-color: ${({ theme }) => theme.colors.white};
-    box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-    border-radius: 5px;
-    color: ${({ theme }) => theme.colors.woodsmoke};
-`;
-
-export const BigTileImage = styled.img`
-    width: 399px;
-    height: 564px;
-    border-radius: 5px;
 `;
 
 export const BigTileHeader = styled.div`
