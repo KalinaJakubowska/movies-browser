@@ -20,12 +20,14 @@ export const Input = styled.input`
     }
 `;
 
-export const InputBox = styled.div`
+export const SearchBox = styled.form`
     position: relative;
 `;
 
-export const StyledInputIcon = styled(InputIcon)`
+export const StyledLensButton = styled.button`
     position: absolute;
+    width: 19px;
+    height: 19px;
     left: 27px;
     top: 14px;
 
