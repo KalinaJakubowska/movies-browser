@@ -15,13 +15,14 @@ export const Wrapper = styled(Link)`
 `;
 
 export const MovieWrapper = styled(Wrapper)`
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     flex-direction: row;
     width: 100%;
+    min-height: unset;
     height: 260px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     height: 201px;
   }
 `;
