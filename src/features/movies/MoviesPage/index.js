@@ -8,6 +8,7 @@ import {
     selectLoading,
     setActivePath,
     resetState,
+    selectError,
 } from "../../listSlice";
 import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
@@ -15,6 +16,7 @@ import { usePageParameter } from "../../pageParameters";
 import apiKey from "../../../common/apiKey";
 import language from "../../../common/language";
 import NoResult from "./../../../common/NoResult"
+import Error from "../../../common/Error";
 
 const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -22,6 +24,7 @@ const MoviesPage = () => {
     const urlQuery = usePageParameter("search");
     const popularMovies = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
+    const isError = useSelector(selectError);
 
     useEffect(() => {
         dispatch(setActivePath(urlQuery
@@ -38,37 +41,39 @@ const MoviesPage = () => {
         <>
             {isLoading
                 ? <Loading />
-                : (!popularMovies.length
-                    ? <NoResult urlQuery={urlQuery} />
-                    : (
-                        <>
-                            <Header>Popular movies</Header>
-                            <MovieContainer>
-                                {popularMovies.map(({
-                                    id,
-                                    poster_path,
-                                    title,
-                                    release_date,
-                                    vote_average,
-                                    vote_count,
-                                    genre_ids,
-                                }) =>
-                                    <MovieTile
-                                        key={id}
-                                        id={id}
-                                        poster_path={poster_path}
-                                        title={title}
-                                        release_date={release_date}
-                                        vote_average={vote_average}
-                                        vote_count={vote_count}
-                                        genre_ids={genre_ids}
-                                    />
-                                )}
-                            </MovieContainer>
-                            <BottomNavbar />
-                        </>
+                : isError
+                    ? <Error />
+                    : (!popularMovies.length
+                        ? <NoResult urlQuery={urlQuery} />
+                        : (
+                            <>
+                                <Header>Popular movies</Header>
+                                <MovieContainer>
+                                    {popularMovies.map(({
+                                        id,
+                                        poster_path,
+                                        title,
+                                        release_date,
+                                        vote_average,
+                                        vote_count,
+                                        genre_ids,
+                                    }) =>
+                                        <MovieTile
+                                            key={id}
+                                            id={id}
+                                            poster_path={poster_path}
+                                            title={title}
+                                            release_date={release_date}
+                                            vote_average={vote_average}
+                                            vote_count={vote_count}
+                                            genre_ids={genre_ids}
+                                        />
+                                    )}
+                                </MovieContainer>
+                                <BottomNavbar />
+                            </>
+                        )
                     )
-                )
             }
         </>
     );
