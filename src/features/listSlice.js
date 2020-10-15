@@ -9,6 +9,7 @@ const listSlice = createSlice({
         activePage: 1,
         numberPages: undefined,
         activePath: "/movie/popular",
+        query: "",
     },
     reducers: {
         fetchListSuccess: (state, { payload: list }) => {
@@ -32,7 +33,10 @@ const listSlice = createSlice({
             state.activePath = "";
             state.numberPages = undefined;
             state.loading = true;
-        }
+        },
+        setQuery: (state, { payload: query }) => {
+            state.query = query;
+        },
     },
 });
 
@@ -42,10 +46,12 @@ export const {
     setActivePage,
     setActivePath,
     resetState,
+    setQuery,
 } = listSlice.actions;
 export const selectList = state => state.list.list;
 export const selectLoading = state => state.list.loading;
 export const selectActivePage = state => state.list.activePage;
 export const selectNumberPages = state => state.list.numberPages;
+export const selectQuery = state => state.list.query;
 
 export default listSlice.reducer;
