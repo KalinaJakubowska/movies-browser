@@ -9,6 +9,7 @@ import {
   setItemId,
   selectExtraData,
   selectError,
+  resetState,
 } from "../../itemSlice";
 import language from "./../../../common/language";
 import apiKey from "./../../../common/apiKey";
@@ -34,6 +35,10 @@ const MoviePage = () => {
       }),
     );
     dispatch(setItemId(id));
+
+    return () => {
+      dispatch(resetState());
+    };
   }, [id]);
 
   return (
