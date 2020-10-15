@@ -15,6 +15,7 @@ import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile";
 import apiKey from "../../../common/apiKey";
 import language from "../../../common/language";
+import NoResult from "../../../common/NoResult";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -35,24 +36,26 @@ const PeoplePage = () => {
 
     return (
         <>
-            <Header>Popular People</Header>
-
             {isLoading
                 ? <Loading />
-                : (
-                    <>
-                        <PeopleContainer>
-                            {popularPeople.map(({ profile_path, id, name }) =>
-                                <PersonTile
-                                    key={id}
-                                    profile_path={profile_path}
-                                    id={id}
-                                    name={name}
-                                />
-                            )}
-                        </PeopleContainer>
-                        <BottomNavbar />
-                    </>
+                : (!popularPeople.length
+                    ? <NoResult urlQuery={urlQuery} />
+                    : (
+                        <>
+                            <Header>Popular People</Header>
+                            <PeopleContainer>
+                                {popularPeople.map(({ profile_path, id, name }) =>
+                                    <PersonTile
+                                        key={id}
+                                        profile_path={profile_path}
+                                        id={id}
+                                        name={name}
+                                    />
+                                )}
+                            </PeopleContainer>
+                            <BottomNavbar />
+                        </>
+                    )
                 )
             }
         </>
