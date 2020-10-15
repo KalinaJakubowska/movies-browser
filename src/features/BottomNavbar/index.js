@@ -1,17 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectNumberPages } from "../listSlice";
-import { usePageParameter, useReplacePageParameter } from "../pageParameters";
+import { usePageParameter, useReplacePageParameters } from "../pageParameters";
 import { Container, Button, PageCounter, Number } from "./styled";
 
 const BottomNavbar = () => {
     const urlPageNumber = +usePageParameter("page");
     const page = urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber;
     const numberPages = useSelector(selectNumberPages);
-    const replacePageParameter = useReplacePageParameter();
+    const replacePageParameters = useReplacePageParameters();
 
     const onButtonClick = (page) => {
-        replacePageParameter("page", page);
+        replacePageParameters([{
+            key: "page",
+            value: page,
+        }]);
     };
 
     return (

@@ -6,20 +6,23 @@ export const usePageParameter = paramName => {
     return (new URLSearchParams(location.search)).get(paramName);
 };
 
-export const useReplacePageParameter = () => {
+export const useReplacePageParameters = () => {
     const history = useHistory();
     const location = useLocation();
 
     const searchParams = new URLSearchParams(location.search);
 
-    const replacePageParameter = (key, value) => {
-        if (value === "") {
-            searchParams.delete(key);
-        } else {
-            searchParams.set(key, value);
-        }
+    const replacePageParameters = (parameters) => {
+        parameters.forEach(({ key, value }) => {
+            if (value === "") {
+                searchParams.delete(key);
+            } else {
+                searchParams.set(key, value);
+            }
+        });
+
         history.push(`${location.pathname}?${searchParams.toString()}`);
     };
 
-    return replacePageParameter;
+    return replacePageParameters;
 };
