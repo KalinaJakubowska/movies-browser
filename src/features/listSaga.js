@@ -4,7 +4,7 @@ import store from "../store";
 import {
     fetchListError,
     fetchListSuccess,
-    setActivePage,
+    setActivePath,
 } from "./listSlice";
 
 function* fetchListHandler() {
@@ -20,6 +20,6 @@ function* fetchListHandler() {
     }
 };
 
-export function* watchSetActivePage() {
-    yield takeEvery(setActivePage.type, fetchListHandler);
+export function* watchSetActivePath() {
+    yield takeEvery(setActivePath.type, fetchListHandler);
 };
