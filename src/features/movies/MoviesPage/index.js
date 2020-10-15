@@ -13,25 +13,27 @@ import {
 import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
+import apiKey from "../../../common/apiKey";
+import language from "../../../common/language";
 
 const MoviesPage = () => {
     const dispatch = useDispatch();
+    const urlPageNumber = +usePageParameter("page");
+    const urlQuery = usePageParameter("search");
+    const popularMovies = useSelector(selectList);
+    const isLoading = useSelector(selectLoading);
 
     useEffect(() => {
-        dispatch(setActivePath("popularMovies"));
+        dispatch(setActivePath(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
 
         return () => {
             dispatch(resetState());
         };
     }, []);
 
-    const urlPageNumber = +usePageParameter("page");
-    const popularMovies = useSelector(selectList);
-    const isLoading = useSelector(selectLoading);
-
     useEffect(() => {
         dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
-    }, [urlPageNumber]);
+    }, [urlPageNumber, urlQuery]);
 
     return (
         <>

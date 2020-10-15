@@ -8,7 +8,7 @@ const listSlice = createSlice({
         loading: true,
         activePage: 1,
         numberPages: undefined,
-        activePath: "/movie/popular",
+        activePath: "",
         query: "",
     },
     reducers: {
@@ -25,7 +25,7 @@ const listSlice = createSlice({
             state.loading = true;
         },
         setActivePath: (state, { payload: name }) => {
-            state.activePath = listPaths[name];
+            state.activePath = name;
         },
         resetState: (state) => {
             state.list = [];

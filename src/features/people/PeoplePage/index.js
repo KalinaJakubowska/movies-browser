@@ -13,22 +13,22 @@ import { PeopleContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile";
+import apiKey from "../../../common/apiKey";
+import language from "../../../common/language";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
+    const urlPageNumber = +usePageParameter("page");
+    const popularPeople = useSelector(selectList);
+    const isLoading = useSelector(selectLoading);
 
     useEffect(() => {
-        dispatch(setActivePath("popularPeople"));
+        dispatch(setActivePath(`https://api.themoviedb.org/3/person/popular?api_key=${apiKey}&language=${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
 
         return () => {
             dispatch(resetState());
         };
     }, []);
-
-    const urlPageNumber = +usePageParameter("page");
-    const popularPeople = useSelector(selectList);
-    const isLoading = useSelector(selectLoading);
-
 
     useEffect(() => {
         dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));

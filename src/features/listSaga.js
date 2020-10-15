@@ -6,18 +6,13 @@ import {
     fetchListSuccess,
     setActivePage,
 } from "./listSlice";
-import apiKey from "../common/apiKey";
-import language from "../common/language";
 
 function* fetchListHandler() {
-    const page = store.getState().list.activePage;
     const activePath = store.getState().list.activePath;
 
     try {
         yield delay(500);
-        const data = yield call(() => getApiData(
-            `https://api.themoviedb.org/3${activePath}?api_key=${apiKey}&language=${language}&page=${page}`
-        ));
+        const data = yield call(() => getApiData(activePath));
         yield put(fetchListSuccess(data));
     } catch (error) {
         yield put(fetchListError());
