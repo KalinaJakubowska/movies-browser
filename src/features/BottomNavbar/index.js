@@ -12,6 +12,7 @@ import {
   Number,
   StyledArrowLeft,
   StyledArrowRight,
+  SingleArrow,
 } from "./styled";
 
 const BottomNavbar = () => {
@@ -53,7 +54,7 @@ const BottomNavbar = () => {
           disabled={page === numberPages}
           onClick={() => onButtonClick(numberPages)}>
           {"Last"}
-          <StyledArrowRight />
+            <StyledArrowRight />
         </Button>
       </DesktopContainer>
       <MobileContainer>
@@ -64,7 +65,9 @@ const BottomNavbar = () => {
           </DoubleArrow>
         </Button>
         <Button disabled={page === 1} onClick={() => onButtonClick(page - 1)}>
-          <StyledArrowLeft />
+          <SingleArrow>
+            <StyledArrowLeft />
+          </SingleArrow>
         </Button>
         <PageCounter>
           Page <Number>{page}</Number> of <Number>{numberPages}</Number>
@@ -72,7 +75,9 @@ const BottomNavbar = () => {
         <Button
           disabled={page === numberPages}
           onClick={() => onButtonClick(page + 1)}>
-          <StyledArrowRight />
+          <SingleArrow>
+              <StyledArrowRight />
+          </SingleArrow>
         </Button>
         <Button
           disabled={page === numberPages}

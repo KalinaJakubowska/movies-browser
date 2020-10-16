@@ -37,11 +37,13 @@ export const Button = styled.button`
     background-color: ${({theme}) => theme.colors.cornsilk};
   }
 
- 
-
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     display: flex;
     padding: 8px 12px;
+    margin: 0 8px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     margin: 0 4px;
   }
 `;
@@ -103,6 +105,12 @@ export const StyledArrowRight = styled(ArrowRight)`
 export const DoubleArrow = styled.div`
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     display: flex;
-    
+  }
+`;
+
+export const SingleArrow = styled.div`
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    display: flex;
+    height: 8px;
   }
 `;
