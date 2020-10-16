@@ -1,7 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectActivePage, selectNumberPages, setActivePage } from "../listSlice";
-import { useReplacePageParameter } from "../pageParameters";
+
+import {useSelector} from "react-redux";
+import {selectNumberPages} from "../listSlice";
+import {usePageParameter, useReplacePageParameters} from "../pageParameters";
 import {
   DesktopContainer,
   MobileContainer,
@@ -14,76 +15,76 @@ import {
 } from "./styled";
 
 const BottomNavbar = () => {
-    const activePage = useSelector(selectActivePage);
-    const numberPages = useSelector(selectNumberPages);
-    const dispatch = useDispatch();
-    const replacePageParameter = useReplacePageParameter();
+  const urlPageNumber = +usePageParameter("page");
+  const page = urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber;
+  const numberPages = useSelector(selectNumberPages);
+  const replacePageParameters = useReplacePageParameters();
 
-    const onButtonClick = (page) => {
-        replacePageParameter("page", page);
-        dispatch(setActivePage(page));
-    };
+  const onButtonClick = (page) => {
+    replacePageParameters([
+      {
+        key: "page",
+        value: page,
+      },
+    ]);
+  };
 
-    return (
-      <>
-        <DesktopContainer>
-          <Button disabled={activePage === 1} onClick={() => onButtonClick(1)}>
+  return (
+    <>
+      <DesktopContainer>
+        <Button disabled={page === 1} onClick={() => onButtonClick(1)}>
+          <StyledArrowLeft />
+          {"First"}
+        </Button>
+        <Button disabled={page === 1} onClick={() => onButtonClick(page - 1)}>
+          <StyledArrowLeft />
+          {"Previous"}
+        </Button>
+        <PageCounter>
+          Page <Number>{page}</Number> of <Number>{numberPages}</Number>
+        </PageCounter>
+        <Button
+          disabled={page === numberPages}
+          onClick={() => onButtonClick(page + 1)}>
+          {"Next"}
+          <StyledArrowRight />
+        </Button>
+        <Button
+          disabled={page === numberPages}
+          onClick={() => onButtonClick(numberPages)}>
+          {"Last"}
+          <StyledArrowRight />
+        </Button>
+      </DesktopContainer>
+      <MobileContainer>
+        <Button disabled={page === 1} onClick={() => onButtonClick(1)}>
+          <DoubleArrow>
             <StyledArrowLeft />
-            {"First"}
-          </Button>
-          <Button
-            disabled={activePage === 1}
-            onClick={() => onButtonClick(activePage - 1)}>
             <StyledArrowLeft />
-            {"Previous"}
-          </Button>
-          <PageCounter>
-            Page <Number>{activePage}</Number> of <Number>{numberPages}</Number>
-          </PageCounter>
-          <Button
-            disabled={activePage === numberPages}
-            onClick={() => onButtonClick(activePage + 1)}>
-            {"Next"}
+          </DoubleArrow>
+        </Button>
+        <Button disabled={page === 1} onClick={() => onButtonClick(page - 1)}>
+          <StyledArrowLeft />
+        </Button>
+        <PageCounter>
+          Page <Number>{page}</Number> of <Number>{numberPages}</Number>
+        </PageCounter>
+        <Button
+          disabled={page === numberPages}
+          onClick={() => onButtonClick(page + 1)}>
+          <StyledArrowRight />
+        </Button>
+        <Button
+          disabled={page === numberPages}
+          onClick={() => onButtonClick(numberPages)}>
+          <DoubleArrow>
             <StyledArrowRight />
-          </Button>
-          <Button
-            disabled={activePage === numberPages}
-            onClick={() => onButtonClick(numberPages)}>
-            {"Last"}
             <StyledArrowRight />
-          </Button>
-        </DesktopContainer>
-        <MobileContainer>
-          <Button disabled={activePage === 1} onClick={() => onButtonClick(1)}>
-            <DoubleArrow>
-              <StyledArrowLeft />
-              <StyledArrowLeft />
-            </DoubleArrow>
-          </Button>
-          <Button
-            disabled={activePage === 1}
-            onClick={() => onButtonClick(activePage - 1)}>
-            <StyledArrowLeft />
-          </Button>
-          <PageCounter>
-            Page <Number>{activePage}</Number> of <Number>{numberPages}</Number>
-          </PageCounter>
-          <Button
-            disabled={activePage === numberPages}
-            onClick={() => onButtonClick(activePage + 1)}>
-            <StyledArrowRight />
-          </Button>
-          <Button
-            disabled={activePage === numberPages}
-            onClick={() => onButtonClick(numberPages)}>
-            <DoubleArrow>
-              <StyledArrowRight />
-              <StyledArrowRight />
-            </DoubleArrow>
-          </Button>
-        </MobileContainer>
-      </>
-    );
+          </DoubleArrow>
+        </Button>
+      </MobileContainer>
+    </>
+  );
 };
 
 export default BottomNavbar;

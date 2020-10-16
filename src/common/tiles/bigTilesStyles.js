@@ -4,15 +4,8 @@ import { Wrapper } from "./tileStyles";
 export const BigTileWrapper = styled(Wrapper)`
     flex-direction: row;
     width: 100%;
-    height: fit-content;
     padding: 40px;
     margin: 56px auto 64px;
-`;
-
-export const BigTileImage = styled.img`
-    width: 399px;
-    height: 564px;
-    border-radius: 5px;
 `;
 
 export const BigTileHeader = styled.div`

@@ -1,7 +1,6 @@
 import React from "react";
 import {
     BigTileWrapper,
-    BigTileImage,
     BigTileHeader,
     BigDetailsContainer,
     Detail,
@@ -9,6 +8,7 @@ import {
     Description,
     DetailsWrapper,
 } from "./../bigTilesStyles";
+import { BigTileImage } from "./styled";
 import noProfileImage from "./../../../assets/noPosterImage.svg";
 
 const BigPersonTile = ({

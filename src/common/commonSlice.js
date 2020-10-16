@@ -10,8 +10,8 @@ const commonSlice = createSlice({
         fetchCommon: state => {
             state.loading = true;
         },
-        fetchCommonSuccess: (state, { payload: genresList }) => {
-            state.genresList = genresList;
+        fetchCommonSuccess: (state, { payload: data }) => {
+            state.genresList = data.genres;
             state.loading = false;
         },
         fetchCommonError: state => {

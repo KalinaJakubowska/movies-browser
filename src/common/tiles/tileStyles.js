@@ -4,47 +4,17 @@ import styled from "styled-components";
 export const Wrapper = styled(Link)`
   text-decoration: none;
   display: flex;
-  flex-direction: column;
-  width: 324px;
-  height: 650px;
-  padding: 16px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.woodsmoke};
-`;
-
-export const MovieWrapper = styled(Wrapper)`
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    flex-direction: row;
-    width: 100%;
-    height: 260px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    height: 201px;
-  }
+  min-height: fit-content;
 `;
 
 export const Image = styled.img`
   display: block;
-  height: 434px;
-  width: 292px;
   border-radius: 5px;
-  margin-bottom: 16px;
   flex-shrink: 0;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    width: auto;
-    height: 230px;
-    margin-right: 20px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    height: 169px;
-    width: 114px;
-    margin-right: 0;
-  }
 `;
 
 export const Container = styled.div`

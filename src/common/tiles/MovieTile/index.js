@@ -1,14 +1,14 @@
 import React from "react";
 import Ratings from "./../../tiles/Ratings";
 import {
-  MovieWrapper,
-  Image,
   Title,
   Year,
   Container,
   DetailsContainer,
 } from "./../tileStyles";
+import { MovieWrapper, MovieImage } from "./styled";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
+import Types from "./../Types";
 
 const MovieTile = ({
   id,
@@ -18,10 +18,11 @@ const MovieTile = ({
   vote_average,
   vote_count,
   role,
+  genre_ids,
 }) => {
   return (
     <MovieWrapper to={`/movies/movie/${id}`}>
-      <Image
+      <MovieImage
         src={poster_path
           ? `https://image.tmdb.org/t/p/w342${poster_path}`
           : noPosterImage
@@ -44,7 +45,7 @@ const MovieTile = ({
               }
             </Year>
           )}
-          <div>Types</div>
+          <Types genre_ids={genre_ids} />
         </Container>
         <Ratings
           voteAverage={vote_average}
