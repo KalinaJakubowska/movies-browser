@@ -5,7 +5,7 @@ export const Input = styled.input`
     width: 432px;
     height: 48px;
     border: 1px solid ${({ theme }) => theme.colors.cornsilk};
-    border-radius: ${({ value }) => value ? "33px 33px 0 0" : "33px"};
+    border-radius: ${({ open, value }) => open && value ? "24px 24px 0 0" : "33px"};
     padding-left: 64px;
     background-color: white;
 
