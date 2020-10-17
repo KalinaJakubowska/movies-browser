@@ -8,6 +8,7 @@ const searchSlice = createSlice({
         activePath: "",
         error: false,
         query: "",
+        open: false,
     },
     reducers: {
         fetchSearchSuccess: (state, { payload: results }) => {
@@ -33,6 +34,9 @@ const searchSlice = createSlice({
         setQuery: (state, { payload: query }) => {
             state.query = query;
         },
+        setOpen: (state, { payload: open }) => {
+            state.open = open;
+        },
     },
 });
 
@@ -42,10 +46,12 @@ export const {
     setActiveSearchPath,
     resetState,
     setQuery,
+    setOpen,
 } = searchSlice.actions;
 export const selectResults = state => state.search.results;
 export const selectLoading = state => state.search.loading;
 export const selectError = state => state.search.error;
 export const selectQuery = state => state.search.query;
+export const selectOpen = state => state.search.open;
 
 export default searchSlice.reducer;
