@@ -5,10 +5,8 @@ const listSlice = createSlice({
     initialState: {
         list: [],
         loading: true,
-        activePage: 1,
         numberPages: undefined,
         activePath: "",
-        query: "",
         error: false,
     },
     reducers: {
@@ -22,23 +20,16 @@ const listSlice = createSlice({
             state.loading = false;
             state.error = true;
         },
-        setActivePage: (state, { payload: pageNumber }) => {
-            state.activePage = pageNumber;
-            state.loading = true;
-        },
         setActivePath: (state, { payload: name }) => {
             state.activePath = name;
+            state.loading = true;
         },
         resetState: (state) => {
             state.list = [];
-            state.activePage = undefined;
             state.activePath = "";
             state.numberPages = undefined;
             state.loading = true;
             state.error = false;
-        },
-        setQuery: (state, { payload: query }) => {
-            state.query = query;
         },
     },
 });
@@ -46,16 +37,12 @@ const listSlice = createSlice({
 export const {
     fetchListSuccess,
     fetchListError,
-    setActivePage,
     setActivePath,
     resetState,
-    setQuery,
 } = listSlice.actions;
 export const selectList = state => state.list.list;
 export const selectLoading = state => state.list.loading;
 export const selectError = state => state.list.error;
-export const selectActivePage = state => state.list.activePage;
 export const selectNumberPages = state => state.list.numberPages;
-export const selectQuery = state => state.list.query;
 
 export default listSlice.reducer;
