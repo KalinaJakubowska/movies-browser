@@ -6,7 +6,7 @@ import language from "../../../common/language";
 import Loading from "../../../common/Loading";
 import { selectResults, setActiveSearchPath, selectLoading } from "./../searchSlice";
 import { Wrapper } from "./styled";
-import NoResult from "./../../../common/NoResult";
+import NoResultSearch from "./../../../common/NoResultSearch";
 import MiniTile from "../../../common/tiles/MiniTile";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
 import noProfileImage from "./../../../assets/noProfileImage.svg";
@@ -25,35 +25,37 @@ const DynamicResultsBox = ({ query }) => {
     }, [query]);
 
     return (
-        <Wrapper >
-            {isLoading
-                ? <Loading />
-                : !results.length
-                    ? <NoResult urlQuery={query} />
-                    : results.map(result =>
-                        <MiniTile
-                            key={result.id}
-                            searchText={searchText}
-                            data={searchText === "movie"
-                                ? {
-                                    id: result.id,
-                                    text: result.title,
-                                    image: result.poster_path
-                                        ? `https://image.tmdb.org/t/p/w154${result.poster_path}`
-                                        : noPosterImage
-                                }
-                                : {
-                                    id: result.id,
-                                    text: result.name,
-                                    image: result.profile_path
-                                        ? `https://image.tmdb.org/t/p/w185${result.profile_path}`
-                                        : noProfileImage
-                                }
-                            }
-                        />
-                    )
-            }
-        </Wrapper>
+      <Wrapper>
+        {isLoading ? (
+          <Loading />
+        ) : !results.length ? (
+          <NoResultSearch urlQuery={query} />
+        ) : (
+          results.map((result) => (
+            <MiniTile
+              key={result.id}
+              searchText={searchText}
+              data={
+                searchText === "movie"
+                  ? {
+                      id: result.id,
+                      text: result.title,
+                      image: result.poster_path
+                        ? `https://image.tmdb.org/t/p/w154${result.poster_path}`
+                        : noPosterImage,
+                    }
+                  : {
+                      id: result.id,
+                      text: result.name,
+                      image: result.profile_path
+                        ? `https://image.tmdb.org/t/p/w185${result.profile_path}`
+                        : noProfileImage,
+                    }
+              }
+            />
+          ))
+        )}
+      </Wrapper>
     );
 };
 
