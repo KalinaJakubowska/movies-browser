@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { selectQuery, setQuery } from "../listSlice";
+import { selectQuery, setQuery } from "./../Search/searchSlice";
 import { useReplacePageParameters } from "../pageParameters";
 import DynamicResultsBox from "./DynamicResultsBox";
 import { SearchBox, Input, StyledLensButton } from "./styled";
