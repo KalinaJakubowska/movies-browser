@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { selectQuery, setQuery } from "./../Search/searchSlice";
@@ -12,6 +12,10 @@ const Search = () => {
     const replacePageParameters = useReplacePageParameters();
     const location = useLocation();
     const searchText = location.pathname.includes("movie") ? "movies" : "people";
+
+    useEffect(() => {
+        dispatch(setQuery(""));
+    }, [location])
 
     const onFormSubmit = (event) => {
         event.preventDefault();
