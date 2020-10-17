@@ -18,7 +18,6 @@ function* fetchItemHandler() {
         yield put(fetchItemSuccess({ itemData, extraData }));
     } catch (error) {
         yield put(fetchItemError());
-        yield call(alert, error);
     }
 };
 
