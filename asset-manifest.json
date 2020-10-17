@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/movie-browser/static/js/main.9cd9b822.chunk.js",
-    "main.js.map": "/movie-browser/static/js/main.9cd9b822.chunk.js.map",
+    "main.js": "/movie-browser/static/js/main.b027e5d3.chunk.js",
+    "main.js.map": "/movie-browser/static/js/main.b027e5d3.chunk.js.map",
     "runtime-main.js": "/movie-browser/static/js/runtime-main.6da0a001.js",
     "runtime-main.js.map": "/movie-browser/static/js/runtime-main.6da0a001.js.map",
-    "static/js/2.9042c21d.chunk.js": "/movie-browser/static/js/2.9042c21d.chunk.js",
-    "static/js/2.9042c21d.chunk.js.map": "/movie-browser/static/js/2.9042c21d.chunk.js.map",
+    "static/js/2.7ada4338.chunk.js": "/movie-browser/static/js/2.7ada4338.chunk.js",
+    "static/js/2.7ada4338.chunk.js.map": "/movie-browser/static/js/2.7ada4338.chunk.js.map",
     "index.html": "/movie-browser/index.html",
-    "precache-manifest.0f5ffc27d5675796b59676599264a523.js": "/movie-browser/precache-manifest.0f5ffc27d5675796b59676599264a523.js",
+    "precache-manifest.ab8a80c909dcf26c96875d791fc3618b.js": "/movie-browser/precache-manifest.ab8a80c909dcf26c96875d791fc3618b.js",
     "service-worker.js": "/movie-browser/service-worker.js",
-    "static/js/2.9042c21d.chunk.js.LICENSE.txt": "/movie-browser/static/js/2.9042c21d.chunk.js.LICENSE.txt",
+    "static/js/2.7ada4338.chunk.js.LICENSE.txt": "/movie-browser/static/js/2.7ada4338.chunk.js.LICENSE.txt",
     "static/media/ArrowLeft.40944e6f.svg": "/movie-browser/static/media/ArrowLeft.40944e6f.svg",
     "static/media/ArrowRight.eaef6aac.svg": "/movie-browser/static/media/ArrowRight.eaef6aac.svg",
     "static/media/Danger.8815fed7.svg": "/movie-browser/static/media/Danger.8815fed7.svg",
@@ -18,11 +18,12 @@
     "static/media/input-logo.svg": "/movie-browser/static/media/input-logo.ab39462f.svg",
     "static/media/loadingCircle.svg": "/movie-browser/static/media/loadingCircle.d057d55a.svg",
     "static/media/noPosterImage.svg": "/movie-browser/static/media/noPosterImage.e8d1851c.svg",
+    "static/media/noProfileImage.svg": "/movie-browser/static/media/noProfileImage.b6c0d625.svg",
     "static/media/star.svg": "/movie-browser/static/media/star.b489e613.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6da0a001.js",
-    "static/js/2.9042c21d.chunk.js",
-    "static/js/main.9cd9b822.chunk.js"
+    "static/js/2.7ada4338.chunk.js",
+    "static/js/main.b027e5d3.chunk.js"
   ]
 }
