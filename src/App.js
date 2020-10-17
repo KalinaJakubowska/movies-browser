@@ -19,6 +19,7 @@ import PersonPage from "./features/people/PersonPage";
 import { useDispatch } from "react-redux";
 import { fetchCommon } from "./common/commonSlice";
 import Search from "./features/Search";
+import { setOpen } from "./features/Search/searchSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <HashRouter>
-      <main>
+      <main onClick={() => dispatch(setOpen(false))}>
         <Nav>
           <WidthContainer>
             <NavContainer>
