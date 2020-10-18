@@ -6,6 +6,7 @@ const Button = styled.button`
     background: none;
     color: ${({theme}) => theme.colors.waterloo};
     font-size: 20px;
+    cursor: pointer;
 `;
 
 export default Button;
