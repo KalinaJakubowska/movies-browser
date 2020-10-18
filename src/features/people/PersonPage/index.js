@@ -54,12 +54,11 @@ const PersonPage = () => {
                             biography={personData.biography}
                         />
 
-                        <Header as="h2">Cast
-                        ({castCrewData.cast
-                                ? `${castCrewData.cast.length}`
-                                : "0"
-                            })
-                    </Header>
+                        {castCrewData.cast.length > 0 &&
+                            <Header as="h2">
+                                Cast {`(${castCrewData.cast.length})`}
+                            </Header>
+                        }
                         <MovieContainer>
                             {castCrewData.cast
                                 .slice(0, 10)
@@ -88,12 +87,11 @@ const PersonPage = () => {
                                     ))}
                         </MovieContainer>
 
-                        <Header as="h2">Crew
-                        ({castCrewData.crew
-                                ? `${castCrewData.crew.length}`
-                                : "0"
-                            })
-                    </Header>
+                        {castCrewData.crew.length > 0 &&
+                            <Header as="h2">
+                                Crew {`(${castCrewData.crew.length})`}
+                            </Header>
+                        }
                         <MovieContainer>
                             {castCrewData.crew
                                 .slice(0, 10)
