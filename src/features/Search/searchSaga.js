@@ -1,4 +1,4 @@
-import { call, put, delay, takeLatest, debounce, takeEvery } from "redux-saga/effects";
+import { call, put, debounce } from "redux-saga/effects";
 import { getApiData } from "./../../getApiData";
 import store from "./../../store";
 import {

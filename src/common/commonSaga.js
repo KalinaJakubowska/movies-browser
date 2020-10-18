@@ -1,4 +1,4 @@
-import { takeEvery, call, put, delay } from "redux-saga/effects";
+import { takeEvery, call, put } from "redux-saga/effects";
 import { getApiData } from "../getApiData";
 import {
     fetchCommonError,
@@ -10,7 +10,6 @@ import language from "./language";
 
 function* fetchCommonHandler() {
     try {
-        yield delay(500);
         const data = yield call(() => getApiData(
             `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=${language}`
         ));

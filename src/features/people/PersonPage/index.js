@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loading from "../../../common/Loading";
@@ -18,6 +18,7 @@ import MovieTile from "../../../common/tiles/MovieTile";
 import Header from "./../../../common/Header";
 import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Error from "../../../common/Error";
+import Button from "../../../common/Button.js";
 
 const PersonPage = () => {
     const { id } = useParams();
@@ -26,6 +27,8 @@ const PersonPage = () => {
     const castCrewData = useSelector(selectExtraData);
     const loading = useSelector(selectLoading);
     const isError = useSelector(selectError);
+    const [castDisplayed, setCastDisplayed] = useState(8);
+    const [crewDisplayed, setCrewDisplayed] = useState(8);
 
     useEffect(() => {
         dispatch(setActivePath({
@@ -54,73 +57,100 @@ const PersonPage = () => {
                             biography={personData.biography}
                         />
 
-                        <Header as="h2">Cast
-                        ({castCrewData.cast
-                                ? `${castCrewData.cast.length}`
-                                : "0"
-                            })
-                    </Header>
-                        <MovieContainer>
-                            {castCrewData.cast
-                                .slice(0, 10)
-                                .map(({
-                                    poster_path,
-                                    id,
-                                    title,
-                                    release_date,
-                                    vote_average,
-                                    vote_count,
-                                    character,
-                                    credit_id,
-                                    genre_ids,
-                                }) => (
-                                        <MovieTile
-                                            key={credit_id}
-                                            poster_path={poster_path}
-                                            id={id}
-                                            title={title}
-                                            release_date={release_date}
-                                            vote_average={vote_average}
-                                            vote_count={vote_count}
-                                            role={character}
-                                            genre_ids={genre_ids}
-                                        />
-                                    ))}
-                        </MovieContainer>
+                        {castCrewData.cast.length > 0 &&
+                            <>
+                                <Header as="h2">
+                                    Cast {`(${castCrewData.cast.length})`}
+                                    {(
+                                        castCrewData.cast.length > 8
+                                        && castCrewData.cast.length === castDisplayed
+                                    ) &&
+                                        <Button onClick={() => { setCastDisplayed(8) }}>Hide</Button>
+                                    }
+                                </Header>
+                                <MovieContainer>
+                                    {castCrewData.cast
+                                        .slice(0, castDisplayed)
+                                        .map(({
+                                            poster_path,
+                                            id,
+                                            title,
+                                            release_date,
+                                            vote_average,
+                                            vote_count,
+                                            character,
+                                            credit_id,
+                                            genre_ids,
+                                        }) => (
+                                                <MovieTile
+                                                    key={credit_id}
+                                                    poster_path={poster_path}
+                                                    id={id}
+                                                    title={title}
+                                                    release_date={release_date}
+                                                    vote_average={vote_average}
+                                                    vote_count={vote_count}
+                                                    role={character}
+                                                    genre_ids={genre_ids}
+                                                />
+                                            ))}
+                                </MovieContainer>
+                                {castCrewData.cast.length > castDisplayed &&
+                                    <Button onClick={() => { setCastDisplayed(castCrewData.cast.length) }}>Show All</Button>
+                                }
+                                {(castCrewData.cast.length > 8 && castCrewData.cast.length === castDisplayed) &&
+                                    <Button onClick={() => { setCastDisplayed(8) }}>Hide</Button>
+                                }
+                            </>
+                        }
 
-                        <Header as="h2">Crew
-                        ({castCrewData.crew
-                                ? `${castCrewData.crew.length}`
-                                : "0"
-                            })
-                    </Header>
-                        <MovieContainer>
-                            {castCrewData.crew
-                                .slice(0, 10)
-                                .map(({
-                                    poster_path,
-                                    id,
-                                    title,
-                                    release_date,
-                                    vote_average,
-                                    vote_count,
-                                    job,
-                                    credit_id,
-                                    genre_ids,
-                                }) => (
-                                        <MovieTile
-                                            key={credit_id}
-                                            poster_path={poster_path}
-                                            id={id}
-                                            title={title}
-                                            release_date={release_date}
-                                            vote_average={vote_average}
-                                            vote_count={vote_count}
-                                            role={job}
-                                            genre_ids={genre_ids}
-                                        />
-                                    ))}
-                        </MovieContainer>
+                        {castCrewData.crew.length > 0 &&
+                            <>
+                                <Header as="h2">
+                                    Crew {`(${castCrewData.crew.length})`}
+                                    {(
+                                        castCrewData.crew.length > 8
+                                        && castCrewData.crew.length === crewDisplayed
+                                    )
+                                        &&
+                                        <Button onClick={() => { setCrewDisplayed(8) }}>Hide</Button>
+                                    }
+                                </Header>
+                                <MovieContainer>
+                                    {castCrewData.crew
+                                        .slice(0, crewDisplayed)
+                                        .map(({
+                                            poster_path,
+                                            id,
+                                            title,
+                                            release_date,
+                                            vote_average,
+                                            vote_count,
+                                            job,
+                                            credit_id,
+                                            genre_ids,
+                                        }) => (
+                                                <MovieTile
+                                                    key={credit_id}
+                                                    poster_path={poster_path}
+                                                    id={id}
+                                                    title={title}
+                                                    release_date={release_date}
+                                                    vote_average={vote_average}
+                                                    vote_count={vote_count}
+                                                    role={job}
+                                                    genre_ids={genre_ids}
+                                                />
+                                            ))}
+                                </MovieContainer>
+                                {castCrewData.crew.length > crewDisplayed &&
+                                    <Button onClick={() => { setCrewDisplayed(castCrewData.crew.length) }}>Show All</Button>
+                                }
+                                {(castCrewData.crew.length > 8 && castCrewData.crew.length === crewDisplayed) &&
+                                    <Button onClick={() => { setCrewDisplayed(8) }}>Hide</Button>
+                                }
+                            </>
+                        }
                     </>
             }
         </>

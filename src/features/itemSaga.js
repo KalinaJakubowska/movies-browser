@@ -1,4 +1,4 @@
-import { takeEvery, call, put, delay } from "redux-saga/effects";
+import { takeEvery, call, put } from "redux-saga/effects";
 import store from "../store";
 import { getApiData } from "../getApiData";
 import {
@@ -12,7 +12,6 @@ function* fetchItemHandler() {
     const activeExtraPath = store.getState().item.activeExtraPath;
 
     try {
-        yield delay(500);
         const itemData = yield call(() => getApiData(activeItemPath));
         const extraData = yield call(() => getApiData(activeExtraPath));
         yield put(fetchItemSuccess({ itemData, extraData }));
