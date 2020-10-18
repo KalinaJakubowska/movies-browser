@@ -8,6 +8,7 @@ const listSlice = createSlice({
         numberPages: undefined,
         activePath: "",
         error: false,
+        totalResults: undefined,
     },
     reducers: {
         fetchListSuccess: (state, { payload: list }) => {
@@ -15,6 +16,7 @@ const listSlice = createSlice({
             state.numberPages = list.total_pages;
             state.loading = false;
             state.error = false;
+            state.totalResults = list.total_results;
         },
         fetchListError: state => {
             state.loading = false;
@@ -30,6 +32,7 @@ const listSlice = createSlice({
             state.numberPages = undefined;
             state.loading = true;
             state.error = false;
+            state.totalResults = undefined;
         },
     },
 });
@@ -44,5 +47,6 @@ export const selectList = state => state.list.list;
 export const selectLoading = state => state.list.loading;
 export const selectError = state => state.list.error;
 export const selectNumberPages = state => state.list.numberPages;
+export const selectTotalResults = state => state.list.totalResults;
 
 export default listSlice.reducer;

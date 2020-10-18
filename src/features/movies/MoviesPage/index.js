@@ -9,6 +9,7 @@ import {
     setActivePath,
     resetState,
     selectError,
+    selectTotalResults,
 } from "../../listSlice";
 import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
@@ -23,6 +24,7 @@ const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
     const popularMovies = useSelector(selectList);
+    const totalResults = useSelector(selectTotalResults);
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
 
@@ -47,7 +49,12 @@ const MoviesPage = () => {
                         ? <NoResult urlQuery={urlQuery} />
                         : (
                             <>
-                                <Header>Popular movies</Header>
+                                <Header>
+                                    {urlQuery
+                                        ? `Search results for "${urlQuery}" (${totalResults})`
+                                        : "Popular Movies"
+                                    }
+                                </Header>
                                 <MovieContainer>
                                     {popularMovies.map(({
                                         id,
