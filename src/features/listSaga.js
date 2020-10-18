@@ -1,4 +1,4 @@
-import { takeEvery, call, put, delay } from "redux-saga/effects";
+import { takeEvery, call, put } from "redux-saga/effects";
 import { getApiData } from "../getApiData";
 import store from "../store";
 import {
@@ -11,7 +11,6 @@ function* fetchListHandler() {
     const activePath = store.getState().list.activePath;
 
     try {
-        yield delay(500);
         const data = yield call(() => getApiData(activePath));
         yield put(fetchListSuccess(data));
     } catch (error) {
