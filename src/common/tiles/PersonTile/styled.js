@@ -43,6 +43,7 @@ export const PersonImage = styled(Image)`
 export const PersonDetailsContainer = styled(DetailsContainer)`
   grid-template-columns: repeat(6, 1fr);
   align-items: center;
+  margin: 0 auto;
 `;
 
 export const PersonName = styled(Title)`
