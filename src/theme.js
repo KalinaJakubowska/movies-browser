@@ -14,6 +14,6 @@ export const theme = {
   breakpoints: {
     mobile: "450",
     bigMobile: "710",
-    screenSmall: "1350",
+    screenSmall: "1399",
   },
 };
