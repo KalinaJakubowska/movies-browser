@@ -24,13 +24,6 @@ const searchSlice = createSlice({
             state.activePath = path;
             state.loading = true;
         },
-        resetState: (state) => {
-            state.results = [];
-            state.activePath = "";
-            state.numberPages = undefined;
-            state.loading = true;
-            state.error = false;
-        },
         setQuery: (state, { payload: query }) => {
             state.query = query;
         },
@@ -44,7 +37,6 @@ export const {
     fetchSearchSuccess,
     fetchSearchError,
     setActiveSearchPath,
-    resetState,
     setQuery,
     setOpen,
 } = searchSlice.actions;
