@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loading from "../../../common/Loading";
@@ -18,6 +18,7 @@ import PersonTile from "../../../common/tiles/PersonTile";
 import Header from "../../../common/Header";
 import BigMovieTile from "../../../common/tiles/BigMovieTile";
 import Error from "../../../common/Error";
+import Button from "../../../common/Button";
 
 const MoviePage = () => {
   const { id } = useParams();
@@ -26,6 +27,8 @@ const MoviePage = () => {
   const castCrewData = useSelector(selectExtraData);
   const loading = useSelector(selectLoading);
   const isError = useSelector(selectError);
+  const [castDisplayed, setCastDisplayed] = useState(10);
+  const [crewDisplayed, setCrewDisplayed] = useState(10);
 
   useEffect(() => {
     dispatch(
@@ -61,38 +64,70 @@ const MoviePage = () => {
               />
 
               {castCrewData.cast.length > 0 &&
-                <Header as="h2">Cast</Header>
-              }
-              <PeopleContainer>
-                {castCrewData.cast
-                  .slice(0, 10)
-                  .map(({ profile_path, id, character, name, credit_id }) => (
-                    <PersonTile
-                      key={credit_id}
-                      profile_path={profile_path}
-                      id={id}
-                      name={name}
-                      subtitle={character}
-                    />
-                  ))}
-              </PeopleContainer>
+                <>
+                  <Header as="h2">
+                    Cast
+                    {(
+                      castCrewData.cast.length > 10
+                      && castCrewData.cast.length === castDisplayed
+                    ) &&
+                      <Button onClick={() => { setCastDisplayed(10) }}>Hide</Button>
+                    }</Header>
+                  <PeopleContainer>
+                    {castCrewData.cast
+                      .slice(0, castDisplayed)
+                      .map(({ profile_path, id, character, name, credit_id }) => (
+                        <PersonTile
+                          key={credit_id}
+                          profile_path={profile_path}
+                          id={id}
+                          name={name}
+                          subtitle={character}
+                        />
+                      ))}
+                  </PeopleContainer>
+                  {castCrewData.cast.length > castDisplayed &&
+                    <Button onClick={() => { setCastDisplayed(castCrewData.cast.length) }}>Show All</Button>
+                  }
+                  {(castCrewData.cast.length > 10 && castCrewData.cast.length === castDisplayed) &&
+                    <Button onClick={() => { setCastDisplayed(10) }}>Hide</Button>
+                  }
+                </>
 
-              {castCrewData.crew.length > 0 &&
-                <Header as="h2">Crew</Header>
               }
-              <PeopleContainer>
-                {castCrewData.crew
-                  .slice(0, 10)
-                  .map(({ profile_path, id, job, name, credit_id }) => (
-                    <PersonTile
-                      key={credit_id}
-                      profile_path={profile_path}
-                      id={id}
-                      name={name}
-                      subtitle={job}
-                    />
-                  ))}
-              </PeopleContainer>
+              {castCrewData.crew.length > 0 &&
+                <>
+                  <Header as="h2">
+                    Crew
+                    {(
+                      castCrewData.crew.length > 10
+                      && castCrewData.crew.length === crewDisplayed
+                    )
+                      &&
+                      <Button onClick={() => { setCrewDisplayed(10) }}>Hide</Button>
+                    }
+                  </Header>
+                  <PeopleContainer>
+                    {castCrewData.crew
+                      .slice(0, crewDisplayed)
+                      .map(({ profile_path, id, job, name, credit_id }) => (
+                        <PersonTile
+                          key={credit_id}
+                          profile_path={profile_path}
+                          id={id}
+                          name={name}
+                          subtitle={job}
+                        />
+                      ))}
+                  </PeopleContainer>
+                  {castCrewData.crew.length > crewDisplayed &&
+                    <Button onClick={() => { setCrewDisplayed(castCrewData.crew.length) }}>Show All</Button>
+                  }
+                  {(castCrewData.crew.length > 10 && castCrewData.crew.length === crewDisplayed) &&
+                    <Button onClick={() => { setCrewDisplayed(10) }}>Hide</Button>
+                  }
+                </>
+              }
             </>
           )}
     </>
