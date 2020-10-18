@@ -7,6 +7,7 @@ import {
     selectError,
     selectList,
     selectLoading,
+    selectTotalResults,
     setActivePath,
 } from "../../listSlice";
 import { PeopleContainer } from "./../../../common/tiles/TileContainer";
@@ -23,6 +24,7 @@ const PeoplePage = () => {
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
     const popularPeople = useSelector(selectList);
+    const totalResults = useSelector(selectTotalResults);
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
 
@@ -46,7 +48,12 @@ const PeoplePage = () => {
                         ? <NoResult urlQuery={urlQuery} />
                         : (
                             <>
-                                <Header>Popular People</Header>
+                                <Header>
+                                    {urlQuery
+                                        ? `Search results for "${urlQuery}" (${totalResults})`
+                                        : "Popular People"
+                                    }
+                                </Header>
                                 <PeopleContainer>
                                     {popularPeople.map(({ profile_path, id, name }) =>
                                         <PersonTile
