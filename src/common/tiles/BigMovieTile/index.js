@@ -53,8 +53,9 @@ const BigMovieTile = ({
                 </DetailsWrapper>
                 <Types genre_ids={genre_ids} />
                 <Ratings
-                    voteAverage={vote_average}
-                    voteCount={vote_count}
+                    vote_average={vote_average}
+                    vote_count={vote_count}
+                    big={true}
                 />
                 {overview &&
                     <Description>
