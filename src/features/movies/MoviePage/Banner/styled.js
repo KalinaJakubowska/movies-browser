@@ -10,6 +10,10 @@ export const WidthBackdropContainer = styled.div`
     max-width: 1368px;
     position: relative;
     margin: auto;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
+        margin: 0 10%;
+    }
 `;
 
 export const Backdrop = styled.img`
@@ -42,6 +46,8 @@ export const Title = styled.h1`
     line-height: 120%;
     margin-bottom: 24px;
     color: inherit;
+
+    -webkit-text-stroke: 1px black;
 `;
 
 export const Star = styled.img`
