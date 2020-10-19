@@ -37,7 +37,7 @@ function App() {
             <NavContainer>
               <NavContainerLeft>
                 <Title to="/movies">
-                  <Logo src={logo}/>
+                  <Logo src={logo} />
                 </Title>
                 <List>
                   <ListItem>
