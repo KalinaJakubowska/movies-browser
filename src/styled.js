@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import { ReactComponent as TitleLogo } from "./assets/camera-logo.svg";
+import { Link, NavLink } from "react-router-dom";
 
 const activeClassName = "link-active";
 
@@ -102,7 +101,8 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
   }
 `;
 
-export const Title = styled.p`
+export const Title = styled(Link)`
+  text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
   font-size: 24px;
   font-weight: 500;
@@ -123,8 +123,9 @@ export const Title = styled.p`
   }
 `;
 
-export const StyledTitleLogo = styled(TitleLogo)`
+export const Logo = styled.img`
+    height: 40px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    height: 12px;
+    height: 17px;
   }
 `;

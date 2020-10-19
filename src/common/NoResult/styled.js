@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as PaperPlane } from "../../assets/NoResult.svg";
+import { ReactComponent as PaperPlane } from "../../assets/noResultImage.svg";
 
 export const ImageBox = styled.div`
   display: flex;

@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { selectOpen, selectQuery, setOpen, setQuery } from "./../Search/searchSlice";
 import { useReplacePageParameters } from "../pageParameters";
 import DynamicResultsBox from "./DynamicResultsBox";
-import { SearchBox, Input, StyledLensButton } from "./styled";
+import { SearchBox, Input, StyledMagnifierButton } from "./styled";
 
 const Search = () => {
     const query = useSelector(selectQuery);
@@ -41,7 +41,7 @@ const Search = () => {
 
     return (
         <SearchBox onSubmit={onFormSubmit}>
-            <StyledLensButton />
+            <StyledMagnifierButton />
             <Input
                 placeholder={`Search for ${searchText}`}
                 value={query}

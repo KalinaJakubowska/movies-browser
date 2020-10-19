@@ -10,7 +10,7 @@ import {
   Nav,
   StyledNavLink,
   Title,
-  StyledTitleLogo,
+  Logo,
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import MoviePage from "./features/movies/MoviePage";
@@ -20,6 +20,7 @@ import { useDispatch } from "react-redux";
 import { fetchCommon } from "./common/commonSlice";
 import Search from "./features/Search";
 import { setOpen } from "./features/Search/searchSlice";
+import logo from "./assets/logo.svg";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,8 +36,9 @@ function App() {
           <WidthNavContainer>
             <NavContainer>
               <NavContainerLeft>
-                <StyledTitleLogo />
-                <Title>Movie Browser</Title>
+                <Title to="/movies">
+                  <Logo src={logo}/>
+                </Title>
                 <List>
                   <ListItem>
                     <StyledNavLink to="/movies">MOVIES</StyledNavLink>
@@ -47,28 +49,28 @@ function App() {
                 </List>
               </NavContainerLeft>
               <NavContainerRight>
-                <Search/>
+                <Search />
               </NavContainerRight>
             </NavContainer>
           </WidthNavContainer>
         </Nav>
-          <Switch>
-            <Route path="/movies/movie/:id">
-              <MoviePage />
-            </Route>
-            <Route path="/movies">
-              <MoviesPage />
-            </Route>
-            <Route path="/people/person/:id">
-              <PersonPage />
-            </Route>
-            <Route path="/people">
-              <PeoplePage />
-            </Route>
-            <Route path="/">
-              <Redirect to="/movies" />
-            </Route>
-          </Switch>
+        <Switch>
+          <Route path="/movies/movie/:id">
+            <MoviePage />
+          </Route>
+          <Route path="/movies">
+            <MoviesPage />
+          </Route>
+          <Route path="/people/person/:id">
+            <PersonPage />
+          </Route>
+          <Route path="/people">
+            <PeoplePage />
+          </Route>
+          <Route path="/">
+            <Redirect to="/movies" />
+          </Route>
+        </Switch>
       </main>
     </HashRouter>
   );
