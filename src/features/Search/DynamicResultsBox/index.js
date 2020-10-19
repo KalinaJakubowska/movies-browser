@@ -16,11 +16,11 @@ const DynamicResultsBox = ({ query }) => {
   const results = useSelector(selectResults);
   const loading = useSelector(selectLoading);
   const location = useLocation();
-  const searchText = location.pathname.includes("movie") ? "movie" : "person";
+  const pathText = location.pathname.includes("movie") ? "movie" : "person";
 
   useEffect(() => {
     dispatch(setActiveSearchPath(
-      `https://api.themoviedb.org/3/search/${searchText}?api_key=${apiKey}&language=${language}&query=${query}`
+      `https://api.themoviedb.org/3/search/${pathText}?api_key=${apiKey}&language=${language}&query=${query}`
     ));
   }, [query]);
 
@@ -34,9 +34,9 @@ const DynamicResultsBox = ({ query }) => {
             results.map((result) => (
               <MiniTile
                 key={result.id}
-                searchText={searchText}
+                pathText={pathText}
                 data={
-                  searchText === "movie"
+                  pathText === "movie"
                     ? {
                       id: result.id,
                       text: result.title,

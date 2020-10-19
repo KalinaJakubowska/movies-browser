@@ -1,10 +1,10 @@
 import React from "react";
 import { MiniImage, MiniText, MiniWrapper } from "./styled";
 
-const MiniTile = ({ searchText, data: { id, image, text } }) => {
+const MiniTile = ({ pathText, data: { id, image, text } }) => {
 
     return (
-        <MiniWrapper to={searchText === "movie"
+        <MiniWrapper to={pathText === "movie"
             ? `/movies/movie/${id}`
             : `/people/person/${id}`
         }>
