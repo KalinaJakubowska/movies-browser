@@ -1,7 +1,6 @@
 import React from "react";
-
-import {ReactComponent as Danger} from "../../assets/Danger.svg";
-import {Text, StyledNavLink, ErrorContainer, ErrorHeader} from "./styled";
+import { ReactComponent as Danger } from "../../assets/danger.svg";
+import { Text, StyledNavLink, ErrorContainer, ErrorHeader } from "./styled";
 
 const Error = () => {
   return (

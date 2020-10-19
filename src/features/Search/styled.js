@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import InputIcon from "./../../assets/input-logo.svg";
+import magnifier from "./../../assets/magnifier.svg";
 
 export const Input = styled.input`
     width: 432px;
@@ -30,11 +30,11 @@ export const SearchBox = styled.form`
     position: relative;
 `;
 
-export const StyledLensButton = styled.button`
+export const StyledMagnifierButton = styled.button`
     position: absolute;
     width: 24px;
     height: 24px;
-    background-image: url(${InputIcon});
+    background-image: url(${magnifier});
     background-size:24px;
     background-color: transparent;
     border: none;
