@@ -26,7 +26,7 @@ const MoviesPage = () => {
     const urlQuery = usePageParameter("search");
     const popularMovies = useSelector(selectList);
     const totalResults = useSelector(selectTotalResults);
-    const isLoading = useSelector(selectLoading);
+    const loading = useSelector(selectLoading);
     const isError = useSelector(selectError);
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const MoviesPage = () => {
 
     return (
         <WidthContainer>
-            {isLoading
+            {loading
                 ? <Loading />
                 : isError
                     ? <Error />
