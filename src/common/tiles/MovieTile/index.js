@@ -48,8 +48,8 @@ const MovieTile = ({
           <Types genre_ids={genre_ids} />
         </Container>
         <Ratings
-          voteAverage={vote_average}
-          voteCount={vote_count}
+          vote_average={vote_average}
+          vote_count={vote_count}
         />
       </DetailsContainer>
     </MovieWrapper>

@@ -17,6 +17,10 @@ export const WidthContainer = styled.div`
   min-height: inherit;
 `;
 
+export const WidthNavContainer = styled(WidthContainer)`
+  padding: 0;
+`;
+
 export const NavContainer = styled.div`
   display: flex;
   align-items: center;
@@ -27,7 +31,7 @@ export const NavContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 auto;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     min-height: 71px;
   }
 `;
@@ -36,12 +40,12 @@ export const NavContainerLeft = styled(NavContainer)`
   flex-wrap: nowrap;
   justify-content: space-between;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     flex-basis: 80vw;
     justify-content: space-evenly;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     flex-basis: 100%;
     justify-content: space-around;
   }
