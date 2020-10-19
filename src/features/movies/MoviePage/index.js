@@ -54,12 +54,14 @@ const MoviePage = () => {
           ? <Error />
           : (
             <>
-              <Banner
-                title={movieData.title}
-                backdrop_path={movieData.backdrop_path}
-                vote_average={movieData.vote_average}
-                vote_count={movieData.vote_count}
-              />
+              {movieData.backdrop_path &&
+                <Banner
+                  title={movieData.title}
+                  backdrop_path={movieData.backdrop_path}
+                  vote_average={movieData.vote_average}
+                  vote_count={movieData.vote_count}
+                />
+              }
               <WidthContainer>
                 <BigMovieTile
                   poster_path={movieData.poster_path}
