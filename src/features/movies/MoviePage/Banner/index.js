@@ -11,7 +11,7 @@ import {
     Count,
     Votes,
 } from "./styled";
-import noProfileImage from "./../../../../assets/noProfileImage.svg";
+import noBackdropImage from "./../../../../assets/noBackdropImage.png";
 
 const Banner = ({ title, backdrop_path, vote_average, vote_count }) => {
 
@@ -28,7 +28,7 @@ const Banner = ({ title, backdrop_path, vote_average, vote_count }) => {
                 <Backdrop
                     src={backdrop_path
                         ? `https://image.tmdb.org/t/p/w1280${backdrop_path}`
-                        : noProfileImage}
+                        : noBackdropImage}
                 />
             </WidthBackdropContainer>
         </Background>
