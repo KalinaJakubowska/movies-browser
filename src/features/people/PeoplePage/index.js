@@ -18,6 +18,7 @@ import apiKey from "../../../common/apiKey";
 import language from "../../../common/language";
 import NoResult from "../../../common/NoResult";
 import Error from "../../../common/Error";
+import { WidthContainer } from "../../../styled";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const PeoplePage = () => {
     }, [urlPageNumber, urlQuery]);
 
     return (
-        <>
+        <WidthContainer>
             {isLoading
                 ? <Loading />
                 : isError
@@ -69,7 +70,7 @@ const PeoplePage = () => {
                         )
                     )
             }
-        </>
+        </WidthContainer>
     );
 };
 

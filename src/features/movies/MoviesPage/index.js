@@ -18,6 +18,7 @@ import apiKey from "../../../common/apiKey";
 import language from "../../../common/language";
 import NoResult from "./../../../common/NoResult"
 import Error from "../../../common/Error";
+import { WidthContainer } from "../../../styled";
 
 const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const MoviesPage = () => {
     }, [urlPageNumber, urlQuery]);
 
     return (
-        <>
+        <WidthContainer>
             {isLoading
                 ? <Loading />
                 : isError
@@ -82,7 +83,7 @@ const MoviesPage = () => {
                         )
                     )
             }
-        </>
+        </WidthContainer>
     );
 };
 

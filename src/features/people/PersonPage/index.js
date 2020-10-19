@@ -19,6 +19,7 @@ import Header from "./../../../common/Header";
 import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Error from "../../../common/Error";
 import Button from "../../../common/Button.js";
+import { WidthContainer } from "../../../styled";
 
 const PersonPage = () => {
     const { id } = useParams();
@@ -43,7 +44,7 @@ const PersonPage = () => {
     }, [id])
 
     return (
-        <>
+        <WidthContainer>
             {loading
                 ? <Loading />
                 : isError
@@ -153,7 +154,7 @@ const PersonPage = () => {
                         }
                     </>
             }
-        </>
+        </WidthContainer>
     );
 };
 
