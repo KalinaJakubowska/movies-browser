@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   border-radius: 0 0 10px 10px;
   border: 1px solid ${({theme}) => theme.colors.cornsilk};
   border-top: none;
+  z-index: 1;
 
   ::-webkit-scrollbar {
     width: 20px;
