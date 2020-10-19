@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import {
-  WidthContainer,
+  WidthNavContainer,
   NavContainer,
   NavContainerRight,
   NavContainerLeft,
@@ -32,7 +32,7 @@ function App() {
     <HashRouter>
       <main onClick={() => dispatch(setOpen(false))}>
         <Nav>
-          <WidthContainer>
+          <WidthNavContainer>
             <NavContainer>
               <NavContainerLeft>
                 <StyledTitleLogo />
@@ -50,9 +50,8 @@ function App() {
                 <Search/>
               </NavContainerRight>
             </NavContainer>
-          </WidthContainer>
+          </WidthNavContainer>
         </Nav>
-        <WidthContainer>
           <Switch>
             <Route path="/movies/movie/:id">
               <MoviePage />
@@ -70,7 +69,6 @@ function App() {
               <Redirect to="/movies" />
             </Route>
           </Switch>
-        </WidthContainer>
       </main>
     </HashRouter>
   );
