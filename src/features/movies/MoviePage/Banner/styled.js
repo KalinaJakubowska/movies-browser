@@ -35,35 +35,78 @@ export const MovieDetails = styled.div`
 `;
 
 export const RatingsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 56px;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    margin-bottom: 4px;
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h1`
-    font-weight: 600;
-    font-size: 64px;
-    line-height: 120%;
-    margin-bottom: 24px;
-    color: inherit;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 120%;
+  margin-bottom: 24px;
+  color: inherit;
 
-    -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 1px black;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    font-size: 44px;
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    font-size: 24px;
+  }
 `;
 
 export const Star = styled.img`
-    width: 40px;
+  width: 40px;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    width: 22px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    width: 14px;
+  }
 `;
 
 export const Count = styled.span`
-    margin-bottom: 16px;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 130%;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 130%;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    font-size: 22px;
+    margin-bottom: 4px;
+    margin-right: 16px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    font-size: 14px;
+    margin-right: 8px;
+  }
 `;
 
 export const Votes = styled.span`
-    margin-bottom: 16px ;
-    font-size: 16px;
-    line-height: 120%;
-    font-weight: 400;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 120%;
+  font-weight: 400;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    font-size: 10px;
+  }
 `;
