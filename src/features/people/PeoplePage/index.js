@@ -26,7 +26,7 @@ const PeoplePage = () => {
     const urlQuery = usePageParameter("search");
     const popularPeople = useSelector(selectList);
     const totalResults = useSelector(selectTotalResults);
-    const isLoading = useSelector(selectLoading);
+    const loading = useSelector(selectLoading);
     const isError = useSelector(selectError);
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const PeoplePage = () => {
 
     return (
         <WidthContainer>
-            {isLoading
+            {loading
                 ? <Loading />
                 : isError
                     ? <Error />
