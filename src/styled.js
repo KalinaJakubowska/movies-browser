@@ -103,20 +103,20 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
 
 export const Title = styled(Link)`
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({theme}) => theme.colors.white};
   font-size: 24px;
   font-weight: 500;
   padding-left: 16px;
   margin: 0;
   display: flex;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     font-size: 18px;
-    padding: 10;
+    padding: 10px;
     margin-right: 22px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     font-size: 13px;
     padding: 0;
     margin-right: 19px;
@@ -124,8 +124,13 @@ export const Title = styled(Link)`
 `;
 
 export const Logo = styled.img`
-    height: 40px;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  height: 40px;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    height: 28px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     height: 17px;
   }
 `;
