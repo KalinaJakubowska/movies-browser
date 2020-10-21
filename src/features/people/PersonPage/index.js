@@ -41,7 +41,7 @@ const PersonPage = () => {
         return () => {
             dispatch(resetState());
         };
-    }, [id])
+    }, [id, dispatch])
 
     return (
         <WidthContainer>

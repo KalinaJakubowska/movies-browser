@@ -37,7 +37,7 @@ const PeoplePage = () => {
         return () => {
             dispatch(resetState());
         };
-    }, [urlPageNumber, urlQuery]);
+    }, [urlPageNumber, urlQuery, dispatch]);
 
     return (
         <WidthContainer>
