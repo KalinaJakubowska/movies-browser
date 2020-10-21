@@ -4,7 +4,7 @@ import { Wrapper, Image, DetailsContainer, Title } from "./../tileStyles";
 export const PersonWrapper = styled(Wrapper)`
   width: 248px;
   flex-direction: column;
-  padding: 16px;
+  padding: 16px 0;
   align-items: center;
 
   @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
