@@ -19,6 +19,7 @@ export const MiniWrapper = styled(Link)`
 export const MiniImage = styled.img`
     display: block;
     width: 80px;
+    height: 120px;
 `;
 
 export const MiniText = styled.p`
