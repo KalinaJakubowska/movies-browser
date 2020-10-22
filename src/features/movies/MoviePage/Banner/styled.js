@@ -104,7 +104,7 @@ export const Count = styled.span`
 
   @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
     line-height: 100%;
-
+  }
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     font-size: 22px;
     margin-bottom: 4px;
