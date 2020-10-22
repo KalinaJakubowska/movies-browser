@@ -4,9 +4,17 @@ import { Link, NavLink } from "react-router-dom";
 const activeClassName = "link-active";
 
 export const Nav = styled.nav`
-  background: ${({ theme }) => theme.colors.black};
-  color: ${({ theme }) => theme.colors.white};
+  background: ${({theme}) => theme.colors.black};
+  color: ${({theme}) => theme.colors.white};
   min-height: 94px;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    min-height: 80px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    min-height: 60px;
+  }
 `;
 
 export const WidthContainer = styled.div`
@@ -29,31 +37,29 @@ export const NavContainer = styled.div`
   padding: 0 10px;
   flex-wrap: wrap;
   margin: 0 auto;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    min-height: 71px;
-  }
 `;
 
 export const NavContainerLeft = styled(NavContainer)`
   flex-wrap: nowrap;
-  justify-content: space-between;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    flex-basis: 80vw;
-    justify-content: space-evenly;
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    flex-basis: 60vw;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    flex-basis: 100%;
-    justify-content: space-around;
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    flex-basis: 70%;
   }
 `;
 
 export const NavContainerRight = styled(NavContainer)`
   justify-content: flex-end;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+    flex-basis: 60%;
+    justify-content: center;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     flex-basis: 100%;
     justify-content: center;
   }
@@ -79,22 +85,22 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({theme}) => theme.colors.white};
   padding: 13px 24px;
   margin: 0 10px;
 
   &.${activeClassName} {
-    border: 1px solid ${({ theme }) => theme.colors.white};
+    border: 1px solid ${({theme}) => theme.colors.white};
     border-radius: 33px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     font-size: 13px;
     padding: 11px 18px;
     margin: 0 3px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     font-size: 12px;
     padding: 8px 12px;
     margin: 0 3px;
@@ -109,6 +115,10 @@ export const Title = styled(Link)`
   padding-left: 16px;
   margin: 0;
   display: flex;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+    margin-right: 30px;
+  }
 
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     font-size: 18px;

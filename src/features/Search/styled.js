@@ -2,28 +2,29 @@ import styled from "styled-components";
 import magnifier from "./../../assets/magnifier.svg";
 
 export const Input = styled.input`
-    width: 432px;
-    height: 48px;
-    border: 1px solid ${({ theme }) => theme.colors.cornsilk};
-    border-radius: ${({ open, value }) => open && value ? "24px 24px 0 0" : "33px"};
-    padding-left: 64px;
-    background-color: white;
+  min-width: 432px;
+  height: 48px;
+  border: 1px solid ${({theme}) => theme.colors.cornsilk};
+  border-radius: ${({open, value}) =>
+    open && value ? "24px 24px 0 0" : "33px"};
+  padding-left: 64px;
+  background-color: white;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-    &::placeholder {
-        font-size: 16px;
-        line-height: 150%;
-        color: ${({ theme }) => theme.colors.waterloo};
-    }
+  &::placeholder {
+    font-size: 16px;
+    line-height: 150%;
+    color: ${({theme}) => theme.colors.waterloo};
+  }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        width: 288px;
-        height: 44px;
-        padding-left: 40px;
-    }
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    min-width: 288px;
+    height: 44px;
+    padding-left: 40px;
+  }
 `;
 
 export const SearchBox = styled.form`
