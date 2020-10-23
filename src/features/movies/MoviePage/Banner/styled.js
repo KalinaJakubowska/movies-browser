@@ -39,6 +39,10 @@ export const RatingsContainer = styled.div`
   flex-direction: column;
   margin-bottom: 56px;
 
+  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+    margin-bottom: 10px;
+  }
+
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     margin-bottom: 4px;
     flex-direction: row;
@@ -55,9 +59,24 @@ export const Title = styled.h1`
 
   -webkit-text-stroke: 1px black;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
-    font-size: 44px;
+  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
     margin-bottom: 5px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 58px;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 50px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 42px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    font-size: 34px;
   }
 
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
@@ -83,6 +102,9 @@ export const Count = styled.span`
   font-size: 30px;
   line-height: 130%;
 
+  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+    line-height: 100%;
+  }
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     font-size: 22px;
     margin-bottom: 4px;
@@ -101,8 +123,12 @@ export const Votes = styled.span`
   line-height: 120%;
   font-weight: 400;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
     margin-bottom: 0;
+    font-size: 15px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     font-size: 13px;
   }
 
