@@ -55,7 +55,7 @@ export const NavContainerRight = styled(NavContainer)`
   justify-content: flex-end;
 
   @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
-    flex-basis: 60%;
+    flex-basis: 40%;
     justify-content: center;
   }
 
