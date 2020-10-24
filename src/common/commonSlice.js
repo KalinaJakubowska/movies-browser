@@ -5,7 +5,7 @@ const commonSlice = createSlice({
     initialState: {
         genresList: [],
         loading: true,
-        theme: JSON.parse(localStorage.getItem("theme")) || [],
+        isNormalTheme: JSON.parse(localStorage.getItem("theme")) || true,
     },
     reducers: {
         fetchCommon: state => {
@@ -19,8 +19,8 @@ const commonSlice = createSlice({
             state.loading = false;
         },
         setTheme: (state, { payload }) => {
-            state.theme = payload;
-            localStorage.setItem("theme", JSON.stringify(state.theme));
+            state.isNormalTheme = payload;
+            localStorage.setItem("theme", JSON.stringify(state.isNormalTheme));
         }
     },
 });
@@ -33,6 +33,6 @@ export const {
 } = commonSlice.actions;
 export const selectGenres = state => state.common.genresList;
 export const selectLoading = state => state.common.loading;
-export const selectTheme = state => state.common.theme;
+export const selectTheme = state => state.common.isNormalTheme;
 
 export default commonSlice.reducer;
