@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const Wrapper = styled(Link)`
   text-decoration: none;
   display: flex;
-  background-color: ${({ theme }) => theme.unchangeableColors.white};
-  box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+  background-color: ${({ theme }) => theme.colors.tileBackground};
+  box-shadow: 0px 4px 12px ${({theme}) => theme.colors.shadow || "rgba(186, 199, 213, 0.5)"};
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.text};
   min-height: fit-content;

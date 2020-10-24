@@ -27,7 +27,7 @@ export const MobileContainer = styled(DesktopContainer)`
 export const Button = styled.button`
   padding: 10px;
   margin: 0px 12px;
-  background: ${({ theme }) => theme.colors.activeNavButton};;
+  background: ${({ theme }) => theme.colors.activeNavButton};
   border-radius: 5px;
   padding: 8px 16px 8px 16px;
   color: ${({ theme }) => theme.colors.text};
@@ -35,7 +35,8 @@ export const Button = styled.button`
   cursor: pointer;
 
   &:disabled {
-    background-color: ${({ theme }) => theme.colors.typeBox};
+    background: ${({ theme }) => theme.colors.disabledNavButton};
+    cursor: unset;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
