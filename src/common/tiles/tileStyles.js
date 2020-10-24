@@ -12,7 +12,7 @@ export const Wrapper = styled(Link)`
 `;
 
 export const Image = styled.img`
-  display: block;
+  /* display: block; */
   border-radius: 5px;
   flex-shrink: 0;
 `;

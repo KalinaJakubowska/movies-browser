@@ -8,7 +8,7 @@ import {
     Description,
     DetailsWrapper,
 } from "./../bigTilesStyles";
-import { BigTileImage } from "./styled";
+import {BigTileImage, ImageWrapper} from "./styled";
 import noProfileImage from "./../../../assets/noPosterImage.svg";
 
 const BigPersonTile = ({
@@ -19,39 +19,34 @@ const BigPersonTile = ({
     biography,
 }) => {
     return (
-        <BigTileWrapper as="div">
-            <BigTileImage
-                src={profile_path
-                    ? `https://image.tmdb.org/t/p/h632${profile_path}`
-                    : noProfileImage
-                }
-                alt={`Zdjęcie ${name}`}
-            />
-            <BigDetailsContainer>
-                {name &&
-                    <BigTileHeader>
-                        {name}
-                    </BigTileHeader>
-                }
-                <DetailsWrapper>
-                    {birthday &&
-                        <Detail>
-                            <MarkedDetail>Date of birth: </MarkedDetail> {birthday}
-                        </Detail>
-                    }
-                    {place_of_birth &&
-                        <Detail>
-                            <MarkedDetail>Place of birth: </MarkedDetail> {place_of_birth}
-                        </Detail>
-                    }
-                </DetailsWrapper>
-                {biography &&
-                    <Description>
-                        {biography}
-                    </Description>
-                }
-            </BigDetailsContainer>
-        </BigTileWrapper >
+      <BigTileWrapper as="div">
+        <ImageWrapper>
+          <BigTileImage
+            src={
+              profile_path
+                ? `https://image.tmdb.org/t/p/h632${profile_path}`
+                : noProfileImage
+            }
+            alt={`Zdjęcie ${name}`}
+          />
+        </ImageWrapper>
+        <BigDetailsContainer>
+          {name && <BigTileHeader>{name}</BigTileHeader>}
+          <DetailsWrapper>
+            {birthday && (
+              <Detail>
+                <MarkedDetail>Date of birth: </MarkedDetail> {birthday}
+              </Detail>
+            )}
+            {place_of_birth && (
+              <Detail>
+                <MarkedDetail>Place of birth: </MarkedDetail> {place_of_birth}
+              </Detail>
+            )}
+          </DetailsWrapper>
+          {biography && <Description>{biography}</Description>}
+        </BigDetailsContainer>
+      </BigTileWrapper>
     );
 };
 
