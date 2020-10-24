@@ -37,6 +37,6 @@ export const StyledNavLink = styled(NavLink)`
   padding: 16px 24px;
   border-radius: 5px;
   text-decoration: none;
-  color: ${({theme}) => theme.colors.white};
-  background-color: ${({theme}) => theme.colors.scienceBlue};
+  color: ${({theme}) => theme.unchangeableColors.white};
+  background-color: ${({theme}) => theme.colors.backButton};
 `;

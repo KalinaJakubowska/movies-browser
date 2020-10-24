@@ -70,7 +70,7 @@ export const Detail = styled.div`
 `;
 
 export const MarkedDetail = styled.span`
-    color: ${({ theme }) => theme.colors.stormGray};
+    color: ${({ theme }) => theme.colors.detailName};
 `;
 
 export const Description = styled.div`

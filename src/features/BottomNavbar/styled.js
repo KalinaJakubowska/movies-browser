@@ -27,15 +27,16 @@ export const MobileContainer = styled(DesktopContainer)`
 export const Button = styled.button`
   padding: 10px;
   margin: 0px 12px;
-  background: #d6e4ff;
+  background: ${({ theme }) => theme.colors.activeNavButton};
   border-radius: 5px;
   padding: 8px 16px 8px 16px;
-  color: ${({ theme }) => theme.colors.mineShaft};
+  color: ${({ theme }) => theme.colors.text};
   border: none;
   cursor: pointer;
 
   &:disabled {
-    background-color: ${({ theme }) => theme.colors.cornsilk};
+    background: ${({ theme }) => theme.colors.disabledNavButton};
+    cursor: unset;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -52,7 +53,7 @@ export const Button = styled.button`
 export const PageCounter = styled.span`
   font-size: 16px;
   line-height: 150%;
-  color: ${({ theme }) => theme.colors.waterloo};
+  color: ${({ theme }) => theme.colors.subtitle};
   margin: 0px 24px;
   font-weight: 400;
 
@@ -66,7 +67,7 @@ export const Number = styled.span`
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: ${({ theme }) => theme.colors.woodsmoke};
+  color: ${({ theme }) => theme.colors.text};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 10px;
