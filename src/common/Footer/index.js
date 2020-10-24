@@ -1,15 +1,20 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTheme, setTheme } from "../commonSlice";
-import { Wrapper, SwitchButton } from "./styled";
+import { Wrapper, SwitchButton, SwitchButtonBox } from "./styled";
 
 const Footer = () => {
     const dispatch = useDispatch();
-    const theme = useSelector(selectTheme);
+    const isNormalTheme = useSelector(selectTheme);
 
     return (
         <Wrapper>
-            <SwitchButton onClick={() => dispatch(setTheme(!theme))}></SwitchButton>
+            <SwitchButtonBox >
+                <SwitchButton
+                    isNormalTheme={isNormalTheme}
+                    onClick={() => dispatch(setTheme(!isNormalTheme))}
+                />
+            </SwitchButtonBox>
         </Wrapper>
     );
 };
