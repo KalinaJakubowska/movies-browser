@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.footer`
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-top: auto;
   background: ${({ theme }) => theme.unchangeableColors.black};
@@ -13,9 +14,9 @@ export const Wrapper = styled.footer`
 `;
 
 export const SwitchButtonBox = styled.div`
+  margin: 0 10px;
   width: 90px;
   padding: 5px;
-  margin: auto auto;
   border-radius: 5px;
   transition: all 0.5s;
   background: ${({ theme }) => theme.colors.text};
