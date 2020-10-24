@@ -11,6 +11,7 @@ import {
   StyledNavLink,
   Title,
   Logo,
+  Footer,
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import MoviePage from "./features/movies/MoviePage";
@@ -71,6 +72,7 @@ function App() {
             <Redirect to="/movies" />
           </Route>
         </Switch>
+        <Footer/>
       </main>
     </HashRouter>
   );
