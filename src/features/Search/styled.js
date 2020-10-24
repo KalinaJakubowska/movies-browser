@@ -9,9 +9,9 @@ export const Input = styled.input`
     padding-left: 64px;
     background-color: ${({ theme }) => theme.unchangeableColors.white};
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
     &::placeholder {
         font-size: 16px;
@@ -19,11 +19,11 @@ export const Input = styled.input`
         color: ${({ theme }) => theme.colors.subtitle};
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        width: 288px;
-        height: 44px;
-        padding-left: 40px;
-    }
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    min-width: 288px;
+    height: 44px;
+    padding-left: 40px;
+  }
 `;
 
 export const SearchBox = styled.form`
