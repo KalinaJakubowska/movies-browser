@@ -29,8 +29,10 @@ export const {
     fetchCommon,
     fetchCommonSuccess,
     fetchCommonError,
+    setTheme,
 } = commonSlice.actions;
 export const selectGenres = state => state.common.genresList;
 export const selectLoading = state => state.common.loading;
+export const selectTheme = state => state.common.theme;
 
 export default commonSlice.reducer;
