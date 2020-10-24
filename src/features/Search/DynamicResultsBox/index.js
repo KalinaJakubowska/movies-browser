@@ -22,7 +22,7 @@ const DynamicResultsBox = ({ query }) => {
     dispatch(setActiveSearchPath(
       `https://api.themoviedb.org/3/search/${pathText}?api_key=${apiKey}&language=${language}&query=${query}`
     ));
-  }, [query]);
+  }, [query, dispatch, pathText]);
 
   return (
     <Wrapper>

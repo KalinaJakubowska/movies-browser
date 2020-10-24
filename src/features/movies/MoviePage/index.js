@@ -44,7 +44,7 @@ const MoviePage = () => {
     return () => {
       dispatch(resetState());
     };
-  }, [id]);
+  }, [id, dispatch]);
 
   return (
     <>

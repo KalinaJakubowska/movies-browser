@@ -16,7 +16,7 @@ const Search = () => {
 
     useEffect(() => {
         dispatch(setQuery(""));
-    }, [location])
+    }, [location, dispatch])
 
     const onChange = (value) => {
         dispatch(setQuery(value));

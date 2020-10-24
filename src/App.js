@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCommon());
-  }, [])
+  }, [dispatch])
 
   return (
     <HashRouter>
