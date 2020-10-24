@@ -4,8 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 const activeClassName = "link-active";
 
 export const Nav = styled.nav`
-  background: ${({ theme }) => theme.colors.black};
-  color: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.unchangeableColors.black};
+  color: ${({ theme }) => theme.unchangeableColors.white};
   min-height: 94px;
 `;
 
@@ -79,12 +79,12 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.unchangeableColors.white};
   padding: 13px 24px;
   margin: 0 10px;
 
   &.${activeClassName} {
-    border: 1px solid ${({ theme }) => theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.unchangeableColors.white};
     border-radius: 33px;
   }
 
@@ -103,7 +103,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
 
 export const Title = styled(Link)`
   text-decoration: none;
-  color: ${({theme}) => theme.colors.white};
+  color: ${({theme}) => theme.unchangeableColors.white};
   font-size: 24px;
   font-weight: 500;
   padding-left: 16px;

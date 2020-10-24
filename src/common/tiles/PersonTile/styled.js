@@ -67,6 +67,6 @@ export const Subtitle = styled.p`
     };
     line-height: 150%;
     text-align: center;
-    color: ${({ theme }) => theme.colors.waterloo};
+    color: ${({ theme }) => theme.colors.subtitle};
     margin: 0;
 `;

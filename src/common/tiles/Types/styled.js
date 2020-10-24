@@ -7,12 +7,12 @@ export const TypesWrapper = styled.div`
 
 export const TypeBox = styled.div`
   padding: 8px 16px;
-  background-color: ${({theme}) => theme.colors.cornsilk};
+  background-color: ${({theme}) => theme.colors.typeBox};
   border-radius: 5px;
   margin: 0 8px 8px 0;
   font-size: 14px;
   line-height: 140%;
-  color: ${({theme}) => theme.colors.woodsmoke};
+  color: ${({theme}) => theme.colors.text};
   flex-grow: 0;
 `;
 

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Background = styled.div`
     width: 100%;
-    background-color: black;
-    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.unchangeableColors.black};
+    color: ${({ theme }) => theme.unchangeableColors.white};
 `;
 
 export const WidthBackdropContainer = styled.div`
@@ -53,7 +53,7 @@ export const Title = styled.h1`
   margin-bottom: 24px;
   color: inherit;
 
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 1px ${({theme}) => theme.unchangeableColors.black};
 
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     font-size: 44px;

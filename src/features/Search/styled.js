@@ -4,10 +4,10 @@ import magnifier from "./../../assets/magnifier.svg";
 export const Input = styled.input`
     width: 432px;
     height: 48px;
-    border: 1px solid ${({ theme }) => theme.colors.cornsilk};
+    border: 1px solid ${({ theme }) => theme.colors.typeBox};
     border-radius: ${({ open, value }) => open && value ? "24px 24px 0 0" : "33px"};
     padding-left: 64px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.unchangeableColors.white};
 
     &:focus {
         outline: none;
@@ -16,7 +16,7 @@ export const Input = styled.input`
     &::placeholder {
         font-size: 16px;
         line-height: 150%;
-        color: ${({ theme }) => theme.colors.waterloo};
+        color: ${({ theme }) => theme.colors.subtitle};
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {

@@ -4,10 +4,10 @@ import styled from "styled-components";
 export const Wrapper = styled(Link)`
   text-decoration: none;
   display: flex;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.unchangeableColors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
-  color: ${({ theme }) => theme.colors.woodsmoke};
+  color: ${({ theme }) => theme.colors.text};
   min-height: fit-content;
 `;
 
@@ -39,7 +39,7 @@ export const Title = styled.div`
 export const Year = styled.div`
   font-size: 16px;
   line-height: 150%;
-  color: ${({ theme }) => theme.colors.waterloo};
+  color: ${({ theme }) => theme.colors.subtitle};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 13px;
