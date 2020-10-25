@@ -20,7 +20,7 @@ const DynamicResultsBox = ({ query }) => {
 
   useEffect(() => {
     dispatch(setActiveSearchPath(
-      `https://api.themoviedb.org/3/search/${pathText}?api_key=${apiKey}&language=${language}&query=${query}`
+      `https://api.themoviedb.org/3/search/${pathText}${apiKey}${language}&query=${query}`
     ));
   }, [query, dispatch, pathText]);
 

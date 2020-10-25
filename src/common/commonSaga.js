@@ -11,7 +11,7 @@ import language from "./language";
 function* fetchCommonHandler() {
     try {
         const data = yield call(() => getApiData(
-            `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=${language}`
+            `https://api.themoviedb.org/3/genre/movie/list${apiKey}${language}`
         ));
         yield put(fetchCommonSuccess(data));
     } catch (error) {
