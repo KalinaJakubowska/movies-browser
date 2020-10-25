@@ -28,6 +28,9 @@ const commonSlice = createSlice({
             const index = genresList.findIndex(genre => genre.id === id);
             genresList[index].enabled = !genresList[index].enabled;
         },
+        resetEnabledGenres: (state) => {
+            state.genresList = state.genresList.map(genre => ({ ...genre, enabled: false }))
+        },
     },
 });
 
@@ -37,6 +40,7 @@ export const {
     fetchCommonError,
     setTheme,
     switchGenreEnabled,
+    resetEnabledGenres,
 } = commonSlice.actions;
 export const selectGenres = state => state.common.genresList;
 export const selectLoading = state => state.common.loading;
