@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
   width: 100%;
   max-height: 500px;
   overflow: auto;
-  background-color: ${({theme}) => theme.unchangeableColors.white};
-  color: ${({theme}) => theme.unchangeableColors.black};
+  background-color: ${({theme}) => theme.colors.tileBackground};
+  color: ${({theme}) => theme.colors.text};
   border-radius: 0 0 10px 10px;
   border: 1px solid ${({theme}) => theme.colors.typeBox};
   border-top: none;
@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({theme}) => theme.colors.typeBox};
+    background: ${({theme}) => theme.unchangeableColors.cornsilk};
     border-radius: 10px;
   }
 `;

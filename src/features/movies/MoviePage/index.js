@@ -78,12 +78,7 @@ const MoviePage = () => {
                   <>
                     <Header as="h2">
                       Cast
-                    {(
-                        castCrewData.cast.length > 10
-                        && castCrewData.cast.length === castDisplayed
-                      ) &&
-                        <Button onClick={() => { setCastDisplayed(10) }}>Hide</Button>
-                      }</Header>
+                    </Header>
                     <PeopleContainer>
                       {castCrewData.cast
                         .slice(0, castDisplayed)
@@ -110,13 +105,6 @@ const MoviePage = () => {
                   <>
                     <Header as="h2">
                       Crew
-                    {(
-                        castCrewData.crew.length > 10
-                        && castCrewData.crew.length === crewDisplayed
-                      )
-                        &&
-                        <Button onClick={() => { setCrewDisplayed(10) }}>Hide</Button>
-                      }
                     </Header>
                     <PeopleContainer>
                       {castCrewData.crew

@@ -28,6 +28,7 @@ export const SwitchButton = styled.button`
   border-radius: 5px;
   height: 20px;
   width: 20px;
+  padding: 0px;
   transition: all 0.5s;
   transform: ${({ isNormalTheme }) => isNormalTheme ? "unset" : "translateX(300%)"};;
 `;

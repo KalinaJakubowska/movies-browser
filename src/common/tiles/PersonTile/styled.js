@@ -9,7 +9,6 @@ export const PersonWrapper = styled(Wrapper)`
 
   @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
     width: 208px;
-    min-height: unset;
   }
 
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
