@@ -14,7 +14,7 @@ const commonSlice = createSlice({
             state.loading = true;
         },
         fetchCommonSuccess: (state, { payload: data }) => {
-            state.genresList = data.genres;
+            state.genresList = data.genres.map(genre => ({ ...genre, enabled: false }));
             state.loading = false;
         },
         fetchCommonError: state => {
@@ -24,6 +24,10 @@ const commonSlice = createSlice({
             state.isNormalTheme = payload;
             localStorage.setItem("theme", payload);
         },
+        switchGenreEnabled: ({ genresList }, { payload: id }) => {
+            const index = genresList.findIndex(genre => genre.id === id);
+            genresList[index].enabled = !genresList[index].enabled;
+        },
     },
 });
 
@@ -32,6 +36,7 @@ export const {
     fetchCommonSuccess,
     fetchCommonError,
     setTheme,
+    switchGenreEnabled,
 } = commonSlice.actions;
 export const selectGenres = state => state.common.genresList;
 export const selectLoading = state => state.common.loading;

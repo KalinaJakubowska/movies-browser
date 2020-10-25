@@ -35,8 +35,8 @@ const MoviePage = () => {
   useEffect(() => {
     dispatch(
       setActivePath({
-        path1: `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=${language}`,
-        path2: `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}`,
+        path1: `https://api.themoviedb.org/3/movie/${id}${apiKey}${language}`,
+        path2: `https://api.themoviedb.org/3/movie/${id}/credits${apiKey}`,
       }),
     );
     dispatch(setItemId(id));

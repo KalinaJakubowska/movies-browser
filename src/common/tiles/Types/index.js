@@ -1,19 +1,42 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectGenres, selectLoading } from "../../commonSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectGenres, selectLoading, switchGenreEnabled } from "../../commonSlice";
 import { TypesWrapper, TypeBox, BigTypeBox } from "./styled";
+import { useReplacePageParameters } from "../../../features/pageParameters";
 
-const Types = ({ genre_ids, big = false }) => {
+const Types = ({ genre_ids, big = false, clickable = false }) => {
     const genresList = useSelector(selectGenres);
     const loading = useSelector(selectLoading);
+    const dispatch = useDispatch();
+    const replacePageParameters = useReplacePageParameters();
+
+    const onGenreClick = (id) => {
+        replacePageParameters([
+            {
+                key: "page",
+                value: 1,
+            },
+        ]);
+        dispatch(switchGenreEnabled(id))
+    };
 
     return (
         <TypesWrapper>
             {((!loading && genre_ids)
-                && genresList.map(({ id, name }) => genre_ids.includes(id)
-                    && (big
+                && genresList.map(({ id, name, enabled }) => genre_ids.includes(id)
+                    && (!big
                         ? <TypeBox key={id}>{name}</TypeBox>
-                        : <BigTypeBox key={id}>{name}</BigTypeBox>
+                        : clickable
+                            ? (<BigTypeBox
+                                enabled={enabled}
+                                clickable={clickable}
+                                onClick={() => onGenreClick(id)}
+                                key={id}
+                            >
+                                {name}
+                            </BigTypeBox>
+                            )
+                            : <BigTypeBox key={id}>{name}</BigTypeBox>
                     )
                 )
             )}

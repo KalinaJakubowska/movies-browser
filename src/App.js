@@ -19,7 +19,7 @@ import PersonPage from "./features/people/PersonPage";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCommon, selectTheme } from "./common/commonSlice";
 import Search from "./features/Search";
-import { setOpen } from "./features/Search/searchSlice";
+import { selectOpen, setOpen } from "./features/Search/searchSlice";
 import logo from "./assets/logo.svg";
 import Footer from "./common/Footer";
 import { ThemeProvider } from "styled-components";
@@ -29,6 +29,7 @@ import { GlobalStyle } from "./GlobalStyle";
 function App() {
   const dispatch = useDispatch();
   const isNormalTheme = useSelector(selectTheme);
+  const isOpen = useSelector(selectOpen);
 
   useEffect(() => {
     dispatch(fetchCommon());
@@ -38,7 +39,7 @@ function App() {
     <ThemeProvider theme={isNormalTheme ? theme : darkTheme}>
       <GlobalStyle />
       <HashRouter>
-        <main onClick={() => dispatch(setOpen(false))}>
+        <main onClick={() => isOpen && dispatch(setOpen(false))}>
           <Nav>
             <WidthNavContainer>
               <NavContainer>

@@ -19,6 +19,8 @@ import language from "../../../common/language";
 import NoResult from "./../../../common/NoResult"
 import Error from "../../../common/Error";
 import { WidthContainer } from "../../../styled";
+import { selectGenres } from "../../../common/commonSlice";
+import Types from "../../../common/tiles/Types";
 
 const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -28,26 +30,41 @@ const MoviesPage = () => {
     const totalResults = useSelector(selectTotalResults);
     const loading = useSelector(selectLoading);
     const isError = useSelector(selectError);
+    const genresList = useSelector(selectGenres);
+    const enabledGenres = genresList
+        .filter(genre => genre.enabled && genre.id)
+        .map(genre => genre.id);
 
     useEffect(() => {
         dispatch(setActivePath(urlQuery
-            ? `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
-            : `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
+            ? `https://api.themoviedb.org/3/search/movie${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
+            : genresList.map(genre => genre.enabled && genre)
+                ? `https://api.themoviedb.org/3/discover/movie${apiKey}${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}&with_genres=${enabledGenres.join(",")}`
+                : `https://api.themoviedb.org/3/movie/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
         );
 
         return () => {
             dispatch(resetState());
         };
-    }, [urlPageNumber, urlQuery, dispatch]);
+    }, [urlPageNumber, urlQuery, dispatch, genresList]);
 
     return (
         <WidthContainer>
+            {!urlQuery && (
+                <Types
+                    genre_ids={genresList.map(genre => genre.id)}
+                    clickable={true}
+                    big={true}
+                />
+            )}
             {loading
                 ? <Loading />
                 : isError
                     ? <Error />
                     : (!popularMovies.length
-                        ? <NoResult urlQuery={urlQuery} />
+                        ? <NoResult
+                            urlQuery={urlQuery}
+                        />
                         : (
                             <>
                                 <Header>
