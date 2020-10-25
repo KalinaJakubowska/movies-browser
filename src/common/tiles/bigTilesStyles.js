@@ -5,17 +5,16 @@ export const BigTileWrapper = styled(Wrapper)`
   flex-direction: row;
   width: 100%;
   padding: 40px;
-  margin: 56px auto 64px;
-
+  margin: 40px auto 64px;
 
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     padding: 25px;
-    margin: 36px 0 42px;
+    margin: 23px 0 42px;
   }
 
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     padding: 16px;
-    margin: 16px auto 21px;
+    margin: 7px auto 21px;
   }
 `;
 
