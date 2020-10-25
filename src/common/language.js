@@ -1,3 +1,3 @@
-const language = "en-US";
+const language = "&language=en-US";
 
 export default language;
