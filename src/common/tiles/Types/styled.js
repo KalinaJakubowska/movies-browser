@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const TypesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-right: -8px;
 `;
 
 export const TypeBox = styled.div`
