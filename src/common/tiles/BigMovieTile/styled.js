@@ -14,3 +14,4 @@ export const BigMovieImage = styled(Image)`
     height: 169px;
   }
 `;
+
