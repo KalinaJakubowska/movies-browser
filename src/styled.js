@@ -57,6 +57,7 @@ export const NavContainerRight = styled(NavContainer)`
   @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
     flex-basis: 40%;
     justify-content: center;
+    padding: 16px 0;
   }
 
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {

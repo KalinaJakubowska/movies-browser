@@ -25,7 +25,6 @@ export const Input = styled.input`
     min-width: 288px;
     height: 44px;
     padding-left: 40px;
-    margin: 16px auto;
   }
 `;
 
