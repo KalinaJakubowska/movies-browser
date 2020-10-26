@@ -8,7 +8,7 @@ export const Wrapper = styled.footer`
   background: ${({theme}) => theme.unchangeableColors.black};
   color: ${({theme}) => theme.unchangeableColors.white};
   height: 50px;
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
 `;
