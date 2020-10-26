@@ -20,9 +20,11 @@ export const SwitchButtonBox = styled.div`
   border-radius: 5px;
   transition: all 0.5s;
   background: ${({ theme }) => theme.colors.text};
+  cursor: pointer;
 `;
 
 export const SwitchButton = styled.button`
+  cursor: pointer;
   display: block;
   background: ${({ theme }) => theme.colors.background};
   border-radius: 5px;

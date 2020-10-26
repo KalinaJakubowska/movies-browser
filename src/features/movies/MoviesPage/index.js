@@ -31,11 +31,12 @@ const MoviesPage = () => {
     const loading = useSelector(selectLoading);
     const isError = useSelector(selectError);
     const genresList = useSelector(selectGenres);
-    const enabledGenres = genresList
-        .filter(genre => genre.enabled && genre.id)
-        .map(genre => genre.id);
 
     useEffect(() => {
+        const enabledGenres = genresList
+            .filter(genre => genre.enabled && genre.id)
+            .map(genre => genre.id);
+
         dispatch(setActivePath(urlQuery
             ? `https://api.themoviedb.org/3/search/movie${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
             : genresList.map(genre => genre.enabled && genre)

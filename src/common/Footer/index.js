@@ -10,10 +10,9 @@ const Footer = () => {
     return (
         <Wrapper>
             Light theme
-            <SwitchButtonBox >
+            <SwitchButtonBox onClick={() => dispatch(setTheme(!isNormalTheme))}>
                 <SwitchButton
                     isNormalTheme={isNormalTheme}
-                    onClick={() => dispatch(setTheme(!isNormalTheme))}
                 />
             </SwitchButtonBox>
             Dark theme
