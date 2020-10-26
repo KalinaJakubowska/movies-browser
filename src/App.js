@@ -79,9 +79,9 @@ function App() {
               <Redirect to="/movies" />
             </Route>
           </Switch>
-          <Footer />
         </main>
       </HashRouter>
+          <Footer />
     </ThemeProvider>
   );
 };
