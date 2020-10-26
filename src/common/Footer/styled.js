@@ -5,10 +5,10 @@ export const Wrapper = styled.footer`
   justify-content: center;
   align-items: center;
   margin-top: auto;
-  background: ${({ theme }) => theme.unchangeableColors.black};
-  color: ${({ theme }) => theme.unchangeableColors.white};
+  background: ${({theme}) => theme.unchangeableColors.black};
+  color: ${({theme}) => theme.unchangeableColors.white};
   height: 50px;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 `;
