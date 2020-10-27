@@ -81,7 +81,7 @@ function App() {
           </Switch>
         </main>
       </HashRouter>
-          <Footer />
+      <Footer />
     </ThemeProvider>
   );
 };
