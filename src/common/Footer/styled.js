@@ -7,7 +7,7 @@ export const Wrapper = styled.footer`
   margin-top: auto;
   background: ${({theme}) => theme.unchangeableColors.black};
   color: ${({theme}) => theme.unchangeableColors.white};
-  height: 50px;
+  height: 50px; /* The same value as main bottom-padding */
   position: absolute;
   bottom: 0;
   width: 100%;
