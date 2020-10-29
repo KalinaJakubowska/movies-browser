@@ -8,6 +8,9 @@ const commonSlice = createSlice({
         isNormalTheme: localStorage.getItem("theme")
             ? JSON.parse(localStorage.getItem("theme"))
             : true,
+        isAutoTheme: localStorage.getItem("autoTheme")
+            ? JSON.parse(localStorage.getItem("autoTheme"))
+            : true,
         sunData: [],
     },
     reducers: {
@@ -26,6 +29,10 @@ const commonSlice = createSlice({
             state.isNormalTheme = payload;
             localStorage.setItem("theme", payload);
         },
+        setAutoTheme: (state, { payload }) => {
+            state.isAutoTheme = payload;
+            localStorage.setItem("autoTheme", payload);
+        },
         switchGenreEnabled: ({ genresList }, { payload: id }) => {
             const index = genresList.findIndex(genre => genre.id === id);
             genresList[index].enabled = !genresList[index].enabled;
@@ -41,12 +48,14 @@ export const {
     fetchCommonSuccess,
     fetchCommonError,
     setTheme,
+    setAutoTheme,
     switchGenreEnabled,
     resetEnabledGenres,
 } = commonSlice.actions;
 export const selectGenres = state => state.common.genresList;
 export const selectLoading = state => state.common.loading;
 export const selectTheme = state => state.common.isNormalTheme;
+export const selectAutoTheme = state => state.common.isAutoTheme;
 export const selectSunData = state => state.common.sunData;
 
 export default commonSlice.reducer;
