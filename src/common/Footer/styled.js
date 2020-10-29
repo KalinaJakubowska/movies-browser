@@ -1,12 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: auto;
-  background: ${({theme}) => theme.unchangeableColors.black};
-  color: ${({theme}) => theme.unchangeableColors.white};
+  background: ${({ theme }) => theme.unchangeableColors.black};
+  color: ${({ theme }) => theme.unchangeableColors.white};
   height: 50px; /* The same value as main bottom-padding */
   position: absolute;
   bottom: 0;
@@ -32,5 +32,20 @@ export const SwitchButton = styled.button`
   width: 20px;
   padding: 0px;
   transition: all 0.5s;
-  transform: ${({ isNormalTheme }) => isNormalTheme ? "unset" : "translateX(300%)"};;
+  transform: ${({ isNormalTheme }) => isNormalTheme ? "unset" : "translateX(300%)"};
+`;
+
+export const SwitchAutoThemeButton = styled(SwitchButton)`
+  transform: ${({ isAutoTheme }) => !isAutoTheme ? "unset" : "translateX(300%)"};
+`;
+
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+
+  ${({ disabled }) => disabled && css`
+    display: none;
+  `}
+
 `;
