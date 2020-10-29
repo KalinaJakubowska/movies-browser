@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, debounce, put } from "redux-saga/effects";
 import { getApiData } from "../getApiData";
 import store from "../store";
 import {
@@ -19,5 +19,5 @@ function* fetchListHandler() {
 };
 
 export function* watchSetActivePath() {
-    yield takeLatest(setActivePath.type, fetchListHandler);
+    yield debounce(0, setActivePath.type, fetchListHandler);
 };
