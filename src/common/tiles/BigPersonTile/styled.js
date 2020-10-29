@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Image } from "./../tileStyles";
 
 export const BigTileImage = styled(Image)`
+  object-fit: cover;
   max-height: 564px;
   width: 399px;
 
