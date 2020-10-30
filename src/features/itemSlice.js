@@ -30,15 +30,6 @@ const itemSlice = createSlice({
             state.activeItemPath = path1;
             state.activeExtraPath = path2;
         },
-        resetState: (state) => {
-            state.itemData = [];
-            state.extraData = [];
-            state.itemId = undefined;
-            state.activeItemPath = "";
-            state.activeExtraPath = "";
-            state.loading = true;
-            state.error = false;
-        },
     },
 });
 
@@ -47,7 +38,6 @@ export const {
     fetchItemSuccess,
     fetchItemError,
     setActivePath,
-    resetState,
 } = itemSlice.actions;
 export const selectItemData = state => state.item.itemData;
 export const selectExtraData = state => state.item.extraData;
