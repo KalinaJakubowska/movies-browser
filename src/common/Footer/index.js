@@ -4,39 +4,38 @@ import { selectSunData, selectTheme, selectAutoTheme, setNormalTheme, setAutoThe
 import { Wrapper, SwitchButton, SwitchButtonBox, SwitchAutoThemeButton, Container } from "./styled";
 
 const Footer = () => {
-    const dispatch = useDispatch();
     const isNormalTheme = useSelector(selectTheme);
     const isAutoTheme = useSelector(selectAutoTheme);
     const { sunset, sunrise } = useSelector(selectSunData);
-
-
-    const setTheme = (sunrise, sunset) => {
-        const actualDate = new Date();
-
-        if (sunrise.getTime() < actualDate.getTime() && actualDate.getTime() < sunset.getTime()) {
-            dispatch(setNormalTheme(true));
-        }
-        else {
-            dispatch(setNormalTheme(false));
-        }
-    };
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const sunriseTime = new Date(sunrise);
         const sunsetTime = new Date(sunset);
 
+        const setTheme = () => {
+            const actualDate = new Date();
+
+            if (sunriseTime.getTime() < actualDate.getTime() && actualDate.getTime() < sunsetTime.getTime()) {
+                dispatch(setNormalTheme(true));
+            }
+            else {
+                dispatch(setNormalTheme(false));
+            }
+        };
+
         if (isAutoTheme && sunset && sunrise) {
-            setTheme(sunriseTime, sunsetTime)
+            setTheme()
 
             const intervalId = setInterval(() => {
-                setTheme(sunriseTime, sunsetTime)
+                setTheme()
             }, 60000);
 
             return () => {
                 clearInterval(intervalId);
             }
         }
-    }, [isAutoTheme, sunrise, sunset]);
+    }, [isAutoTheme, sunrise, sunset, dispatch]);
 
     return (
         <>
