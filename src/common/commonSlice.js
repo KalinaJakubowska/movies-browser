@@ -25,7 +25,7 @@ const commonSlice = createSlice({
         fetchCommonError: state => {
             state.loading = false;
         },
-        setTheme: (state, { payload }) => {
+        setNormalTheme: (state, { payload }) => {
             state.isNormalTheme = payload;
             localStorage.setItem("theme", payload);
         },
@@ -47,7 +47,7 @@ export const {
     fetchCommon,
     fetchCommonSuccess,
     fetchCommonError,
-    setTheme,
+    setNormalTheme,
     setAutoTheme,
     switchGenreEnabled,
     resetEnabledGenres,
