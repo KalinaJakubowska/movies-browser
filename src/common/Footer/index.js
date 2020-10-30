@@ -16,7 +16,7 @@ const Footer = () => {
         const setTheme = () => {
             const actualDate = new Date();
 
-            if (sunriseTime.getTime() < actualDate.getTime() && actualDate.getTime() < sunsetTime.getTime()) {
+            if (sunriseTime.getTime() + 3600000 < actualDate.getTime() && actualDate.getTime() < sunsetTime.getTime() + 3600000) {
                 dispatch(setNormalTheme(true));
             }
             else {
