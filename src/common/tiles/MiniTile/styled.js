@@ -18,10 +18,11 @@ export const MiniWrapper = styled(Link)`
 `;
 
 export const MiniImage = styled.img`
-    flex: 0 1 auto;
-    display: block;
-    width: 80px;
-    height: 120px;
+  object-fit: cover;
+  flex: 0 1 auto;
+  display: block;
+  width: 80px;
+  height: 120px;
 `;
 
 export const MiniText = styled.p`
