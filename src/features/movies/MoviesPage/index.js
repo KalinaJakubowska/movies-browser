@@ -7,7 +7,6 @@ import {
     selectList,
     selectLoading,
     setActivePath,
-    resetState,
     selectError,
     selectTotalResults,
 } from "../../listSlice";
@@ -43,10 +42,6 @@ const MoviesPage = () => {
                 ? `https://api.themoviedb.org/3/discover/movie${apiKey}${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}&with_genres=${enabledGenres.join(",")}`
                 : `https://api.themoviedb.org/3/movie/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
         );
-
-        return () => {
-            dispatch(resetState());
-        };
     }, [urlPageNumber, urlQuery, dispatch, genresList]);
 
     return (

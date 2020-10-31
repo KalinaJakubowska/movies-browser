@@ -9,7 +9,6 @@ import {
     setItemId,
     selectExtraData,
     selectError,
-    resetState,
 } from "../../itemSlice";
 import language from "./../../../common/language";
 import apiKey from "./../../../common/apiKey";
@@ -37,10 +36,6 @@ const PersonPage = () => {
             path2: `https://api.themoviedb.org/3/person/${id}/movie_credits${apiKey}${language}`,
         }));
         dispatch(setItemId(id));
-
-        return () => {
-            dispatch(resetState());
-        };
     }, [id, dispatch])
 
     return (

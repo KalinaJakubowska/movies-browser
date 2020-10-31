@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../../common/Loading";
 import BottomNavbar from "../../BottomNavbar";
 import {
-    resetState,
     selectError,
     selectList,
     selectLoading,
@@ -34,9 +33,6 @@ const PeoplePage = () => {
             ? `https://api.themoviedb.org/3/search/person${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
             : `https://api.themoviedb.org/3/person/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
         );
-        return () => {
-            dispatch(resetState());
-        };
     }, [urlPageNumber, urlQuery, dispatch]);
 
     return (
