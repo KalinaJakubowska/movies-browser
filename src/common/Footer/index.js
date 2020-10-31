@@ -10,17 +10,23 @@ const Footer = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const sunriseTime = new Date(sunrise);
-        const sunsetTime = new Date(sunset);
+        const plSunriseTime = (new Date(sunrise)).getTime() + 3600000;
+        const plSunsetTime = (new Date(sunset)).getTime() + 3600000;
 
         const setTheme = () => {
-            const actualDate = new Date();
+            const actualTime = (new Date()).getTime();
 
-            if (sunriseTime.getTime() + 3600000 < actualDate.getTime() && actualDate.getTime() < sunsetTime.getTime() + 3600000) {
-                dispatch(setNormalTheme(true));
+            if (plSunriseTime < actualTime
+                && actualTime < plSunsetTime
+            ) {
+                if (!isNormalTheme) {
+                    dispatch(setNormalTheme(true));
+                }
             }
             else {
-                dispatch(setNormalTheme(false));
+                if (isNormalTheme) {
+                    dispatch(setNormalTheme(false));
+                }
             }
         };
 
@@ -35,7 +41,7 @@ const Footer = () => {
                 clearInterval(intervalId);
             }
         }
-    }, [isAutoTheme, sunrise, sunset, dispatch]);
+    }, [isAutoTheme, sunrise, sunset, isNormalTheme, dispatch]);
 
     return (
         <>
