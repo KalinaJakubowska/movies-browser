@@ -26,7 +26,7 @@ export const MobileContainer = styled(DesktopContainer)`
 
 export const Button = styled.button`
   padding: 10px;
-  margin: 0px 12px;
+  margin: 0px 6px;
   background: ${({theme}) => theme.colors.activeNavButton};
   border-radius: 5px;
   padding: 8px 16px 8px 16px;
@@ -47,7 +47,7 @@ export const Button = styled.button`
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     display: flex;
     padding: 8px 12px;
-    margin: 0 8px;
+    margin: 0 5px;
   }
 
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
