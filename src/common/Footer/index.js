@@ -10,8 +10,8 @@ const Footer = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const plSunriseTime = (new Date(sunrise)).getTime() + 3600000;
-        const plSunsetTime = (new Date(sunset)).getTime() + 3600000;
+        const plSunriseTime = (new Date(sunrise)).getTime();
+        const plSunsetTime = (new Date(sunset)).getTime();
 
         const setTheme = () => {
             const actualTime = (new Date()).getTime();
