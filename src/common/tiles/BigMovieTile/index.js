@@ -25,6 +25,8 @@ const BigMovieTile = ({
   production_countries,
   overview,
 }) => {
+  const date = new Date(release_date);
+
   return (
     <BigMovieWrapper as="div">
       <DesktopWrapper>
@@ -46,7 +48,7 @@ const BigMovieTile = ({
           )}
           {release_date && (
             <Detail>
-              <MarkedDetail>Release date: </MarkedDetail> {release_date}
+              <MarkedDetail>Release date: </MarkedDetail> {`${date.toLocaleDateString()}`}
             </Detail>
           )}
         </DetailsWrapper>
@@ -80,7 +82,7 @@ const BigMovieTile = ({
               )}
               {release_date && (
                 <Detail>
-                  <MarkedDetail>Release date: </MarkedDetail> {release_date}
+                  <MarkedDetail>Release date: </MarkedDetail> {`${date.toLocaleDateString()}`}
                 </Detail>
               )}
             </DetailsWrapper>
