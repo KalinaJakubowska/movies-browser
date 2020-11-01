@@ -6,10 +6,10 @@ export const BigMovieImage = styled(Image)`
   object-fit: cover;
   width: 312px;
   height: 464px;
-  margin: 0 40px 16px 0;
+  margin-right: 40px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    margin: 0 25px 0 0;
+    margin-right: 25px;
     float: unset;
     height: 316px;
     width: unset;
@@ -17,6 +17,6 @@ export const BigMovieImage = styled(Image)`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 169px;
-    margin: 0 16px 0 0;
+    margin-right: 16px;
   }
 `;
