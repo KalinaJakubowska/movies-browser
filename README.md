@@ -1,12 +1,12 @@
 # Movies Browser
 
-This  project is a group creation made by Kalina Jakubowska, Kamil Szewczyk and Konrad Kasperczyk. 
-[Live demo](https://kalinajakubowska.github.io/movie-browser/#/movies)
+This project is a group creation made by Kalina Jakubowska and Kamil Szewczyk.
 
+[Live demo](https://kalinajakubowska.github.io/movie-browser/#/movies)
 
 ## Tech Stack
 
-Current project was created with use of: 
+Current project was created with use of:
 - React
 - React Router
 - React Redux
@@ -28,8 +28,24 @@ Application allows to browse movies and actors based on external API, which is i
 Entire project is styled with use of Styled Components, and it is also adapt to follow Responsive Web Design Principles.
 There is a dropdown search window after typing in input for quicker and more comfortable searching process.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Example usage
 
+![Single person page view](https://github.com/KalinaJakubowska/movie-browser/blob/main/images/personPage.gif?raw=true)
+
+## Change of theme
+
+![Example theme changing gif](https://github.com/KalinaJakubowska/movie-browser/blob/main/images/themeChanging.gif?raw=true)
+
+## Searching
+
+![Example searching](https://github.com/KalinaJakubowska/movie-browser/blob/main/images/searching.gif?raw=true)
+
+## Sorting
+
+![Example sorting](https://github.com/KalinaJakubowska/movie-browser/blob/main/images/sorting.gif?raw=true)
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -57,4 +73,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
