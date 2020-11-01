@@ -10,14 +10,14 @@ const Footer = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const plSunriseTime = (new Date(sunrise)).getTime();
-        const plSunsetTime = (new Date(sunset)).getTime();
+        const sunriseTime = (new Date(sunrise)).getTime();
+        const sunsetTime = (new Date(sunset)).getTime();
 
         const setTheme = () => {
             const actualTime = (new Date()).getTime();
 
-            if (plSunriseTime < actualTime
-                && actualTime < plSunsetTime
+            if (sunriseTime < actualTime
+                && actualTime < sunsetTime
             ) {
                 if (!isNormalTheme) {
                     dispatch(setNormalTheme(true));
