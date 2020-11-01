@@ -8,6 +8,10 @@ export const Wrapper = styled(Link)`
   box-shadow: 0px 4px 12px ${({theme}) => theme.colors.shadow || "rgba(186, 199, 213, 0.5)"};
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.text};
+
+  &:hover {
+    filter: brightness(95%);
+  }
 `;
 
 export const Image = styled.img`
