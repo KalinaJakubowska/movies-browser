@@ -2,16 +2,16 @@ import React from "react";
 import Ratings from "../Ratings";
 import {
   BigTileHeader,
-  BigDetailsContainer,
   Detail,
   MarkedDetail,
   Description,
   DetailsWrapper,
-  MobileWrapper,
-  DesktopWrapper,
-  TopWrapper,
+  Container,
+  DesktopDisplayer,
+  MobileDisplayer,
+  BigTileWrapper,
 } from "../bigTilesStyles";
-import { BigMovieWrapper, BigMovieImage } from "./styled";
+import { BigMovieImage } from "./styled";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
 import Types from "../Types";
 
@@ -27,19 +27,24 @@ const BigMovieTile = ({
 }) => {
   const date = new Date(release_date);
 
+  const image = <BigMovieImage
+    src={
+      poster_path
+        ? `https://image.tmdb.org/t/p/w342${poster_path}`
+        : noPosterImage
+    }
+    alt={`Plakat filmu ${title}`}
+  />;
+
   return (
-    <BigMovieWrapper as="div">
-      <DesktopWrapper>
-        <BigMovieImage
-          src={
-            poster_path
-              ? `https://image.tmdb.org/t/p/w342${poster_path}`
-              : noPosterImage
-          }
-          alt={`Plakat filmu ${title}`}
-        />
-        {title && <BigTileHeader>{title}</BigTileHeader>}
+    <BigTileWrapper as="div">
+      <DesktopDisplayer>{image}</DesktopDisplayer>
+      <Container>
+        <MobileDisplayer>{image}</MobileDisplayer>
         <DetailsWrapper>
+          {title &&
+            <BigTileHeader>{title}</BigTileHeader>
+          }
           {production_countries && production_countries.length > 0 && (
             <Detail>
               <MarkedDetail>Production: </MarkedDetail>
@@ -51,52 +56,16 @@ const BigMovieTile = ({
               <MarkedDetail>Release date: </MarkedDetail> {`${date.toLocaleDateString()}`}
             </Detail>
           )}
-        </DetailsWrapper>
-        <Types genre_ids={genre_ids} />
-        <Ratings
-          vote_average={vote_average}
-          vote_count={vote_count}
-          big={true}
-        />
-        {overview && <Description>{overview}</Description>}
-      </DesktopWrapper>
-
-      <MobileWrapper>
-        <TopWrapper>
-          <BigMovieImage
-            src={
-              poster_path
-                ? `https://image.tmdb.org/t/p/w342${poster_path}`
-                : noPosterImage
-            }
-            alt={`Plakat filmu ${title}`}
+          <Types genre_ids={genre_ids} />
+          <Ratings
+            vote_average={vote_average}
+            vote_count={vote_count}
+            big={true}
           />
-          <BigDetailsContainer>
-            {title && <BigTileHeader>{title}</BigTileHeader>}
-            <DetailsWrapper>
-              {production_countries && production_countries.length > 0 && (
-                <Detail>
-                  <MarkedDetail>Production: </MarkedDetail>
-                  {production_countries.map(country => country.name).join(", ")}
-                </Detail>
-              )}
-              {release_date && (
-                <Detail>
-                  <MarkedDetail>Release date: </MarkedDetail> {`${date.toLocaleDateString()}`}
-                </Detail>
-              )}
-            </DetailsWrapper>
-            <Types genre_ids={genre_ids} />
-            <Ratings
-              vote_average={vote_average}
-              vote_count={vote_count}
-              big={true}
-            />
-          </BigDetailsContainer>
-        </TopWrapper>
-        {overview && <Description>{overview}</Description>}
-      </MobileWrapper>
-    </BigMovieWrapper>
+        </DetailsWrapper>
+      </Container>
+      {overview && <Description>{overview}</Description>}
+    </BigTileWrapper>
   );
 };
 
