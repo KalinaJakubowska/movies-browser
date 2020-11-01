@@ -22,6 +22,27 @@ export const BigTileWrapper = styled(Wrapper)`
   }
 `;
 
+export const Container = styled.span`
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+    display: flex;
+  }
+`;
+
+export const DetailsWrapper = styled.div`
+ display: grid;
+  height: fit-content;
+  grid-gap: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+    display: grid;
+    grid-gap: 12px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    grid-gap: 5px;
+  }
+`;
+
 export const BigTileHeader = styled.div`
   font-weight: 600;
   font-size: 36px;
@@ -36,23 +57,6 @@ export const BigTileHeader = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 16px;
-  }
-`;
-
-export const BigDetailsContainer = styled.div`
-  display: grid;
-  height: fit-content;
-  grid-gap: 24px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    display: grid;
-    margin-left: 28px;
-    grid-gap: 12px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    margin-left: 16px;
-    grid-gap: 5px;
   }
 `;
 
@@ -76,53 +80,10 @@ export const MarkedDetail = styled.span`
   color: ${({ theme }) => theme.colors.detailName};
 `;
 
-export const DetailsWrapper = styled.div`
-  margin-bottom: 24px;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Container = styled.span`
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    display: flex;
-  }
-`;
-
-export const MobileWrapper = styled.div`
-  display: none;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    display: block;
-  }
-`;
-
-export const TopWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  min-height: 171px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
-    margin-bottom: 20px;
-  }
-`;
-
-export const DesktopDisplayer = styled.span`
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-     display: none;
-  }
-`;
-
-export const MobileDisplayer = styled.span`
-  display: none;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-     display: unset;
-  }
-`;
-
 export const Description = styled.div`
   font-size: 20px;
   line-height: 160%;
+  margin-top: 40px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-weight: 400;

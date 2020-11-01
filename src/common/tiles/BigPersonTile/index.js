@@ -1,17 +1,14 @@
 import React from "react";
 import {
-
   BigTileHeader,
-  BigDetailsContainer,
   Detail,
   MarkedDetail,
   Description,
   DetailsWrapper,
-  MobileWrapper,
-  DesktopWrapper,
-  TopWrapper,
+  Container,
+  BigTileWrapper,
 } from "./../bigTilesStyles";
-import { BigPersonWrapper, BigTileImage } from "./styled";
+import { BigPersonImage } from "./styled";
 import noProfileImage from "./../../../assets/noPosterImage.svg";
 
 const BigPersonTile = ({
@@ -24,9 +21,9 @@ const BigPersonTile = ({
   const date = new Date(birthday);
 
   return (
-    <BigPersonWrapper as="div">
-      <DesktopWrapper>
-        <BigTileImage
+    <BigTileWrapper as="div">
+      <Container>
+        <BigPersonImage
           src={
             profile_path
               ? `https://image.tmdb.org/t/p/h632${profile_path}`
@@ -34,9 +31,8 @@ const BigPersonTile = ({
           }
           alt={`Zdjęcie ${name}`}
         />
-
-        {name && <BigTileHeader>{name}</BigTileHeader>}
         <DetailsWrapper>
+          {name && <BigTileHeader>{name}</BigTileHeader>}
           {birthday && (
             <Detail>
               <MarkedDetail>Date of birth: </MarkedDetail> {`${date.toLocaleDateString()}`}
@@ -48,39 +44,9 @@ const BigPersonTile = ({
             </Detail>
           )}
         </DetailsWrapper>
-        {biography && <Description>{biography}</Description>}
-      </DesktopWrapper>
-      <MobileWrapper>
-        <TopWrapper>
-          <BigTileImage
-            src={
-              profile_path
-                ? `https://image.tmdb.org/t/p/h632${profile_path}`
-                : noProfileImage
-            }
-            alt={`Zdjęcie ${name}`}
-          />
-
-          <BigDetailsContainer>
-            {name && <BigTileHeader>{name}</BigTileHeader>}
-            <DetailsWrapper>
-              {birthday && (
-                <Detail>
-                  <MarkedDetail>Date of birth: </MarkedDetail> {`${date.toLocaleDateString()}`}
-                </Detail>
-              )}
-              {place_of_birth && (
-                <Detail>
-                  <MarkedDetail>Place of birth: </MarkedDetail>{" "}
-                  {place_of_birth}
-                </Detail>
-              )}
-            </DetailsWrapper>
-          </BigDetailsContainer>
-        </TopWrapper>
-        {biography && <Description>{biography}</Description>}
-      </MobileWrapper>
-    </BigPersonWrapper>
+      </Container>
+      {biography && <Description>{biography}</Description>}
+    </BigTileWrapper>
   );
 };
 
