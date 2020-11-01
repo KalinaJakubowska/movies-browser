@@ -39,7 +39,7 @@ export const DetailsWrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    grid-gap: 5px;
+    grid-gap: 8px;
   }
 `;
 
