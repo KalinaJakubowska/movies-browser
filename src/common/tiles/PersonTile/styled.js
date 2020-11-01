@@ -61,12 +61,17 @@ export const PersonName = styled(Title)`
 `;
 
 export const Subtitle = styled.p`
-    font-size: ${({ textLength }) => (textLength > 20)
-        ? "12px"
-        : "16px"
-    };
-    line-height: 150%;
-    text-align: center;
-    color: ${({ theme }) => theme.colors.subtitle};
-    margin: 0;
+  font-size: ${({textLength}) => (textLength > 20 ? "12px" : "16px")};
+  line-height: 150%;
+  text-align: center;
+  color: ${({theme}) => theme.colors.subtitle};
+  margin: 0;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    font-size: 13px;
+  }
 `;
