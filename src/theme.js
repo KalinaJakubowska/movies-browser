@@ -7,6 +7,7 @@ const unchangeableColors = {
   pattensBlue: "#d6e4ff",
   scienceBlue: "#0044CC",
   shark: "#212327",
+  stormGray: "#74788B",
   waterloo: "#7E839A",
   whisper: "#F5F5FA",
   white: "#FFFFFF",
