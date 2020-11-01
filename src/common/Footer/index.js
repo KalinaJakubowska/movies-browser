@@ -46,17 +46,6 @@ const Footer = () => {
     return (
         <>
             <Wrapper>
-                <Container>
-                    Auto switch with sunset
-                    <SwitchButtonBox
-                        onClick={() => dispatch(setAutoTheme(!isAutoTheme))}
-                    >
-                        <SwitchAutoThemeButton
-                            isAutoTheme={isAutoTheme}
-                            isNormalTheme={isNormalTheme}
-                        />
-                    </SwitchButtonBox>
-                </Container>
                 <Container disabled={isAutoTheme}>
                     Light theme
                     <SwitchButtonBox
@@ -68,6 +57,18 @@ const Footer = () => {
                         />
                     </SwitchButtonBox>
                     Dark theme
+                </Container>
+                <Container>
+                    Auto off
+                    <SwitchButtonBox
+                        onClick={() => dispatch(setAutoTheme(!isAutoTheme))}
+                    >
+                        <SwitchAutoThemeButton
+                            isAutoTheme={isAutoTheme}
+                            isNormalTheme={isNormalTheme}
+                        />
+                    </SwitchButtonBox>
+                    Auto on
                 </Container>
             </Wrapper>
         </>
