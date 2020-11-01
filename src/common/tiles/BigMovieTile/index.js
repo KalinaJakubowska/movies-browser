@@ -7,8 +7,6 @@ import {
   Description,
   DetailsWrapper,
   Container,
-  DesktopDisplayer,
-  MobileDisplayer,
   BigTileWrapper,
 } from "../bigTilesStyles";
 import { BigMovieImage } from "./styled";
@@ -27,20 +25,17 @@ const BigMovieTile = ({
 }) => {
   const date = new Date(release_date);
 
-  const image = <BigMovieImage
-    src={
-      poster_path
-        ? `https://image.tmdb.org/t/p/w342${poster_path}`
-        : noPosterImage
-    }
-    alt={`Plakat filmu ${title}`}
-  />;
-
   return (
     <BigTileWrapper as="div">
-      <DesktopDisplayer>{image}</DesktopDisplayer>
       <Container>
-        <MobileDisplayer>{image}</MobileDisplayer>
+        <BigMovieImage
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w342${poster_path}`
+              : noPosterImage
+          }
+          alt={`Plakat filmu ${title}`}
+        />
         <DetailsWrapper>
           {title &&
             <BigTileHeader>{title}</BigTileHeader>
