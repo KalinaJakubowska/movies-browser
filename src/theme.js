@@ -43,7 +43,7 @@ export const darkTheme = {
     background: unchangeableColors.woodsmoke,
     detailName: unchangeableColors.stormGray,
     disabledNavButton: unchangeableColors.darkWoodsmoke,
-    shadow: unchangeableColors.shark,
+    shadow: unchangeableColors.darkWoodsmoke,
     subtitle: unchangeableColors.waterloo,
     text: unchangeableColors.frenchGray,
     tileBackground: unchangeableColors.black,

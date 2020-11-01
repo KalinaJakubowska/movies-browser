@@ -10,17 +10,23 @@ const Footer = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const sunriseTime = new Date(sunrise);
-        const sunsetTime = new Date(sunset);
+        const sunriseTime = (new Date(sunrise)).getTime();
+        const sunsetTime = (new Date(sunset)).getTime();
 
         const setTheme = () => {
-            const actualDate = new Date();
+            const actualTime = (new Date()).getTime();
 
-            if (sunriseTime.getTime() + 3600000 < actualDate.getTime() && actualDate.getTime() < sunsetTime.getTime() + 3600000) {
-                dispatch(setNormalTheme(true));
+            if (sunriseTime < actualTime
+                && actualTime < sunsetTime
+            ) {
+                if (!isNormalTheme) {
+                    dispatch(setNormalTheme(true));
+                }
             }
             else {
-                dispatch(setNormalTheme(false));
+                if (isNormalTheme) {
+                    dispatch(setNormalTheme(false));
+                }
             }
         };
 
@@ -35,22 +41,11 @@ const Footer = () => {
                 clearInterval(intervalId);
             }
         }
-    }, [isAutoTheme, sunrise, sunset, dispatch]);
+    }, [isAutoTheme, sunrise, sunset, isNormalTheme, dispatch]);
 
     return (
         <>
             <Wrapper>
-                <Container>
-                    Auto switch with sunset
-                    <SwitchButtonBox
-                        onClick={() => dispatch(setAutoTheme(!isAutoTheme))}
-                    >
-                        <SwitchAutoThemeButton
-                            isAutoTheme={isAutoTheme}
-                            isNormalTheme={isNormalTheme}
-                        />
-                    </SwitchButtonBox>
-                </Container>
                 <Container disabled={isAutoTheme}>
                     Light theme
                     <SwitchButtonBox
@@ -62,6 +57,18 @@ const Footer = () => {
                         />
                     </SwitchButtonBox>
                     Dark theme
+                </Container>
+                <Container>
+                    Auto off
+                    <SwitchButtonBox
+                        onClick={() => dispatch(setAutoTheme(!isAutoTheme))}
+                    >
+                        <SwitchAutoThemeButton
+                            isAutoTheme={isAutoTheme}
+                            isNormalTheme={isNormalTheme}
+                        />
+                    </SwitchButtonBox>
+                    Auto on
                 </Container>
             </Wrapper>
         </>

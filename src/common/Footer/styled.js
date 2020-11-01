@@ -2,20 +2,39 @@ import styled, { css } from "styled-components";
 
 export const Wrapper = styled.footer`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: auto;
   background: ${({ theme }) => theme.unchangeableColors.black};
   color: ${({ theme }) => theme.unchangeableColors.white};
-  height: 50px; /* The same value as main bottom-padding */
+  height: 100px; /* The same value as main bottom-padding */
   position: absolute;
   bottom: 0;
   width: 100%;
 `;
 
+export const Container = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  font-size: 16px;
+
+  ${({ disabled }) => disabled && css`
+    display: none;
+  `}
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    font-size: 12px;;
+  }
+`;
+
 export const SwitchButtonBox = styled.div`
   margin: 0 10px;
-  width: 90px;
+  width: 70px;
+  min-width: 50px;
   padding: 5px;
   border-radius: 5px;
   transition: all 0.5s;
@@ -32,20 +51,9 @@ export const SwitchButton = styled.button`
   width: 20px;
   padding: 0px;
   transition: all 0.5s;
-  transform: ${({ isNormalTheme }) => isNormalTheme ? "unset" : "translateX(300%)"};
+  margin-left: ${({ isNormalTheme }) => isNormalTheme ? "0" : "calc(100% - 20px)"};
 `;
 
 export const SwitchAutoThemeButton = styled(SwitchButton)`
-  transform: ${({ isAutoTheme }) => !isAutoTheme ? "unset" : "translateX(300%)"};
-`;
-
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 0 20px;
-
-  ${({ disabled }) => disabled && css`
-    display: none;
-  `}
-
+  margin-left: ${({ isAutoTheme }) => !isAutoTheme ? "0" : "calc(100% - 20px)"};
 `;

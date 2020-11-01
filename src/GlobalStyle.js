@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
    }
 
    main{
-      padding-bottom: 50px;
+      padding-bottom: 100px;
       /* The same value as Footer height */
    }
 

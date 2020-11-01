@@ -14,7 +14,7 @@ export const PersonWrapper = styled(Wrapper)`
 
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
     width: 174px;
-    padding: 8px 0;
+    padding: 8px;
   }
 
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {

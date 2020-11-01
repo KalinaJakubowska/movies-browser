@@ -4,6 +4,10 @@ import {BigTileWrapper} from "./../bigTilesStyles";
 
 export const BigMovieWrapper = styled(BigTileWrapper)`
   min-height: 544px;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+    min-height: unset;
+  }
 `;
 
 
