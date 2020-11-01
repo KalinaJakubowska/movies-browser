@@ -24,6 +24,7 @@ export const Rate = styled.span`
   font-size: ${({ big }) => big ? "22px" : "16px"};
   font-weight: 600;
   margin: 0 12px;
+  white-space: nowrap;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 14px;
@@ -32,7 +33,6 @@ export const Rate = styled.span`
 `;
 
 export const Votes = styled.span`
-  white-space: nowrap;
   font-size: 16px;
   color: ${({theme}) => theme.unchangeableColors.waterloo};
   font-weight: normal;
