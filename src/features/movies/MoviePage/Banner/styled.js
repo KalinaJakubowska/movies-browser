@@ -61,27 +61,12 @@ export const Title = styled.h1`
   -webkit-text-stroke: 0.5px ${({ theme }) => theme.unchangeableColors.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
-    margin-bottom: 5px;
-  }
-
-  @media (max-width: 1000px) {
-    font-size: 58px;
-  }
-
-  @media (max-width: 900px) {
-    font-size: 50px;
-  }
-
-  @media (max-width: 800px) {
-    font-size: 42px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    font-size: 34px;
+    font-size: 32px;
+    margin-bottom: 8px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 
