@@ -15,9 +15,9 @@ const unchangeableColors = {
 };
 
 const breakpoints = {
-  mobile: "450",
-  bigMobile: "710",
-  screenSmall: "1399",
+  mobile: "480",
+  bigMobile: "767",
+  screenSmall: "1368",
 };
 
 export const theme = {

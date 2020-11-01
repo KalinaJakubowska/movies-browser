@@ -4,18 +4,17 @@ export const Container = styled.div`
   height: 24px;
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
+  margin-top: 24px;
 
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
-    margin-bottom: 0;
+    margin-top: 8px;
   }
 `;
 
 export const Star = styled.img`
   width: 24px;
-  height: 22.87px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     width: 16px;
     height: 15.25px;
   }
@@ -25,9 +24,10 @@ export const Rate = styled.span`
   font-size: ${({ big }) => big ? "22px" : "16px"};
   font-weight: 600;
   margin: 0 12px;
+  white-space: nowrap;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    font-size: 13px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+    font-size: 14px;
     margin: 0 7px;
   }
 `;
@@ -38,7 +38,7 @@ export const Votes = styled.span`
   font-weight: normal;
   margin-right: 12px;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
-    font-size: 13px;
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    font-size: 12px;
   }
 `;
