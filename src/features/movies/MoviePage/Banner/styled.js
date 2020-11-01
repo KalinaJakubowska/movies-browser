@@ -73,7 +73,7 @@ export const Title = styled.h1`
 export const Star = styled.img`
   width: 40px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
     width: 22px;
   }
 
@@ -90,14 +90,13 @@ export const Count = styled.span`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
     line-height: 100%;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 22px;
-    margin-bottom: 4px;
     margin-right: 16px;
+    margin-bottom: 12px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    margin-bottom: 8px;
     font-size: 14px;
     margin-right: 8px;
   }
@@ -111,11 +110,7 @@ export const Votes = styled.span`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
     margin-bottom: 0;
-    font-size: 15px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
