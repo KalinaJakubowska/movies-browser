@@ -6,7 +6,7 @@ export const BigPersonWrapper = styled(BigTileWrapper)`
   min-height: 644px;
 
   @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
-    min-height: 519px;
+    min-height: unset;
   }
 `;
 
