@@ -4,6 +4,11 @@ export const Container = styled.div`
   height: 24px;
   display: flex;
   align-items: center;
+  margin-bottom: 24px;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const Star = styled.img`

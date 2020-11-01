@@ -4,6 +4,11 @@ export const TypesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-right: -8px;
+  margin-bottom: 24px;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const TypeBox = styled.div`
