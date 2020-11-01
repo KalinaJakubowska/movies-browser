@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BigTileWrapper,
+  
   BigTileHeader,
   BigDetailsContainer,
   Detail,
@@ -11,7 +11,7 @@ import {
   DesktopWrapper,
   TopWrapper,
 } from "./../bigTilesStyles";
-import {BigTileImage} from "./styled";
+import {BigPersonWrapper, BigTileImage} from "./styled";
 import noProfileImage from "./../../../assets/noPosterImage.svg";
 
 const BigPersonTile = ({
@@ -22,7 +22,7 @@ const BigPersonTile = ({
     biography,
 }) => {
     return (
-      <BigTileWrapper as="div">
+      <BigPersonWrapper as="div">
         <DesktopWrapper>
           <BigTileImage
             src={
@@ -33,7 +33,6 @@ const BigPersonTile = ({
             alt={`Zdjęcie ${name}`}
           />
 
-          <BigDetailsContainer>
             {name && <BigTileHeader>{name}</BigTileHeader>}
             <DetailsWrapper>
               {birthday && (
@@ -48,7 +47,6 @@ const BigPersonTile = ({
               )}
             </DetailsWrapper>
             {biography && <Description>{biography}</Description>}
-          </BigDetailsContainer>
         </DesktopWrapper>
         <MobileWrapper>
           <TopWrapper>
@@ -80,7 +78,7 @@ const BigPersonTile = ({
           </TopWrapper>
           {biography && <Description>{biography}</Description>}
         </MobileWrapper>
-      </BigTileWrapper>
+      </BigPersonWrapper>
     );
 };
 

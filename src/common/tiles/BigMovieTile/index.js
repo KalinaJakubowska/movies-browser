@@ -1,7 +1,6 @@
 import React from "react";
 import Ratings from "../Ratings";
 import {
-  BigTileWrapper,
   BigTileHeader,
   BigDetailsContainer,
   Detail,
@@ -12,7 +11,7 @@ import {
   DesktopWrapper,
   TopWrapper,
 } from "../bigTilesStyles";
-import { BigMovieImage } from "./styled";
+import {BigMovieWrapper, BigMovieImage} from "./styled";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
 import Types from "../Types";
 
@@ -27,7 +26,7 @@ const BigMovieTile = ({
     overview,
 }) => {
     return (
-      <BigTileWrapper as="div">
+      <BigMovieWrapper as="div">
         <DesktopWrapper>
           <BigMovieImage
             src={
@@ -37,7 +36,6 @@ const BigMovieTile = ({
             }
             alt={`Plakat filmu ${title}`}
           />
-          <BigDetailsContainer>
             {title && <BigTileHeader>{title}</BigTileHeader>}
             <DetailsWrapper>
               {production_countries && (
@@ -59,7 +57,6 @@ const BigMovieTile = ({
               big={true}
             />
             {overview && <Description>{overview}</Description>}
-          </BigDetailsContainer>
         </DesktopWrapper>
         <MobileWrapper>
           <TopWrapper>
@@ -96,7 +93,7 @@ const BigMovieTile = ({
           </TopWrapper>
           {overview && <Description>{overview}</Description>}
         </MobileWrapper>
-      </BigTileWrapper>
+      </BigMovieWrapper>
     );
 };
 
