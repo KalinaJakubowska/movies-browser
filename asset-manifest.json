@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/movie-browser/static/js/main.5525941d.chunk.js",
-    "main.js.map": "/movie-browser/static/js/main.5525941d.chunk.js.map",
+    "main.js": "/movie-browser/static/js/main.885983a0.chunk.js",
+    "main.js.map": "/movie-browser/static/js/main.885983a0.chunk.js.map",
     "runtime-main.js": "/movie-browser/static/js/runtime-main.6da0a001.js",
     "runtime-main.js.map": "/movie-browser/static/js/runtime-main.6da0a001.js.map",
-    "static/js/2.6da59b95.chunk.js": "/movie-browser/static/js/2.6da59b95.chunk.js",
-    "static/js/2.6da59b95.chunk.js.map": "/movie-browser/static/js/2.6da59b95.chunk.js.map",
+    "static/js/2.f1200c59.chunk.js": "/movie-browser/static/js/2.f1200c59.chunk.js",
+    "static/js/2.f1200c59.chunk.js.map": "/movie-browser/static/js/2.f1200c59.chunk.js.map",
     "index.html": "/movie-browser/index.html",
-    "precache-manifest.2c30cefb87407ffa1ac32deb41e42637.js": "/movie-browser/precache-manifest.2c30cefb87407ffa1ac32deb41e42637.js",
+    "precache-manifest.c94addc2382e2979b925b1293a2d92be.js": "/movie-browser/precache-manifest.c94addc2382e2979b925b1293a2d92be.js",
     "service-worker.js": "/movie-browser/service-worker.js",
-    "static/js/2.6da59b95.chunk.js.LICENSE.txt": "/movie-browser/static/js/2.6da59b95.chunk.js.LICENSE.txt",
+    "static/js/2.f1200c59.chunk.js.LICENSE.txt": "/movie-browser/static/js/2.f1200c59.chunk.js.LICENSE.txt",
     "static/media/danger.8815fed7.svg": "/movie-browser/static/media/danger.8815fed7.svg",
     "static/media/leftArrow.40944e6f.svg": "/movie-browser/static/media/leftArrow.40944e6f.svg",
     "static/media/loadingCircle.svg": "/movie-browser/static/media/loadingCircle.d057d55a.svg",
@@ -23,7 +23,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6da0a001.js",
-    "static/js/2.6da59b95.chunk.js",
-    "static/js/main.5525941d.chunk.js"
+    "static/js/2.f1200c59.chunk.js",
+    "static/js/main.885983a0.chunk.js"
   ]
 }
