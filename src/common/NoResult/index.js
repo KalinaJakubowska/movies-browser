@@ -3,6 +3,7 @@ import Header from "../Header";
 import { StyledPaperPlane, ImageBox } from "./styled";
 
 const NoResult = ({ urlQuery }) => {
+
   return (
     <>
       <Header>Sorry, there are no results for

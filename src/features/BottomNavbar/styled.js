@@ -27,15 +27,15 @@ export const MobileContainer = styled(DesktopContainer)`
 export const Button = styled.button`
   padding: 10px;
   margin: 0px 6px;
-  background: ${({theme}) => theme.colors.activeNavButton};
+  background: ${({ theme }) => theme.colors.activeNavButton};
   border-radius: 5px;
   padding: 8px 16px 8px 16px;
-  color: ${({theme}) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.text};
   border: none;
   cursor: pointer;
 
   &:disabled {
-    background: ${({theme}) => theme.colors.disabledNavButton};
+    background: ${({ theme }) => theme.colors.disabledNavButton};
     cursor: unset;
   }
 
@@ -44,13 +44,13 @@ export const Button = styled.button`
     transition: transform 0.4s;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: flex;
     padding: 8px 12px;
     margin: 0 5px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     margin: 0 4px;
   }
 `;

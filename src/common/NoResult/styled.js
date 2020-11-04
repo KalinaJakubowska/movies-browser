@@ -16,7 +16,7 @@ export const StyledPaperPlane = styled(PaperPlane)`
   text-align: center;
   max-height: 80vh;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     padding: 50px;
   }
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Header from "../Header";
 
 export const ErrorContainer = styled.div`
@@ -21,12 +21,12 @@ export const Text = styled.p`
   font-size: 22px;
   line-height: 28px;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 18px;
     line-height: 20px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 14px;
   }
 `;
@@ -37,6 +37,6 @@ export const StyledNavLink = styled(NavLink)`
   padding: 16px 24px;
   border-radius: 5px;
   text-decoration: none;
-  color: ${({theme}) => theme.unchangeableColors.white};
-  background-color: ${({theme}) => theme.colors.backButton};
+  color: ${({ theme }) => theme.unchangeableColors.white};
+  background-color: ${({ theme }) => theme.colors.backButton};
 `;

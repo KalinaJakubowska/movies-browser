@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   margin-top: 24px;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     margin-top: 8px;
   }
 `;
@@ -34,11 +34,11 @@ export const Rate = styled.span`
 
 export const Votes = styled.span`
   font-size: 16px;
-  color: ${({theme}) => theme.unchangeableColors.waterloo};
+  color: ${({ theme }) => theme.unchangeableColors.waterloo};
   font-weight: normal;
   margin-right: 12px;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 12px;
   }
 `;

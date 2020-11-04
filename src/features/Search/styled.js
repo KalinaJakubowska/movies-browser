@@ -5,12 +5,12 @@ export const Input = styled.input`
   width: 432px;
   max-width: 90vw;
   height: 48px;
-  border: 1px solid ${({theme}) => theme.colors.typeBox};
-  border-radius: ${({open, value}) =>
+  border: 1px solid ${({ theme }) => theme.colors.typeBox};
+  border-radius: ${({ open, value }) =>
     open && value ? "24px 24px 0 0" : "33px"};
   padding: 0;
   padding-left: 64px;
-  background-color: ${({theme}) => theme.unchangeableColors.white};
+  background-color: ${({ theme }) => theme.unchangeableColors.white};
 
   &:focus {
     outline: none;
@@ -19,7 +19,7 @@ export const Input = styled.input`
   &::placeholder {
     font-size: 16px;
     line-height: 150%;
-    color: ${({theme}) => theme.colors.subtitle};
+    color: ${({ theme }) => theme.colors.subtitle};
   }
 `;
 

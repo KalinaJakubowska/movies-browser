@@ -1,8 +1,8 @@
 import React from "react";
 
-import {useSelector} from "react-redux";
-import {selectNumberPages} from "../listSlice";
-import {usePageParameter, useReplacePageParameters} from "../pageParameters";
+import { useSelector } from "react-redux";
+import { selectNumberPages } from "../listSlice";
+import { usePageParameter, useReplacePageParameters } from "../pageParameters";
 import {
   DesktopContainer,
   MobileContainer,
@@ -54,7 +54,7 @@ const BottomNavbar = () => {
           disabled={page === numberPages}
           onClick={() => onButtonClick(numberPages)}>
           {"Last"}
-            <StyledArrowRight />
+          <StyledArrowRight />
         </Button>
       </DesktopContainer>
       <MobileContainer>
@@ -76,7 +76,7 @@ const BottomNavbar = () => {
           disabled={page === numberPages}
           onClick={() => onButtonClick(page + 1)}>
           <SingleArrow>
-              <StyledArrowRight />
+            <StyledArrowRight />
           </SingleArrow>
         </Button>
         <Button

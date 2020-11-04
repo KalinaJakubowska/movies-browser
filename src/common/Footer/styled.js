@@ -26,7 +26,7 @@ export const Container = styled.div`
     display: none;
   `}
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 12px;;
   }
 `;

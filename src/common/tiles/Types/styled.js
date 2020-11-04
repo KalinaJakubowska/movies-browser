@@ -5,7 +5,7 @@ export const TypesWrapper = styled.div`
   flex-wrap: wrap;
   margin-right: -8px;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     margin-bottom: 0;
   }
 `;

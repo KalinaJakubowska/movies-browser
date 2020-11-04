@@ -23,17 +23,17 @@ export const PeopleContainer = styled(MovieContainer)`
   grid-gap: 32px;
   grid-template-columns: repeat(auto-fill, 248px);
 
-  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
     grid-gap: 24px;
     grid-template-columns: repeat(auto-fill, 208px);
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fill, 173px);
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     grid-gap: 16px;
     grid-template-columns: repeat(auto-fill, 136px);
   }

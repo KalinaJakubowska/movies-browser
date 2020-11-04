@@ -7,10 +7,10 @@ export const Wrapper = styled.div`
   width: 100%;
   max-height: 500px;
   overflow: auto;
-  background-color: ${({theme}) => theme.colors.tileBackground};
-  color: ${({theme}) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.tileBackground};
+  color: ${({ theme }) => theme.colors.text};
   border-radius: 0 0 10px 10px;
-  border: 1px solid ${({theme}) => theme.colors.typeBox};
+  border: 1px solid ${({ theme }) => theme.colors.typeBox};
   border-top: none;
   z-index: 1;
 
@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({theme}) => theme.unchangeableColors.cornsilk};
+    background: ${({ theme }) => theme.unchangeableColors.cornsilk};
     border-radius: 10px;
   }
 `;

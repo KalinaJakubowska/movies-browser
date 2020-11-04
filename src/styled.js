@@ -8,11 +8,11 @@ export const Nav = styled.nav`
   color: ${({ theme }) => theme.unchangeableColors.white};
   min-height: 94px;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     min-height: 80px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     min-height: 60px;
   }
 `;
@@ -42,11 +42,11 @@ export const NavContainer = styled.div`
 export const NavContainerLeft = styled(NavContainer)`
   flex-wrap: nowrap;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     flex-basis: 60vw;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     flex-basis: 70%;
   }
 `;
@@ -54,13 +54,13 @@ export const NavContainerLeft = styled(NavContainer)`
 export const NavContainerRight = styled(NavContainer)`
   justify-content: flex-end;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
     flex-basis: 40%;
     justify-content: center;
     padding: 16px 0;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     flex-basis: 100%;
     justify-content: center;
   }
@@ -95,13 +95,13 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     border-radius: 33px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 13px;
     padding: 11px 18px;
     margin: 0 3px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 12px;
     padding: 8px 12px;
     margin: 0 3px;
@@ -110,24 +110,24 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
 
 export const Title = styled(Link)`
   text-decoration: none;
-  color: ${({theme}) => theme.unchangeableColors.white};
+  color: ${({ theme }) => theme.unchangeableColors.white};
   font-size: 24px;
   font-weight: 500;
   padding-left: 16px;
   margin: 0;
   display: flex;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
     margin-right: 30px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 18px;
     padding: 10px;
     margin-right: 22px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 13px;
     padding: 0;
     margin-right: 19px;
@@ -137,11 +137,11 @@ export const Title = styled(Link)`
 export const Logo = styled.img`
   height: 40px;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     height: 28px;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 17px;
   }
 `;

@@ -1,7 +1,8 @@
 import React from "react";
-import {StyledPaperPlane, ImageBox, SearchHeader} from "./styled";
+import { StyledPaperPlane, ImageBox, SearchHeader } from "./styled";
 
-const NoResultSearch = ({urlQuery}) => {
+const NoResultSearch = ({ urlQuery }) => {
+
   return (
     <>
       <SearchHeader>Sorry, there are no results for "{urlQuery}"</SearchHeader>
