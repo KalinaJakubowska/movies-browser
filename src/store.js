@@ -20,4 +20,9 @@ const store = configureStore({
 
 sagaMiddleware.run(rootSaga);
 
+store.subscribe(() => {
+    localStorage.setItem("theme", store.getState().common.isNormalTheme);
+    localStorage.setItem("autoTheme", store.getState().common.isAutoTheme);
+});
+
 export default store;

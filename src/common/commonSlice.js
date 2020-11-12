@@ -27,11 +27,9 @@ const commonSlice = createSlice({
         },
         setNormalTheme: (state, { payload }) => {
             state.isNormalTheme = payload;
-            localStorage.setItem("theme", payload);
         },
         setAutoTheme: (state, { payload }) => {
             state.isAutoTheme = payload;
-            localStorage.setItem("autoTheme", payload);
         },
         switchGenreEnabled: ({ genresList }, { payload: id }) => {
             const index = genresList.findIndex(genre => genre.id === id);
