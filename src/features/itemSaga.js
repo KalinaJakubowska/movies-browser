@@ -12,8 +12,8 @@ function* fetchItemHandler() {
     const activeExtraPath = store.getState().item.activeExtraPath;
 
     try {
-        const itemData = yield call(() => getApiData(activeItemPath));
-        const extraData = yield call(() => getApiData(activeExtraPath));
+        const itemData = yield call(getApiData, activeItemPath);
+        const extraData = yield call(getApiData, activeExtraPath);
         yield put(fetchItemSuccess({ itemData, extraData }));
     } catch (error) {
         yield put(fetchItemError());

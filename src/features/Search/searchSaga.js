@@ -11,7 +11,7 @@ function* fetchSearchHandler() {
     const activePath = store.getState().search.activePath;
 
     try {
-        const data = yield call(() => getApiData(activePath));
+        const data = yield call(getApiData, activePath);
         yield put(fetchSearchSuccess(data));
     } catch (error) {
         yield put(fetchSearchError());

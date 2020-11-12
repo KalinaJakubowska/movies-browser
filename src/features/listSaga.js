@@ -11,7 +11,7 @@ function* fetchListHandler() {
     const activePath = store.getState().list.activePath;
 
     try {
-        const data = yield call(() => getApiData(activePath));
+        const data = yield call(getApiData, activePath);
         yield put(fetchListSuccess(data));
     } catch (error) {
         yield put(fetchListError());
