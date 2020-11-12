@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as leftArrow } from "../../assets/leftArrow.svg";
-import { ReactComponent as rightArrow } from "../../assets/rightArrow.svg";
+import { ReactComponent as arrow } from "../../assets/rightArrow.svg";
 
 export const DesktopContainer = styled.div`
   width: fit-content;
@@ -15,7 +14,6 @@ export const MobileContainer = styled(DesktopContainer)`
   display: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    display: unset;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -25,7 +23,6 @@ export const MobileContainer = styled(DesktopContainer)`
 `;
 
 export const Button = styled.button`
-  padding: 10px;
   margin: 0px 6px;
   background: ${({ theme }) => theme.colors.activeNavButton};
   border-radius: 5px;
@@ -34,23 +31,22 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
 
-  &:disabled {
-    background: ${({ theme }) => theme.colors.disabledNavButton};
-    cursor: unset;
-  }
-
   &:hover {
     transform: scale(1.05);
     transition: transform 0.4s;
   }
 
+  &:disabled {
+    background: ${({ theme }) => theme.colors.disabledNavButton};
+    cursor: unset;
+    transform: unset;
+    transition: unset;
+    filter: brightness(60%);
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: flex;
     padding: 8px 12px;
-    margin: 0 5px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     margin: 0 4px;
   }
 `;
@@ -60,7 +56,6 @@ export const PageCounter = styled.span`
   line-height: 150%;
   color: ${({ theme }) => theme.colors.subtitle};
   margin: 0px 24px;
-  font-weight: 400;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size:10px;
@@ -79,13 +74,14 @@ export const Number = styled.span`
   }
 `;
 
-export const StyledArrowLeft = styled(leftArrow)`
-  margin-right: 8px;
+export const StyledArrowLeft = styled(arrow)`
+  margin: 0 8px 0 0;
   height: 11px;
   width: 7px;
+  transform: rotate(180deg);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    margin: 0 2px;
+    margin: 0;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
@@ -94,18 +90,12 @@ export const StyledArrowLeft = styled(leftArrow)`
   }
 `;
 
-export const StyledArrowRight = styled(rightArrow)`
-  height: 11px;
-  width:7px;
-  margin-left: 8px;
+export const StyledArrowRight = styled(StyledArrowLeft)`
+  transform: unset;
+  margin: 0 0 0 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    margin: 0 2px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    height:8px;
-    width: 5px;
+    margin: 0;
   }
 `;
 
