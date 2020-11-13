@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-import { selectNumberPages } from "../listSlice";
+import { selectMaxPageNumber } from "../listSlice";
 import { usePageParameter, useReplacePageParameters } from "../pageParameters";
 import {
   DesktopContainer,
@@ -18,7 +18,7 @@ import {
 const BottomNavbar = () => {
   const urlPageNumber = +usePageParameter("page");
   const page = urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber;
-  const numberPages = useSelector(selectNumberPages);
+  const maxPageNumber = useSelector(selectMaxPageNumber);
   const replacePageParameters = useReplacePageParameters();
 
   const onButtonClick = (page) => {
@@ -42,17 +42,17 @@ const BottomNavbar = () => {
           {"Previous"}
         </Button>
         <PageCounter>
-          Page <Number>{page}</Number> of <Number>{numberPages}</Number>
+          Page <Number>{page}</Number> of <Number>{maxPageNumber}</Number>
         </PageCounter>
         <Button
-          disabled={page === numberPages}
+          disabled={page === maxPageNumber}
           onClick={() => onButtonClick(page + 1)}>
           {"Next"}
           <StyledArrowRight />
         </Button>
         <Button
-          disabled={page === numberPages}
-          onClick={() => onButtonClick(numberPages)}>
+          disabled={page === maxPageNumber}
+          onClick={() => onButtonClick(maxPageNumber)}>
           {"Last"}
           <StyledArrowRight />
         </Button>
@@ -70,18 +70,18 @@ const BottomNavbar = () => {
           </SingleArrow>
         </Button>
         <PageCounter>
-          Page <Number>{page}</Number> of <Number>{numberPages}</Number>
+          Page <Number>{page}</Number> of <Number>{maxPageNumber}</Number>
         </PageCounter>
         <Button
-          disabled={page === numberPages}
+          disabled={page === maxPageNumber}
           onClick={() => onButtonClick(page + 1)}>
           <SingleArrow>
             <StyledArrowRight />
           </SingleArrow>
         </Button>
         <Button
-          disabled={page === numberPages}
-          onClick={() => onButtonClick(numberPages)}>
+          disabled={page === maxPageNumber}
+          onClick={() => onButtonClick(maxPageNumber)}>
           <DoubleArrow>
             <StyledArrowRight />
             <StyledArrowRight />
