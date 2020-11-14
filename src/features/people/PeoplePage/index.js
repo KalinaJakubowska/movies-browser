@@ -23,7 +23,7 @@ const PeoplePage = () => {
     const dispatch = useDispatch();
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
-    const popularPeople = useSelector(selectList);
+    const resultsPage = useSelector(selectList);
     const totalResults = useSelector(selectTotalResults);
     const loading = useSelector(selectLoading);
     const isError = useSelector(selectError);
@@ -41,7 +41,7 @@ const PeoplePage = () => {
                 ? <Loading />
                 : isError
                     ? <Error />
-                    : (!popularPeople.length
+                    : (!resultsPage.length
                         ? <NoResult urlQuery={urlQuery} />
                         : (
                             <>
@@ -52,7 +52,7 @@ const PeoplePage = () => {
                                     }
                                 </Header>
                                 <PeopleContainer>
-                                    {popularPeople.map(({ profile_path, id, name }) =>
+                                    {resultsPage.map(({ profile_path, id, name }) =>
                                         <PersonTile
                                             key={id}
                                             profile_path={profile_path}

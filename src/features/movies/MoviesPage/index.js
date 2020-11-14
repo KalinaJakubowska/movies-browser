@@ -25,7 +25,7 @@ const MoviesPage = () => {
     const dispatch = useDispatch();
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
-    const popularMovies = useSelector(selectList);
+    const resultsPage = useSelector(selectList);
     const totalResults = useSelector(selectTotalResults);
     const loading = useSelector(selectLoading);
     const isError = useSelector(selectError);
@@ -57,7 +57,7 @@ const MoviesPage = () => {
                 ? <Loading />
                 : isError
                     ? <Error />
-                    : (!popularMovies.length
+                    : (!resultsPage.length
                         ? <NoResult
                             urlQuery={urlQuery}
                         />
@@ -70,7 +70,7 @@ const MoviesPage = () => {
                                     }
                                 </Header>
                                 <MovieContainer>
-                                    {popularMovies.map(({
+                                    {resultsPage.map(({
                                         id,
                                         poster_path,
                                         title,
