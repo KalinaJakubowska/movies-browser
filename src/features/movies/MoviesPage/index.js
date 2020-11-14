@@ -38,10 +38,8 @@ const MoviesPage = () => {
 
         dispatch(setActivePath(urlQuery
             ? `https://api.themoviedb.org/3/search/movie${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
-            : genresList.map(genre => genre.enabled && genre)
-                ? `https://api.themoviedb.org/3/discover/movie${apiKey}${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}&with_genres=${enabledGenres.join(",")}`
-                : `https://api.themoviedb.org/3/movie/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
-        );
+            : `https://api.themoviedb.org/3/discover/movie${apiKey}${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}&with_genres=${enabledGenres.join(",")}`
+        ));
     }, [urlPageNumber, urlQuery, dispatch, genresList]);
 
     return (
