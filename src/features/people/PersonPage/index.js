@@ -53,7 +53,7 @@ const PersonPage = () => {
                             biography={personData.biography}
                         />
 
-                        {castCrewData.cast.length > 0 &&
+                        {castCrewData.cast && castCrewData.cast.length > 0 &&
                             <>
                                 <Header as="h2">
                                     Cast {`(${castCrewData.cast.length})`}
@@ -94,7 +94,7 @@ const PersonPage = () => {
                             </>
                         }
 
-                        {castCrewData.crew.length > 0 &&
+                        {castCrewData.crew && castCrewData.crew.length > 0 &&
                             <>
                                 <Header as="h2">
                                     Crew {`(${castCrewData.crew.length})`}
