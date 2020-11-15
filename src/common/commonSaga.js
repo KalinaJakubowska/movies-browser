@@ -5,8 +5,7 @@ import {
     fetchCommonSuccess,
     fetchCommon
 } from "./commonSlice";
-import apiKey from "./apiKey";
-import language from "./language";
+import { apiKey, language, apiBaseLink } from "./commonValues";
 
 function* fetchCommonHandler() {
     try {
@@ -14,7 +13,7 @@ function* fetchCommonHandler() {
         const { genres, sunData } = yield all({
             genres: call(
                 getApiData,
-                `https://api.themoviedb.org/3/genre/movie/list${apiKey}${language}`
+                `${apiBaseLink}genre/movie/list${apiKey}${language}`
             ),
             sunData: call(
                 getApiData,

@@ -13,8 +13,7 @@ import {
 import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
-import apiKey from "../../../common/apiKey";
-import language from "../../../common/language";
+import { apiKey, language, apiBaseLink } from "../../../common/commonValues";
 import NoResult from "./../../../common/NoResult"
 import Error from "../../../common/Error";
 import { WidthContainer } from "../../../styled";
@@ -37,8 +36,8 @@ const MoviesPage = () => {
             .map(genre => genre.id);
 
         dispatch(setActivePath(urlQuery
-            ? `https://api.themoviedb.org/3/search/movie${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
-            : `https://api.themoviedb.org/3/discover/movie${apiKey}${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}&with_genres=${enabledGenres.join(",")}`
+            ? `${apiBaseLink}search/movie${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
+            : `${apiBaseLink}discover/movie${apiKey}${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}&with_genres=${enabledGenres.join(",")}`
         ));
     }, [urlPageNumber, urlQuery, dispatch, genresList]);
 

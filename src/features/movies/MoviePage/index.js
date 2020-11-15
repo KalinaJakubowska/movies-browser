@@ -10,8 +10,7 @@ import {
   selectExtraData,
   selectError,
 } from "../../itemSlice";
-import language from "./../../../common/language";
-import apiKey from "./../../../common/apiKey";
+import { language, apiKey, apiBaseLink } from "./../../../common/commonValues";
 import { PeopleContainer } from "../../../common/tiles/TileContainer";
 import PersonTile from "../../../common/tiles/PersonTile";
 import Header from "../../../common/Header";
@@ -34,8 +33,8 @@ const MoviePage = () => {
   useEffect(() => {
     dispatch(
       setActivePath({
-        path1: `https://api.themoviedb.org/3/movie/${id}${apiKey}${language}`,
-        path2: `https://api.themoviedb.org/3/movie/${id}/credits${apiKey}`,
+        path1: `${apiBaseLink}movie/${id}${apiKey}${language}`,
+        path2: `${apiBaseLink}movie/${id}/credits${apiKey}`,
       }),
     );
     dispatch(setItemId(id));

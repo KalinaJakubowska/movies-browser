@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import apiKey from "../../../common/apiKey";
-import language from "../../../common/language";
+import { language, apiKey, apiBaseLink } from "../../../common/commonValues";
 import Loading from "../../../common/Loading";
 import { selectResults, setActiveSearchPath, selectLoading } from "./../searchSlice";
 import { Wrapper } from "./styled";
@@ -20,7 +19,7 @@ const DynamicResultsBox = ({ query }) => {
 
   useEffect(() => {
     dispatch(setActiveSearchPath(
-      `https://api.themoviedb.org/3/search/${pathText}${apiKey}${language}&query=${query}`
+      `${apiBaseLink}search/${pathText}${apiKey}${language}&query=${query}`
     ));
   }, [query, dispatch, pathText]);
 

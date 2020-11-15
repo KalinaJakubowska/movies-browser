@@ -13,8 +13,7 @@ import { PeopleContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile";
-import apiKey from "../../../common/apiKey";
-import language from "../../../common/language";
+import { apiKey, language, apiBaseLink } from "../../../common/commonValues";
 import NoResult from "../../../common/NoResult";
 import Error from "../../../common/Error";
 import { WidthContainer } from "../../../styled";
@@ -30,8 +29,8 @@ const PeoplePage = () => {
 
     useEffect(() => {
         dispatch(setActivePath(urlQuery
-            ? `https://api.themoviedb.org/3/search/person${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
-            : `https://api.themoviedb.org/3/person/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
+            ? `${apiBaseLink}search/person${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
+            : `${apiBaseLink}person/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
         );
     }, [urlPageNumber, urlQuery, dispatch]);
 
