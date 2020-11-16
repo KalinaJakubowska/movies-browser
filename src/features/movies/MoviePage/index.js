@@ -21,14 +21,15 @@ import Banner from "./Banner";
 import { WidthContainer } from "../../../styled";
 
 const MoviePage = () => {
+  const displayedItemsNumber = 10;
   const { id } = useParams();
   const dispatch = useDispatch();
   const movieData = useSelector(selectItemData);
   const castCrewData = useSelector(selectExtraData);
   const loading = useSelector(selectLoading);
   const isError = useSelector(selectError);
-  const [castDisplayed, setCastDisplayed] = useState(10);
-  const [crewDisplayed, setCrewDisplayed] = useState(10);
+  const [castDisplayed, setCastDisplayed] = useState(displayedItemsNumber);
+  const [crewDisplayed, setCrewDisplayed] = useState(displayedItemsNumber);
 
   useEffect(() => {
     dispatch(
@@ -89,8 +90,8 @@ const MoviePage = () => {
                     {castCrewData.cast.length > castDisplayed &&
                       <Button onClick={() => { setCastDisplayed(castCrewData.cast.length) }}>Show All</Button>
                     }
-                    {(castCrewData.cast.length > 10 && castCrewData.cast.length === castDisplayed) &&
-                      <Button onClick={() => { setCastDisplayed(10) }}>Hide</Button>
+                    {(castCrewData.cast.length > displayedItemsNumber && castCrewData.cast.length === castDisplayed) &&
+                      <Button onClick={() => { setCastDisplayed(displayedItemsNumber) }}>Hide</Button>
                     }
                   </>
 
@@ -116,8 +117,8 @@ const MoviePage = () => {
                     {castCrewData.crew.length > crewDisplayed &&
                       <Button onClick={() => { setCrewDisplayed(castCrewData.crew.length) }}>Show All</Button>
                     }
-                    {(castCrewData.crew.length > 10 && castCrewData.crew.length === crewDisplayed) &&
-                      <Button onClick={() => { setCrewDisplayed(10) }}>Hide</Button>
+                    {(castCrewData.crew.length > displayedItemsNumber && castCrewData.crew.length === crewDisplayed) &&
+                      <Button onClick={() => { setCrewDisplayed(displayedItemsNumber) }}>Hide</Button>
                     }
                   </>
                 }
