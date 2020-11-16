@@ -10,8 +10,7 @@ import {
   selectExtraData,
   selectError,
 } from "../../itemSlice";
-import language from "./../../../common/language";
-import apiKey from "./../../../common/apiKey";
+import { language, apiKey, apiBaseLink } from "./../../../common/commonValues";
 import { PeopleContainer } from "../../../common/tiles/TileContainer";
 import PersonTile from "../../../common/tiles/PersonTile";
 import Header from "../../../common/Header";
@@ -22,20 +21,21 @@ import Banner from "./Banner";
 import { WidthContainer } from "../../../styled";
 
 const MoviePage = () => {
+  const displayedItemsNumber = 10;
   const { id } = useParams();
   const dispatch = useDispatch();
   const movieData = useSelector(selectItemData);
   const castCrewData = useSelector(selectExtraData);
   const loading = useSelector(selectLoading);
   const isError = useSelector(selectError);
-  const [castDisplayed, setCastDisplayed] = useState(10);
-  const [crewDisplayed, setCrewDisplayed] = useState(10);
+  const [castDisplayed, setCastDisplayed] = useState(displayedItemsNumber);
+  const [crewDisplayed, setCrewDisplayed] = useState(displayedItemsNumber);
 
   useEffect(() => {
     dispatch(
       setActivePath({
-        path1: `https://api.themoviedb.org/3/movie/${id}${apiKey}${language}`,
-        path2: `https://api.themoviedb.org/3/movie/${id}/credits${apiKey}`,
+        path1: `${apiBaseLink}movie/${id}${apiKey}${language}`,
+        path2: `${apiBaseLink}movie/${id}/credits${apiKey}`,
       }),
     );
     dispatch(setItemId(id));
@@ -69,7 +69,7 @@ const MoviePage = () => {
                   overview={movieData.overview}
                 />
 
-                {castCrewData.cast.length > 0 &&
+                {castCrewData.cast && castCrewData.cast.length > 0 &&
                   <>
                     <Header as="h2">
                       Cast
@@ -90,13 +90,13 @@ const MoviePage = () => {
                     {castCrewData.cast.length > castDisplayed &&
                       <Button onClick={() => { setCastDisplayed(castCrewData.cast.length) }}>Show All</Button>
                     }
-                    {(castCrewData.cast.length > 10 && castCrewData.cast.length === castDisplayed) &&
-                      <Button onClick={() => { setCastDisplayed(10) }}>Hide</Button>
+                    {(castCrewData.cast.length > displayedItemsNumber && castCrewData.cast.length === castDisplayed) &&
+                      <Button onClick={() => { setCastDisplayed(displayedItemsNumber) }}>Hide</Button>
                     }
                   </>
 
                 }
-                {castCrewData.crew.length > 0 &&
+                {castCrewData.crew && castCrewData.crew.length > 0 &&
                   <>
                     <Header as="h2">
                       Crew
@@ -117,8 +117,8 @@ const MoviePage = () => {
                     {castCrewData.crew.length > crewDisplayed &&
                       <Button onClick={() => { setCrewDisplayed(castCrewData.crew.length) }}>Show All</Button>
                     }
-                    {(castCrewData.crew.length > 10 && castCrewData.crew.length === crewDisplayed) &&
-                      <Button onClick={() => { setCrewDisplayed(10) }}>Hide</Button>
+                    {(castCrewData.crew.length > displayedItemsNumber && castCrewData.crew.length === crewDisplayed) &&
+                      <Button onClick={() => { setCrewDisplayed(displayedItemsNumber) }}>Hide</Button>
                     }
                   </>
                 }

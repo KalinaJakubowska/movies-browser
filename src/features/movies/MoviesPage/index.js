@@ -13,8 +13,7 @@ import {
 import { MovieContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
-import apiKey from "../../../common/apiKey";
-import language from "../../../common/language";
+import { apiKey, language, apiBaseLink } from "../../../common/commonValues";
 import NoResult from "./../../../common/NoResult"
 import Error from "../../../common/Error";
 import { WidthContainer } from "../../../styled";
@@ -25,7 +24,7 @@ const MoviesPage = () => {
     const dispatch = useDispatch();
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
-    const popularMovies = useSelector(selectList);
+    const resultsPage = useSelector(selectList);
     const totalResults = useSelector(selectTotalResults);
     const loading = useSelector(selectLoading);
     const isError = useSelector(selectError);
@@ -37,11 +36,9 @@ const MoviesPage = () => {
             .map(genre => genre.id);
 
         dispatch(setActivePath(urlQuery
-            ? `https://api.themoviedb.org/3/search/movie${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
-            : genresList.map(genre => genre.enabled && genre)
-                ? `https://api.themoviedb.org/3/discover/movie${apiKey}${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}&with_genres=${enabledGenres.join(",")}`
-                : `https://api.themoviedb.org/3/movie/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
-        );
+            ? `${apiBaseLink}search/movie${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
+            : `${apiBaseLink}discover/movie${apiKey}${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}&with_genres=${enabledGenres.join(",")}`
+        ));
     }, [urlPageNumber, urlQuery, dispatch, genresList]);
 
     return (
@@ -57,7 +54,7 @@ const MoviesPage = () => {
                 ? <Loading />
                 : isError
                     ? <Error />
-                    : (!popularMovies.length
+                    : (!resultsPage.length
                         ? <NoResult
                             urlQuery={urlQuery}
                         />
@@ -70,7 +67,7 @@ const MoviesPage = () => {
                                     }
                                 </Header>
                                 <MovieContainer>
-                                    {popularMovies.map(({
+                                    {resultsPage.map(({
                                         id,
                                         poster_path,
                                         title,

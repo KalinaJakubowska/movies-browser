@@ -10,7 +10,7 @@ export const MovieContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     grid-gap: 20px;
-    grid-template-columns: unset;
+    grid-template-columns: 1fr;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { selectOpen, selectQuery, setOpen, setQuery } from "./../Search/searchSlice";
+import { selectOpen, selectQuery, setOpen, setQuery } from "./searchSlice";
 import { useReplacePageParameters } from "../pageParameters";
 import DynamicResultsBox from "./DynamicResultsBox";
 import { SearchBox, Input, StyledMagnifierButton } from "./styled";

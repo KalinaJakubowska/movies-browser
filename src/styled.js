@@ -89,10 +89,22 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
   color: ${({ theme }) => theme.unchangeableColors.white};
   padding: 13px 24px;
   margin: 0 10px;
+  border-radius: 33px;
+  transition: 0.15s;
+
+  &:hover {
+    background: ${({ theme }) => theme.unchangeableColors.white};
+    color: ${({ theme }) => theme.unchangeableColors.black};
+  }
 
   &.${activeClassName} {
     border: 1px solid ${({ theme }) => theme.unchangeableColors.white};
-    border-radius: 33px;
+    cursor: unset;
+
+    &:hover {
+      background: unset;
+      color: unset;
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {

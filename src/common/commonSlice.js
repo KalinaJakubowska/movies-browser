@@ -27,18 +27,13 @@ const commonSlice = createSlice({
         },
         setNormalTheme: (state, { payload }) => {
             state.isNormalTheme = payload;
-            localStorage.setItem("theme", payload);
         },
         setAutoTheme: (state, { payload }) => {
             state.isAutoTheme = payload;
-            localStorage.setItem("autoTheme", payload);
         },
         switchGenreEnabled: ({ genresList }, { payload: id }) => {
             const index = genresList.findIndex(genre => genre.id === id);
             genresList[index].enabled = !genresList[index].enabled;
-        },
-        resetEnabledGenres: (state) => {
-            state.genresList = state.genresList.map(genre => ({ ...genre, enabled: false }))
         },
     },
 });
@@ -50,7 +45,6 @@ export const {
     setNormalTheme,
     setAutoTheme,
     switchGenreEnabled,
-    resetEnabledGenres,
 } = commonSlice.actions;
 export const selectGenres = state => state.common.genresList;
 export const selectLoading = state => state.common.loading;
