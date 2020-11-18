@@ -40,7 +40,7 @@ const MoviesPage = () => {
             ? `${apiBaseLink}search/movie${apiKey}${language}&query=${urlQuery}&page=${page}`
             : `${apiBaseLink}discover/movie${apiKey}${language}&sort_by=popularity.desc&page=${page}&with_genres=${enabledGenres.join(",")}`
         ));
-    }, [urlPageNumber, urlQuery, dispatch, genresList]);
+    }, [urlPageNumber, urlQuery, dispatch, genresList, page]);
 
     return (
         <WidthContainer>

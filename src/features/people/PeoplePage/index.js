@@ -33,7 +33,7 @@ const PeoplePage = () => {
             ? `${apiBaseLink}search/person${apiKey}${language}&query=${urlQuery}&page=${page}`
             : `${apiBaseLink}person/popular${apiKey}${language}&page=${page}`)
         );
-    }, [urlPageNumber, urlQuery, dispatch]);
+    }, [urlPageNumber, urlQuery, dispatch, page]);
 
     return (
         <WidthContainer>
