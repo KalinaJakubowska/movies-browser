@@ -2,10 +2,10 @@ import React from "react";
 import Loading from "./../Loading";
 import Error from "./../Error";
 
-const Checker = ({ children, loading, isError }) => {
+const Checker = ({ children, isLoading, isError }) => {
     return (
         <>
-            {loading
+            {isLoading
                 ? <Loading />
                 : isError
                     ? <Error />
