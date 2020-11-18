@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Loading from "../../../common/Loading";
 import BottomNavbar from "../../BottomNavbar";
 import {
     selectError,
@@ -15,8 +14,8 @@ import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile";
 import { apiKey, language, apiBaseLink } from "../../../common/commonValues";
 import NoResult from "../../../common/NoResult";
-import Error from "../../../common/Error";
 import { WidthContainer } from "../../../styled";
+import Checker from "../../../common/Checker/checker";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -24,7 +23,7 @@ const PeoplePage = () => {
     const urlQuery = usePageParameter("search");
     const resultsPage = useSelector(selectList);
     const totalResults = useSelector(selectTotalResults);
-    const loading = useSelector(selectLoading);
+    const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
 
     useEffect(() => {
@@ -36,35 +35,32 @@ const PeoplePage = () => {
 
     return (
         <WidthContainer>
-            {loading
-                ? <Loading />
-                : isError
-                    ? <Error />
-                    : (!resultsPage.length
-                        ? <NoResult urlQuery={urlQuery} />
-                        : (
-                            <>
-                                <Header>
-                                    {urlQuery
-                                        ? `Search results for "${urlQuery}" (${totalResults})`
-                                        : "Popular People"
-                                    }
-                                </Header>
-                                <PeopleContainer>
-                                    {resultsPage.map(({ profile_path, id, name }) =>
-                                        <PersonTile
-                                            key={id}
-                                            profile_path={profile_path}
-                                            id={id}
-                                            name={name}
-                                        />
-                                    )}
-                                </PeopleContainer>
-                                <BottomNavbar />
-                            </>
-                        )
+            <Checker isLoading={isLoading} isError={isError}>
+                {!resultsPage.length
+                    ? <NoResult urlQuery={urlQuery} />
+                    : (
+                        <>
+                            <Header>
+                                {urlQuery
+                                    ? `Search results for "${urlQuery}" (${totalResults})`
+                                    : "Popular People"
+                                }
+                            </Header>
+                            <PeopleContainer>
+                                {resultsPage.map(({ profile_path, id, name }) =>
+                                    <PersonTile
+                                        key={id}
+                                        profile_path={profile_path}
+                                        id={id}
+                                        name={name}
+                                    />
+                                )}
+                            </PeopleContainer>
+                            <BottomNavbar />
+                        </>
                     )
-            }
+                }
+            </Checker>
         </WidthContainer>
     );
 };
