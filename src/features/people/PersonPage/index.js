@@ -13,7 +13,7 @@ import { language, apiKey, apiBaseLink } from "./../../../common/commonValues";
 import BigPersonTile from "../../../common/tiles/BigPersonTile";
 import MovieTile from "../../../common/tiles/MovieTile";
 import Header from "./../../../common/Header";
-import { MovieContainer } from "./../../../common/tiles/TileContainer";
+import { MovieContainer } from "./../../../common/tiles/tileContainers";
 import Button from "../../../common/Button.js";
 import { WidthContainer } from "../../../styled";
 import Checker from "../../../common/Checker/checker";

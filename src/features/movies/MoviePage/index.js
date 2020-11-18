@@ -10,7 +10,7 @@ import {
   selectError,
 } from "../../itemSlice";
 import { language, apiKey, apiBaseLink } from "./../../../common/commonValues";
-import { PeopleContainer } from "../../../common/tiles/TileContainer";
+import { PeopleContainer } from "../../../common/tiles/tileContainers";
 import PersonTile from "../../../common/tiles/PersonTile";
 import Header from "../../../common/Header";
 import BigMovieTile from "../../../common/tiles/BigMovieTile";

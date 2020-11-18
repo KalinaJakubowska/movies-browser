@@ -9,7 +9,7 @@ import {
     selectError,
     selectTotalResults,
 } from "../../listSlice";
-import { MovieContainer } from "./../../../common/tiles/TileContainer";
+import { MovieContainer } from "../../../common/tiles/tileContainers";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 import { apiKey, language, apiBaseLink } from "../../../common/commonValues";

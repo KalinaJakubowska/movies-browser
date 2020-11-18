@@ -8,7 +8,7 @@ import {
     selectTotalResults,
     setActivePath,
 } from "../../listSlice";
-import { PeopleContainer } from "./../../../common/tiles/TileContainer";
+import { PeopleContainer } from "../../../common/tiles/tileContainers";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile";
