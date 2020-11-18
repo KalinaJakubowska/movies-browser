@@ -18,11 +18,13 @@ import { WidthContainer } from "../../../styled";
 import { selectGenres } from "../../../common/commonSlice";
 import Types from "../../../common/tiles/Types";
 import Checker from "../../../common/Checker/checker";
+import { pageCondition } from "../../../common/pageCondition";
 
 const MoviesPage = () => {
     const dispatch = useDispatch();
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
+    const page = pageCondition(urlPageNumber);
     const resultsPage = useSelector(selectList);
     const totalResults = useSelector(selectTotalResults);
     const isLoading = useSelector(selectLoading);
@@ -35,8 +37,8 @@ const MoviesPage = () => {
             .map(genre => genre.id);
 
         dispatch(setActivePath(urlQuery
-            ? `${apiBaseLink}search/movie${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
-            : `${apiBaseLink}discover/movie${apiKey}${language}&sort_by=popularity.desc&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}&with_genres=${enabledGenres.join(",")}`
+            ? `${apiBaseLink}search/movie${apiKey}${language}&query=${urlQuery}&page=${page}`
+            : `${apiBaseLink}discover/movie${apiKey}${language}&sort_by=popularity.desc&page=${page}&with_genres=${enabledGenres.join(",")}`
         ));
     }, [urlPageNumber, urlQuery, dispatch, genresList]);
 

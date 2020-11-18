@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
+import { pageCondition } from "../../common/pageCondition";
 import { selectMaxPageNumber } from "../listSlice";
 import { usePageParameter, useReplacePageParameters } from "../pageParameters";
 import {
@@ -17,7 +18,7 @@ import {
 
 const BottomNavbar = () => {
   const urlPageNumber = +usePageParameter("page");
-  const page = urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber;
+  const page = pageCondition(urlPageNumber);
   const maxPageNumber = useSelector(selectMaxPageNumber);
   const replacePageParameters = useReplacePageParameters();
 

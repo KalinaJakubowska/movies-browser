@@ -16,10 +16,12 @@ import { apiKey, language, apiBaseLink } from "../../../common/commonValues";
 import NoResult from "../../../common/NoResult";
 import { WidthContainer } from "../../../styled";
 import Checker from "../../../common/Checker/checker";
+import { pageCondition } from "../../../common/pageCondition";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
     const urlPageNumber = +usePageParameter("page");
+    const page = pageCondition(urlPageNumber);
     const urlQuery = usePageParameter("search");
     const resultsPage = useSelector(selectList);
     const totalResults = useSelector(selectTotalResults);
@@ -28,8 +30,8 @@ const PeoplePage = () => {
 
     useEffect(() => {
         dispatch(setActivePath(urlQuery
-            ? `${apiBaseLink}search/person${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
-            : `${apiBaseLink}person/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
+            ? `${apiBaseLink}search/person${apiKey}${language}&query=${urlQuery}&page=${page}`
+            : `${apiBaseLink}person/popular${apiKey}${language}&page=${page}`)
         );
     }, [urlPageNumber, urlQuery, dispatch]);
 
