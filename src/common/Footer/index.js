@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectSunData, selectTheme, selectAutoTheme, setNormalTheme, setAutoTheme } from "../commonSlice";
+import { selectTheme, selectAutoTheme, setNormalTheme, setAutoTheme } from "../commonSlice";
+import { selectSunData } from "../sunsetSlice";
 import { Wrapper, SwitchButton, SwitchButtonBox, SwitchAutoThemeButton, Container } from "./styled";
 
 const Footer = () => {
