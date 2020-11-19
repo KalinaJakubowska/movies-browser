@@ -17,7 +17,7 @@ import MoviePage from "./features/movies/MoviePage";
 import PeoplePage from "./features/people/PeoplePage";
 import PersonPage from "./features/people/PersonPage";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCommon, selectTheme } from "./common/commonSlice";
+import { fetchCommon } from "./common/commonSlice";
 import Search from "./features/Search";
 import { selectOpen, setOpen } from "./features/Search/searchSlice";
 import logo from "./assets/logo.svg";
@@ -26,7 +26,7 @@ import { ThemeProvider } from "styled-components";
 import { theme, darkTheme } from "./theme";
 import { GlobalStyle } from "./GlobalStyle";
 import Checker from "./common/Checker/checker";
-import { selectLoading } from "./common/sunsetSlice";
+import { selectLoading, selectTheme } from "./common/sunsetSlice";
 
 function App() {
   const dispatch = useDispatch();
