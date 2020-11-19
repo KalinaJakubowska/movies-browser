@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
-    setActivePath,
     selectLoading,
     selectItemData,
-    setItemId,
+    fetchItem,
     selectExtraData,
     selectError,
 } from "../../itemSlice";
-import { language, apiKey, apiBaseLink } from "./../../../common/commonValues";
 import BigPersonTile from "../../../common/tiles/BigPersonTile";
 import MovieTile from "../../../common/tiles/MovieTile";
 import Header from "./../../../common/Header";
@@ -30,11 +28,7 @@ const PersonPage = () => {
     const [crewDisplayed, setCrewDisplayed] = useState(displayedItemsNumber);
 
     useEffect(() => {
-        dispatch(setActivePath({
-            path1: `${apiBaseLink}person/${id}${apiKey}${language}`,
-            path2: `${apiBaseLink}person/${id}/movie_credits${apiKey}${language}`,
-        }));
-        dispatch(setItemId(id));
+        dispatch(fetchItem({ id, type: "person" }));
     }, [id, dispatch])
 
     return (

@@ -6,15 +6,11 @@ const itemSlice = createSlice({
         itemData: [],
         extraData: [],
         loading: true,
-        itemId: undefined,
-        activeItemPath: "",
-        activeExtraPath: "",
         error: false,
     },
     reducers: {
-        setItemId: (state, { payload: id }) => {
+        fetchItem: state => {
             state.loading = true;
-            state.itemId = id;
         },
         fetchItemSuccess: (state, { payload: { itemData, extraData } }) => {
             state.itemData = itemData;
@@ -26,15 +22,11 @@ const itemSlice = createSlice({
             state.loading = false;
             state.error = true;
         },
-        setActivePath: (state, { payload: { path1, path2 } }) => {
-            state.activeItemPath = path1;
-            state.activeExtraPath = path2;
-        },
     },
 });
 
 export const {
-    setItemId,
+    fetchItem,
     fetchItemSuccess,
     fetchItemError,
     setActivePath,

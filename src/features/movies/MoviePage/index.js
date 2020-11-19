@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
-  setActivePath,
   selectLoading,
   selectItemData,
-  setItemId,
+  fetchItem,
   selectExtraData,
   selectError,
 } from "../../itemSlice";
-import { language, apiKey, apiBaseLink } from "./../../../common/commonValues";
 import { PeopleContainer } from "../../../common/tiles/tileContainers";
 import PersonTile from "../../../common/tiles/PersonTile";
 import Header from "../../../common/Header";
@@ -31,13 +29,7 @@ const MoviePage = () => {
   const [crewDisplayed, setCrewDisplayed] = useState(displayedItemsNumber);
 
   useEffect(() => {
-    dispatch(
-      setActivePath({
-        path1: `${apiBaseLink}movie/${id}${apiKey}${language}`,
-        path2: `${apiBaseLink}movie/${id}/credits${apiKey}`,
-      }),
-    );
-    dispatch(setItemId(id));
+    dispatch(fetchItem({ id, type: "movie" }));
   }, [id, dispatch]);
 
   return (
