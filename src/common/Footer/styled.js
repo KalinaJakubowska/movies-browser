@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Wrapper = styled.footer`
   display: flex;
@@ -21,10 +21,6 @@ export const Container = styled.div`
   align-items: center;
   margin: 0 20px;
   font-size: 16px;
-
-  ${({ disabled }) => disabled && css`
-    display: none;
-  `}
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 12px;;
