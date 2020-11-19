@@ -1,11 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectTheme, selectAutoTheme, setNormalTheme, setAutoTheme } from "../commonSlice";
-import { selectSunData } from "../sunsetSlice";
+import {
+    selectError,
+    selectSunData,
+    selectTheme,
+    selectAutoTheme,
+    setNormalTheme,
+    setAutoTheme
+} from "../sunsetSlice";
 import { Wrapper, SwitchButton, SwitchButtonBox, SwitchAutoThemeButton, Container } from "./styled";
 
 const Footer = () => {
     const isNormalTheme = useSelector(selectTheme);
+    const isSunsetError = useSelector(selectError);
     const isAutoTheme = useSelector(selectAutoTheme);
     const { sunset, sunrise } = useSelector(selectSunData);
     const dispatch = useDispatch();
@@ -47,30 +54,34 @@ const Footer = () => {
     return (
         <>
             <Wrapper>
-                <Container disabled={isAutoTheme}>
-                    Light theme
+                {!isAutoTheme &&
+                    <Container>
+                        Light theme
                     <SwitchButtonBox
-                        onClick={() => !isAutoTheme && dispatch(setNormalTheme(!isNormalTheme))}
-                    >
-                        <SwitchButton
-                            isAutoTheme={isAutoTheme}
-                            isNormalTheme={isNormalTheme}
-                        />
-                    </SwitchButtonBox>
+                            onClick={() => dispatch(setNormalTheme(!isNormalTheme))}
+                        >
+                            <SwitchButton
+                                isAutoTheme={isAutoTheme}
+                                isNormalTheme={isNormalTheme}
+                            />
+                        </SwitchButtonBox>
                     Dark theme
-                </Container>
-                <Container>
-                    Auto off
+                    </Container>
+                }
+                {isSunsetError ||
+                    <Container>
+                        Auto off
                     <SwitchButtonBox
-                        onClick={() => dispatch(setAutoTheme(!isAutoTheme))}
-                    >
-                        <SwitchAutoThemeButton
-                            isAutoTheme={isAutoTheme}
-                            isNormalTheme={isNormalTheme}
-                        />
-                    </SwitchButtonBox>
+                            onClick={() => dispatch(setAutoTheme(!isAutoTheme))}
+                        >
+                            <SwitchAutoThemeButton
+                                isAutoTheme={isAutoTheme}
+                                isNormalTheme={isNormalTheme}
+                            />
+                        </SwitchButtonBox>
                     Auto on
-                </Container>
+                    </Container>
+                }
             </Wrapper>
         </>
     );
