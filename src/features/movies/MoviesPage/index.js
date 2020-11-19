@@ -5,17 +5,16 @@ import MovieTile from "../../../common/tiles/MovieTile";
 import {
     selectList,
     selectLoading,
-    setActivePath,
     selectError,
     selectTotalResults,
+    fetchList,
 } from "../../listSlice";
 import { MovieContainer } from "../../../common/tiles/tileContainers";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
-import { apiKey, language, apiBaseLink } from "../../../common/commonValues";
 import NoResult from "./../../../common/NoResult"
 import { WidthContainer } from "../../../styled";
-import { selectGenres, selectEnabledGenres } from "../../../common/commonSlice";
+import { selectGenres } from "../../../common/commonSlice";
 import Types from "../../../common/tiles/Types";
 import Checker from "../../../common/Checker/checker";
 import { pageCondition } from "../../../common/pageCondition";
@@ -30,14 +29,10 @@ const MoviesPage = () => {
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
     const genresList = useSelector(selectGenres);
-    const enabledGenres = useSelector(selectEnabledGenres);
 
     useEffect(() => {
-        dispatch(setActivePath(urlQuery
-            ? `${apiBaseLink}search/movie${apiKey}${language}&query=${urlQuery}&page=${page}`
-            : `${apiBaseLink}discover/movie${apiKey}${language}&sort_by=popularity.desc&page=${page}&with_genres=${enabledGenres.join(",")}`
-        ));
-    }, [urlPageNumber, urlQuery, dispatch, genresList, page]);
+        dispatch(fetchList({ page, urlQuery, type: "movies" }));
+    }, [urlQuery, dispatch, genresList, page]);
 
     return (
         <WidthContainer>

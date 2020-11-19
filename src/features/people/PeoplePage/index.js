@@ -6,13 +6,12 @@ import {
     selectList,
     selectLoading,
     selectTotalResults,
-    setActivePath,
+    fetchList,
 } from "../../listSlice";
 import { PeopleContainer } from "../../../common/tiles/tileContainers";
 import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile";
-import { apiKey, language, apiBaseLink } from "../../../common/commonValues";
 import NoResult from "../../../common/NoResult";
 import { WidthContainer } from "../../../styled";
 import Checker from "../../../common/Checker/checker";
@@ -29,11 +28,8 @@ const PeoplePage = () => {
     const isError = useSelector(selectError);
 
     useEffect(() => {
-        dispatch(setActivePath(urlQuery
-            ? `${apiBaseLink}search/person${apiKey}${language}&query=${urlQuery}&page=${page}`
-            : `${apiBaseLink}person/popular${apiKey}${language}&page=${page}`)
-        );
-    }, [urlPageNumber, urlQuery, dispatch, page]);
+        dispatch(fetchList({ urlQuery, page, type: "people" }))
+    }, [urlQuery, dispatch, page]);
 
     return (
         <WidthContainer>
