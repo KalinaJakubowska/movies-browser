@@ -6,11 +6,13 @@ const listSlice = createSlice({
         list: [],
         loading: true,
         maxPageNumber: undefined,
-        activePath: "",
         error: false,
         totalResults: undefined,
     },
     reducers: {
+        fetchList: state => {
+            state.loading = true;
+        },
         fetchListSuccess: (state, { payload: list }) => {
             state.list = list.results;
             state.maxPageNumber = list.total_pages;
@@ -22,17 +24,13 @@ const listSlice = createSlice({
             state.loading = false;
             state.error = true;
         },
-        setActivePath: (state, { payload: name }) => {
-            state.activePath = name;
-            state.loading = true;
-        },
     },
 });
 
 export const {
     fetchListSuccess,
     fetchListError,
-    setActivePath,
+    fetchList,
 } = listSlice.actions;
 export const selectList = state => state.list.list;
 export const selectLoading = state => state.list.loading;

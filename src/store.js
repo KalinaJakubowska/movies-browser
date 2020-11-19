@@ -3,6 +3,7 @@ import listReducer from "./features/listSlice";
 import itemReducer from "./features/itemSlice";
 import searchReducer from "./features/Search/searchSlice";
 import commonReducer from "./common/commonSlice";
+import sunsetReducer from "./common/sunsetSlice";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./rootSaga";
 
@@ -14,6 +15,7 @@ const store = configureStore({
         item: itemReducer,
         common: commonReducer,
         search: searchReducer,
+        sunset: sunsetReducer,
     },
     middleware: [sagaMiddleware],
 });
@@ -21,8 +23,8 @@ const store = configureStore({
 sagaMiddleware.run(rootSaga);
 
 store.subscribe(() => {
-    localStorage.setItem("theme", store.getState().common.isNormalTheme);
-    localStorage.setItem("autoTheme", store.getState().common.isAutoTheme);
+    localStorage.setItem("theme", store.getState().sunset.isNormalTheme);
+    localStorage.setItem("autoTheme", store.getState().sunset.isAutoTheme);
 });
 
 export default store;
