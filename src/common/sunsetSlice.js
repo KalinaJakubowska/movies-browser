@@ -26,5 +26,6 @@ export const {
     fetchSunsetError,
 } = sunsetSlice.actions;
 export const selectSunData = state => state.sunset.sunData;
+export const selectLoading = state => state.sunset.loading;
 
 export default sunsetSlice.reducer;
