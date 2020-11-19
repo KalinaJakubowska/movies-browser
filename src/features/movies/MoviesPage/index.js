@@ -15,7 +15,7 @@ import { usePageParameter } from "../../pageParameters";
 import { apiKey, language, apiBaseLink } from "../../../common/commonValues";
 import NoResult from "./../../../common/NoResult"
 import { WidthContainer } from "../../../styled";
-import { selectGenres } from "../../../common/commonSlice";
+import { selectGenres, selectEnabledGenres } from "../../../common/commonSlice";
 import Types from "../../../common/tiles/Types";
 import Checker from "../../../common/Checker/checker";
 import { pageCondition } from "../../../common/pageCondition";
@@ -30,12 +30,9 @@ const MoviesPage = () => {
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
     const genresList = useSelector(selectGenres);
+    const enabledGenres = useSelector(selectEnabledGenres);
 
     useEffect(() => {
-        const enabledGenres = genresList
-            .filter(genre => genre.enabled && genre.id)
-            .map(genre => genre.id);
-
         dispatch(setActivePath(urlQuery
             ? `${apiBaseLink}search/movie${apiKey}${language}&query=${urlQuery}&page=${page}`
             : `${apiBaseLink}discover/movie${apiKey}${language}&sort_by=popularity.desc&page=${page}&with_genres=${enabledGenres.join(",")}`
