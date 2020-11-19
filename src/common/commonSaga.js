@@ -3,7 +3,7 @@ import { getApiData } from "../getApiData";
 import {
     fetchCommonError,
     fetchCommonSuccess,
-    fetchCommon
+    fetchCommon,
 } from "./commonSlice";
 import {
     fetchSunsetError,
