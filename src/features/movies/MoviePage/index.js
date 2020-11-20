@@ -7,6 +7,7 @@ import {
   fetchItem,
   selectExtraData,
   selectError,
+  resetState,
 } from "../../itemSlice";
 import { PeopleContainer } from "../../../common/tiles/tileContainers";
 import PersonTile from "../../../common/tiles/PersonTile";
@@ -30,19 +31,20 @@ const MoviePage = () => {
 
   useEffect(() => {
     dispatch(fetchItem({ id, type: "movie" }));
+
+    return () => resetState();
   }, [id, dispatch]);
 
   return (
-
-    <Checker isLoading={isLoading} isError={isError} >
-      {movieData.backdrop_path &&
+    <Checker isLoading={isLoading} isError={isError}>
+      {movieData.backdrop_path && (
         <Banner
           title={movieData.title}
           backdrop_path={movieData.backdrop_path}
           vote_average={movieData.vote_average}
           vote_count={movieData.vote_count}
         />
-      }
+      )}
       <WidthContainer>
         <BigMovieTile
           poster_path={movieData.poster_path}
@@ -50,16 +52,16 @@ const MoviePage = () => {
           release_date={movieData.release_date}
           vote_average={movieData.vote_average}
           vote_count={movieData.vote_count}
-          genre_ids={movieData.genres && movieData.genres.map(genre => genre.id)}
+          genre_ids={
+            movieData.genres && movieData.genres.map((genre) => genre.id)
+          }
           production_countries={movieData.production_countries}
           overview={movieData.overview}
         />
 
-        {castCrewData.cast && castCrewData.cast.length > 0 &&
+        {castCrewData.cast && castCrewData.cast.length > 0 && (
           <>
-            <Header as="h2">
-              Cast
-                    </Header>
+            <Header as="h2">Cast</Header>
             <PeopleContainer>
               {castCrewData.cast
                 .slice(0, castDisplayed)
@@ -73,20 +75,30 @@ const MoviePage = () => {
                   />
                 ))}
             </PeopleContainer>
-            {castCrewData.cast.length > castDisplayed &&
-              <Button onClick={() => { setCastDisplayed(castCrewData.cast.length) }}>Show All</Button>
-            }
-            {(castCrewData.cast.length > displayedItemsNumber && castCrewData.cast.length === castDisplayed) &&
-              <Button onClick={() => { setCastDisplayed(displayedItemsNumber) }}>Hide</Button>
-            }
+            {castCrewData.cast.length > castDisplayed && (
+              <Button
+                onClick={() => {
+                  setCastDisplayed(castCrewData.cast.length);
+                }}
+              >
+                Show All
+              </Button>
+            )}
+            {castCrewData.cast.length > displayedItemsNumber &&
+              castCrewData.cast.length === castDisplayed && (
+                <Button
+                  onClick={() => {
+                    setCastDisplayed(displayedItemsNumber);
+                  }}
+                >
+                  Hide
+                </Button>
+              )}
           </>
-
-        }
-        {castCrewData.crew && castCrewData.crew.length > 0 &&
+        )}
+        {castCrewData.crew && castCrewData.crew.length > 0 && (
           <>
-            <Header as="h2">
-              Crew
-            </Header>
+            <Header as="h2">Crew</Header>
             <PeopleContainer>
               {castCrewData.crew
                 .slice(0, crewDisplayed)
@@ -100,14 +112,27 @@ const MoviePage = () => {
                   />
                 ))}
             </PeopleContainer>
-            {castCrewData.crew.length > crewDisplayed &&
-              <Button onClick={() => { setCrewDisplayed(castCrewData.crew.length) }}>Show All</Button>
-            }
-            {(castCrewData.crew.length > displayedItemsNumber && castCrewData.crew.length === crewDisplayed) &&
-              <Button onClick={() => { setCrewDisplayed(displayedItemsNumber) }}>Hide</Button>
-            }
+            {castCrewData.crew.length > crewDisplayed && (
+              <Button
+                onClick={() => {
+                  setCrewDisplayed(castCrewData.crew.length);
+                }}
+              >
+                Show All
+              </Button>
+            )}
+            {castCrewData.crew.length > displayedItemsNumber &&
+              castCrewData.crew.length === crewDisplayed && (
+                <Button
+                  onClick={() => {
+                    setCrewDisplayed(displayedItemsNumber);
+                  }}
+                >
+                  Hide
+                </Button>
+              )}
           </>
-        }
+        )}
       </WidthContainer>
     </Checker>
   );
