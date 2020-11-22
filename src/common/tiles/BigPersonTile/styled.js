@@ -3,7 +3,7 @@ import { Image } from "./../tileStyles";
 
 export const BigPersonImage = styled(Image)`
   float: left;
-  object-fit: contain;
+  object-fit: cover;
   height: 564px;
   margin-right: 40px;
 
@@ -13,7 +13,7 @@ export const BigPersonImage = styled(Image)`
   }
 
   @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
-       height: 300px;
+    height: 300px;
   }
 
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {

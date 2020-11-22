@@ -6,7 +6,7 @@ import {
     PersonName,
     Subtitle,
 } from "./styled";
-import noProfileImage from "./../../../assets/noPosterImage.svg"
+import noProfileImage from "./../../../assets/noProfileImage.svg";
 
 const PersonTile = ({ profile_path, id, name, subtitle = "" }) => {
     return (
