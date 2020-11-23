@@ -9,7 +9,7 @@ import {
   BigTileWrapper,
 } from "./../bigTilesStyles";
 import { BigPersonImage } from "./styled";
-import noProfileImage from "./../../../assets/noPosterImage.svg";
+import noProfileImage from "./../../../assets/noProfileImage.svg";
 
 const BigPersonTile = ({
   profile_path,
