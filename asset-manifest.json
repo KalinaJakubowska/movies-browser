@@ -1,29 +1,28 @@
 {
   "files": {
-    "main.js": "/movie-browser/static/js/main.885983a0.chunk.js",
-    "main.js.map": "/movie-browser/static/js/main.885983a0.chunk.js.map",
+    "main.js": "/movie-browser/static/js/main.40046634.chunk.js",
+    "main.js.map": "/movie-browser/static/js/main.40046634.chunk.js.map",
     "runtime-main.js": "/movie-browser/static/js/runtime-main.6da0a001.js",
     "runtime-main.js.map": "/movie-browser/static/js/runtime-main.6da0a001.js.map",
-    "static/js/2.f1200c59.chunk.js": "/movie-browser/static/js/2.f1200c59.chunk.js",
-    "static/js/2.f1200c59.chunk.js.map": "/movie-browser/static/js/2.f1200c59.chunk.js.map",
+    "static/js/2.530b5e53.chunk.js": "/movie-browser/static/js/2.530b5e53.chunk.js",
+    "static/js/2.530b5e53.chunk.js.map": "/movie-browser/static/js/2.530b5e53.chunk.js.map",
     "index.html": "/movie-browser/index.html",
-    "precache-manifest.9e5ed1385addd13b5c9992b2b6c2e85c.js": "/movie-browser/precache-manifest.9e5ed1385addd13b5c9992b2b6c2e85c.js",
+    "precache-manifest.a9ab7f22bca039f7aa4bc5e2f112a798.js": "/movie-browser/precache-manifest.a9ab7f22bca039f7aa4bc5e2f112a798.js",
     "service-worker.js": "/movie-browser/service-worker.js",
-    "static/js/2.f1200c59.chunk.js.LICENSE.txt": "/movie-browser/static/js/2.f1200c59.chunk.js.LICENSE.txt",
+    "static/js/2.530b5e53.chunk.js.LICENSE.txt": "/movie-browser/static/js/2.530b5e53.chunk.js.LICENSE.txt",
     "static/media/danger.8815fed7.svg": "/movie-browser/static/media/danger.8815fed7.svg",
-    "static/media/leftArrow.40944e6f.svg": "/movie-browser/static/media/leftArrow.40944e6f.svg",
     "static/media/loadingCircle.svg": "/movie-browser/static/media/loadingCircle.d057d55a.svg",
     "static/media/logo.svg": "/movie-browser/static/media/logo.d998400d.svg",
     "static/media/magnifier.svg": "/movie-browser/static/media/magnifier.ab39462f.svg",
     "static/media/noPosterImage.svg": "/movie-browser/static/media/noPosterImage.e8d1851c.svg",
     "static/media/noProfileImage.svg": "/movie-browser/static/media/noProfileImage.b6c0d625.svg",
-    "static/media/noResultImage.4cfeea15.svg": "/movie-browser/static/media/noResultImage.4cfeea15.svg",
+    "static/media/noResultImage.5bb66e4a.svg": "/movie-browser/static/media/noResultImage.5bb66e4a.svg",
     "static/media/rightArrow.eaef6aac.svg": "/movie-browser/static/media/rightArrow.eaef6aac.svg",
     "static/media/star.svg": "/movie-browser/static/media/star.b489e613.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6da0a001.js",
-    "static/js/2.f1200c59.chunk.js",
-    "static/js/main.885983a0.chunk.js"
+    "static/js/2.530b5e53.chunk.js",
+    "static/js/main.40046634.chunk.js"
   ]
 }
