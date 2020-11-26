@@ -10,6 +10,13 @@ export const Button = styled(Link)`
   color: ${({ theme }) => theme.unchangeableColors.white};
   background-color: ${({ theme }) => theme.colors.backButton};
   margin-bottom: 12px;
+  border: none;
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.01);
+    filter: brightness(1.05);
+  }
 
   ${({ big }) =>
     big &&
