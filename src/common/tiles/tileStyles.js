@@ -20,6 +20,7 @@ export const Image = styled.img`
   flex-shrink: 0;
   object-fit: cover;
   object-position: top;
+  margin-bottom: 16px;
 `;
 
 export const Container = styled.div`

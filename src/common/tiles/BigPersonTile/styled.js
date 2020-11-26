@@ -1,11 +1,8 @@
 import styled from "styled-components";
-import { Image } from "./../tileStyles";
+import { BigImage } from "./../bigTilesStyles";
 
-export const BigPersonImage = styled(Image)`
-  float: left;
-  object-fit: cover;
+export const BigPersonImage = styled(BigImage)`
   height: 564px;
-  margin-right: 40px;
 
   @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
     height: 439px;

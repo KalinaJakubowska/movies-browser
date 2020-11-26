@@ -24,7 +24,6 @@ export const PersonWrapper = styled(Wrapper)`
 
 export const PersonImage = styled(Image)`
   width: 208px;
-  margin-bottom: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
     width: 176px;
