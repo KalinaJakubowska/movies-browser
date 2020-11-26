@@ -19,12 +19,9 @@ export const GlobalStyle = createGlobalStyle`
       font-family: 'Poppins', sans-serif;
    }
 
-   main{
-      padding-bottom: ${footerHeight + 50}px;
-   }
-
    #root {
       min-height: 100vh;
+      padding-bottom: ${footerHeight + 50}px;
       position: relative;
    }
 `;

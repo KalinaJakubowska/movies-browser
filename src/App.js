@@ -43,7 +43,7 @@ function App() {
       <GlobalStyle />
       <Checker isLoading={isSunsetLoading}>
         <HashRouter>
-          <main onClick={() => isOpen && dispatch(setOpen(false))}>
+          <div onClick={() => isOpen && dispatch(setOpen(false))}>
             <Nav>
               <WidthNavContainer>
                 <NavContainer>
@@ -83,7 +83,7 @@ function App() {
                 <Redirect to="/movies" />
               </Route>
             </Switch>
-          </main>
+          </div>
         </HashRouter>
         <Footer />
       </Checker>
