@@ -18,6 +18,8 @@ export const Image = styled.img`
   display: block;
   border-radius: 5px;
   flex-shrink: 0;
+  object-fit: cover;
+  object-position: top;
 `;
 
 export const Container = styled.div`
