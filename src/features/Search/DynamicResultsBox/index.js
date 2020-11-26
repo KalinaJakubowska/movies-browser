@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { language, apiKey, apiBaseLink } from "../../../common/commonValues";
 import Loading from "../../../common/Loading";
-import { selectResults, setActiveSearchPath, selectLoading } from "./../searchSlice";
+import {
+  selectResults,
+  setActiveSearchPath,
+  selectLoading,
+} from "./../searchSlice";
 import { Wrapper } from "./styled";
 import NoResultSearch from "./../../../common/NoResultSearch";
 import MiniTile from "../../../common/tiles/MiniTile";
@@ -18,9 +22,11 @@ const DynamicResultsBox = ({ query }) => {
   const pathText = location.pathname.includes("movie") ? "movie" : "person";
 
   useEffect(() => {
-    dispatch(setActiveSearchPath(
-      `${apiBaseLink}search/${pathText}${apiKey}${language}&query=${query}`
-    ));
+    dispatch(
+      setActiveSearchPath(
+        `${apiBaseLink}search/${pathText}${apiKey}${language}&query=${query}`
+      )
+    );
   }, [query, dispatch, pathText]);
 
   return (
@@ -30,30 +36,29 @@ const DynamicResultsBox = ({ query }) => {
       ) : !results.length ? (
         <NoResultSearch urlQuery={query} />
       ) : (
-            results.map((result) => (
-              <MiniTile
-                key={result.id}
-                pathText={pathText}
-                data={
-                  pathText === "movie"
-                    ? {
-                      id: result.id,
-                      text: result.title,
-                      image: result.poster_path
-                        ? `https://image.tmdb.org/t/p/w154${result.poster_path}`
-                        : noPosterImage,
-                    }
-                    : {
-                      id: result.id,
-                      text: result.name,
-                      image: result.profile_path
-                        ? `https://image.tmdb.org/t/p/w185${result.profile_path}`
-                        : noProfileImage,
-                    }
+        results.map((result) => (
+          <MiniTile
+            key={result.id}
+            pathText={pathText}
+            {...(pathText === "movie"
+              ? {
+                  id: result.id,
+                  text: result.title,
+                  image: result.poster_path
+                    ? `https://image.tmdb.org/t/p/w154${result.poster_path}`
+                    : noPosterImage,
                 }
-              />
-            ))
-          )}
+              : {
+                  id: result.id,
+                  text: result.name,
+                  image: result.profile_path
+                    ? `https://image.tmdb.org/t/p/w185${result.profile_path}`
+                    : noProfileImage,
+                }
+            )}
+          />
+        ))
+      )}
     </Wrapper>
   );
 };
