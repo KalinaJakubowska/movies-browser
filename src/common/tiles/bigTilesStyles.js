@@ -31,6 +31,14 @@ export const BigImage = styled(Image)`
   margin-right: 40px;
   width: auto;
   float: left;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+    margin-right: 25px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    margin-right: 16px;
+  }
 `;
 
 export const Container = styled.span`
