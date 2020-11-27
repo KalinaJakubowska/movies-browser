@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import BottomNavbar from "../../BottomNavbar";
+import Pager from "../../Pager";
 import MovieTile from "../../../common/tiles/MovieTile";
 import {
   selectList,
@@ -80,7 +80,7 @@ const MoviesPage = () => {
                 )
               )}
             </MovieContainer>
-            <BottomNavbar />
+            <Pager />
           </>
         )}
       </Checker>

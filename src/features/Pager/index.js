@@ -16,7 +16,7 @@ import {
   SingleArrow,
 } from "./styled";
 
-const BottomNavbar = () => {
+const Pager = () => {
   const urlPageNumber = +usePageParameter("page");
   const page = pageCondition(urlPageNumber);
   const maxPageNumber = useSelector(selectMaxPageNumber);
@@ -93,4 +93,4 @@ const BottomNavbar = () => {
   );
 };
 
-export default BottomNavbar;
+export default Pager;
