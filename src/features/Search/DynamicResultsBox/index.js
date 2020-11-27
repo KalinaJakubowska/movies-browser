@@ -9,7 +9,7 @@ import {
   selectLoading,
 } from "./../searchSlice";
 import { Wrapper } from "./styled";
-import NoResultSearch from "./../../../common/NoResultSearch";
+import NoResult from "./../../../common/NoResult";
 import MiniTile from "../../../common/tiles/MiniTile";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
 import noProfileImage from "./../../../assets/noProfileImage.svg";
@@ -34,7 +34,7 @@ const DynamicResultsBox = ({ query }) => {
       {loading ? (
         <Loading />
       ) : !results.length ? (
-        <NoResultSearch urlQuery={query} />
+        <NoResult small urlQuery={query} />
       ) : (
         results.map((result) => (
           <MiniTile
@@ -54,8 +54,7 @@ const DynamicResultsBox = ({ query }) => {
                   image: result.profile_path
                     ? `https://image.tmdb.org/t/p/w185${result.profile_path}`
                     : noProfileImage,
-                }
-            )}
+                })}
           />
         ))
       )}
