@@ -1,9 +1,9 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-import { pageCondition } from "../../common/pageCondition";
-import { selectMaxPageNumber } from "../listSlice";
-import { usePageParameter, useReplacePageParameters } from "../pageParameters";
+import { pageCondition } from "../pageCondition";
+import { selectMaxPageNumber } from "../../features/listSlice";
+import { usePageParameter, useReplacePageParameters } from "../../features/pageParameters";
 import {
   DesktopContainer,
   MobileContainer,

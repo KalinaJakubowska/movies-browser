@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Pager from "../../Pager";
+import Pager from "../../../common/Pager";
 import {
   selectError,
   selectList,
