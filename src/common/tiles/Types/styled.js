@@ -44,6 +44,8 @@ export const BigTypeBox = styled(TypeBox)`
 
   ${({ enabled }) => enabled && css`
     background: ${({ theme }) => theme.colors.backButton};
+    color: ${({ theme }) => theme.unchangeableColors.white};
+    
     filter: brightness(160%);
   `}
 `;
