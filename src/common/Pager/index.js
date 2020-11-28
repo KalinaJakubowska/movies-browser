@@ -3,7 +3,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { pageCondition } from "../pageCondition";
 import { selectMaxPageNumber } from "../../features/listSlice";
-import { usePageParameter, useReplacePageParameters } from "../../features/pageParameters";
+import {
+  usePageParameter,
+  useReplacePageParameters,
+} from "../../features/pageParameters";
 import {
   DesktopContainer,
   MobileContainer,
@@ -36,25 +39,27 @@ const Pager = () => {
       <DesktopContainer>
         <Button disabled={page === 1} onClick={() => onButtonClick(1)}>
           <StyledArrowLeft />
-          {"First"}
+          First
         </Button>
         <Button disabled={page === 1} onClick={() => onButtonClick(page - 1)}>
           <StyledArrowLeft />
-          {"Previous"}
+          Previous
         </Button>
         <PageCounter>
           Page <Number>{page}</Number> of <Number>{maxPageNumber}</Number>
         </PageCounter>
         <Button
           disabled={page === maxPageNumber}
-          onClick={() => onButtonClick(page + 1)}>
-          {"Next"}
+          onClick={() => onButtonClick(page + 1)}
+        >
+          Next
           <StyledArrowRight />
         </Button>
         <Button
           disabled={page === maxPageNumber}
-          onClick={() => onButtonClick(maxPageNumber)}>
-          {"Last"}
+          onClick={() => onButtonClick(maxPageNumber)}
+        >
+          Last
           <StyledArrowRight />
         </Button>
       </DesktopContainer>
@@ -75,14 +80,16 @@ const Pager = () => {
         </PageCounter>
         <Button
           disabled={page === maxPageNumber}
-          onClick={() => onButtonClick(page + 1)}>
+          onClick={() => onButtonClick(page + 1)}
+        >
           <SingleArrow>
             <StyledArrowRight />
           </SingleArrow>
         </Button>
         <Button
           disabled={page === maxPageNumber}
-          onClick={() => onButtonClick(maxPageNumber)}>
+          onClick={() => onButtonClick(maxPageNumber)}
+        >
           <DoubleArrow>
             <StyledArrowRight />
             <StyledArrowRight />
