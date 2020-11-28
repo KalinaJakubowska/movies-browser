@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as arrow } from "../../assets/rightArrow.svg";
+import { ReactComponent as Arrow } from "../../assets/rightArrow.svg";
 
 export const DesktopContainer = styled.div`
   width: fit-content;
@@ -74,7 +74,7 @@ export const Number = styled.span`
   }
 `;
 
-export const StyledArrowLeft = styled(arrow)`
+export const StyledArrowLeft = styled(Arrow)`
   margin: 0 8px 0 0;
   height: 11px;
   width: 7px;
