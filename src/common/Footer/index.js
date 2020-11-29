@@ -22,10 +22,10 @@ const Footer = () => {
         const sunsetTime = (new Date(sunset)).getTime();
 
         const setTheme = () => {
-            const actualTime = (new Date()).getTime();
+            const currentTime = (new Date()).getTime();
 
-            if (sunriseTime < actualTime
-                && actualTime < sunsetTime
+            if (sunriseTime < currentTime
+                && currentTime < sunsetTime
             ) {
                 if (!isNormalTheme) {
                     dispatch(setIsNormalTheme(true));
