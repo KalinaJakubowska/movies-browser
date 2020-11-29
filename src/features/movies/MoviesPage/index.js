@@ -15,7 +15,7 @@ import Header from "./../../../common/Header";
 import { usePageParameter } from "../../pageParameters";
 import NoResult from "./../../../common/NoResult";
 import { WidthContainer } from "../../../styled";
-import { selectGenres } from "../../../common/commonSlice";
+import { selectGenresList } from "../../../common/commonSlice";
 import Types from "../../../common/tiles/Types";
 import Checker from "../../../common/Checker/checker";
 import { pageCondition } from "../../../common/pageCondition";
@@ -29,7 +29,7 @@ const MoviesPage = () => {
   const totalResults = useSelector(selectTotalResults);
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
-  const genresList = useSelector(selectGenres);
+  const genresList = useSelector(selectGenresList);
 
   useEffect(() => {
     dispatch(fetchList({ page, urlQuery, type: "movies" }));

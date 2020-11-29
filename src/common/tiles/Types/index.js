@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectGenres, selectLoading, switchGenreEnabled } from "../../commonSlice";
+import { selectGenresList, selectLoading, switchGenreEnabled } from "../../commonSlice";
 import { TypesWrapper, TypeBox, BigTypeBox } from "./styled";
 import { useReplacePageParameters } from "../../../features/pageParameters";
 
 const Types = ({ genre_ids, big = false, clickable = false }) => {
-    const genresList = useSelector(selectGenres);
+    const genresList = useSelector(selectGenresList);
     const loading = useSelector(selectLoading);
     const dispatch = useDispatch();
     const replacePageParameters = useReplacePageParameters();

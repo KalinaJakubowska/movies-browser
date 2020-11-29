@@ -30,7 +30,7 @@ export const {
     fetchCommonError,
     switchGenreEnabled,
 } = commonSlice.actions;
-export const selectGenres = state => state.common.genresList;
+export const selectGenresList = state => state.common.genresList;
 export const selectLoading = state => state.common.loading;
 export const selectEnabledGenres = state => state.common.genresList
     .filter(genre => genre.enabled && genre.id)
