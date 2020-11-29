@@ -35,7 +35,7 @@ const BigPersonTile = ({
           {name && <BigTileHeader>{name}</BigTileHeader>}
           {birthday && (
             <Detail>
-              <MarkedDetail>Date of birth: </MarkedDetail> {`${date.toLocaleDateString("en")}`}
+              <MarkedDetail>Date of birth: </MarkedDetail> {date.toLocaleDateString("en")}
             </Detail>
           )}
           {place_of_birth && (
