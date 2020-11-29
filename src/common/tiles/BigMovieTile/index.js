@@ -37,18 +37,17 @@ const BigMovieTile = ({
           alt={`Plakat filmu ${title}`}
         />
         <DetailsWrapper>
-          {title &&
-            <BigTileHeader>{title}</BigTileHeader>
-          }
+          {title && <BigTileHeader>{title}</BigTileHeader>}
           {production_countries && production_countries.length > 0 && (
             <Detail>
               <MarkedDetail>Production: </MarkedDetail>
-              {production_countries.map(country => country.name).join(", ")}
+              {production_countries.map((country) => country.name).join(", ")}
             </Detail>
           )}
           {release_date && (
             <Detail>
-              <MarkedDetail>Release date: </MarkedDetail> {`${date.toLocaleDateString()}`}
+              <MarkedDetail>Release date: </MarkedDetail>{" "}
+              {date.toLocaleDateString("en")}
             </Detail>
           )}
           <Types genre_ids={genre_ids} />
