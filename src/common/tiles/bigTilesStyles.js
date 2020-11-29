@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Wrapper } from "./tileStyles";
+import { Wrapper, Image } from "./tileStyles";
 
 export const BigTileWrapper = styled(Wrapper)`
   display: block;
@@ -26,6 +26,21 @@ export const BigTileWrapper = styled(Wrapper)`
   }
 `;
 
+export const BigImage = styled(Image)`
+  margin-bottom: 4px;
+  margin-right: 40px;
+  width: auto;
+  float: left;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+    margin-right: 25px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    margin-right: 16px;
+  }
+`;
+
 export const Container = styled.span`
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: flex;
@@ -33,7 +48,7 @@ export const Container = styled.span`
 `;
 
 export const DetailsWrapper = styled.div`
- display: grid;
+  display: grid;
   height: fit-content;
   grid-gap: 24px;
 

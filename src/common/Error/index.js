@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactComponent as Danger } from "../../assets/danger.svg";
-import { Text, StyledNavLink, ErrorContainer, ErrorHeader } from "./styled";
+import { Text, ErrorContainer, ErrorHeader } from "./styled";
+import { Button } from "./../Button";
 
 const Error = () => {
   return (
@@ -10,7 +11,9 @@ const Error = () => {
       <Text>
         Please check your network connection <br /> and try again
       </Text>
-      <StyledNavLink to="/movies">Back to homepage</StyledNavLink>
+      <Button big to="/movies">
+        Back to homepage
+      </Button>
     </ErrorContainer>
   );
 };

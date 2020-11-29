@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+export const footerHeight = 100;
+
 export const GlobalStyle = createGlobalStyle`
    html {
       box-sizing: border-box;
@@ -17,13 +19,9 @@ export const GlobalStyle = createGlobalStyle`
       font-family: 'Poppins', sans-serif;
    }
 
-   main{
-      padding-bottom: 100px;
-      /* The same value as Footer height */
-   }
-
    #root {
       min-height: 100vh;
+      padding-bottom: ${footerHeight + 50}px;
       position: relative;
    }
 `;

@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "../Header";
-import { StyledPaperPlane, ImageBox } from "./styled";
+import { HeaderInfo, StyledPaperPlane, ImageBox } from "./styled";
 
-const NoResult = ({ urlQuery }) => {
-
+const NoResult = ({ urlQuery, small = false }) => {
   return (
     <>
-      <Header>Sorry, there are no results for
+      <HeaderInfo small={small}>
+        Sorry, there are no results for
         {urlQuery ? ` "${urlQuery}".` : " your search."}
-      </Header>
+      </HeaderInfo>
       <ImageBox>
         <StyledPaperPlane />
       </ImageBox>

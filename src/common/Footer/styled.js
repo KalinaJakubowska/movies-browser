@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { footerHeight } from "./../../GlobalStyle";
 
 export const Wrapper = styled.footer`
   display: flex;
@@ -8,7 +9,7 @@ export const Wrapper = styled.footer`
   margin-top: auto;
   background: ${({ theme }) => theme.unchangeableColors.black};
   color: ${({ theme }) => theme.unchangeableColors.white};
-  height: 100px; /* The same value as main bottom-padding */
+  height: ${footerHeight}px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -23,7 +24,7 @@ export const Container = styled.div`
   font-size: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    font-size: 12px;;
+    font-size: 12px;
   }
 `;
 
@@ -47,9 +48,11 @@ export const SwitchButton = styled.button`
   width: 20px;
   padding: 0px;
   transition: all 0.5s;
-  margin-left: ${({ isNormalTheme }) => isNormalTheme ? "0" : "calc(100% - 20px)"};
+  margin-left: ${({ isNormalTheme }) =>
+    isNormalTheme ? "0" : "calc(100% - 20px)"};
 `;
 
 export const SwitchAutoThemeButton = styled(SwitchButton)`
-  margin-left: ${({ isAutoTheme }) => !isAutoTheme ? "0" : "calc(100% - 20px)"};
+  margin-left: ${({ isAutoTheme }) =>
+    !isAutoTheme ? "0" : "calc(100% - 20px)"};
 `;

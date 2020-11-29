@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { ReactComponent as arrow } from "../../assets/rightArrow.svg";
+import { ReactComponent as Arrow } from "../../assets/rightArrow.svg";
 
 export const DesktopContainer = styled.div`
   width: fit-content;
-  margin: 40px auto 100px;
+  margin: 40px auto 0;
 
-  @media  (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px)  {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: none;
   }
 `;
@@ -18,7 +18,7 @@ export const MobileContainer = styled(DesktopContainer)`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 32px auto 60px;
+    margin: 32px auto 0px;
   }
 `;
 
@@ -30,18 +30,18 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.colors.text};
   border: none;
   cursor: pointer;
+  transition: filter 0.4s;
 
   &:hover {
-    transform: scale(1.05);
-    transition: transform 0.4s;
+    filter: brightness(90%);
   }
 
   &:disabled {
     background: ${({ theme }) => theme.colors.disabledNavButton};
-    cursor: unset;
+    cursor: no-drop;
     transform: unset;
     transition: unset;
-    filter: brightness(60%);
+    filter: brightness(75%);
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -58,7 +58,7 @@ export const PageCounter = styled.span`
   margin: 0px 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    font-size:10px;
+    font-size: 10px;
     margin: 0 8px;
   }
 `;
@@ -74,7 +74,7 @@ export const Number = styled.span`
   }
 `;
 
-export const StyledArrowLeft = styled(arrow)`
+export const StyledArrowLeft = styled(Arrow)`
   margin: 0 8px 0 0;
   height: 11px;
   width: 7px;

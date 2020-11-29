@@ -3,17 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     selectError,
     selectSunData,
-    selectTheme,
-    selectAutoTheme,
-    setNormalTheme,
-    setAutoTheme
+    selectIsNormalTheme,
+    selectIsAutoTheme,
+    setIsNormalTheme,
+    setIsAutoTheme
 } from "../sunsetSlice";
 import { Wrapper, SwitchButton, SwitchButtonBox, SwitchAutoThemeButton, Container } from "./styled";
 
 const Footer = () => {
-    const isNormalTheme = useSelector(selectTheme);
+    const isNormalTheme = useSelector(selectIsNormalTheme);
     const isSunsetError = useSelector(selectError);
-    const isAutoTheme = useSelector(selectAutoTheme);
+    const isAutoTheme = useSelector(selectIsAutoTheme);
     const { sunset, sunrise } = useSelector(selectSunData);
     const dispatch = useDispatch();
 
@@ -22,18 +22,18 @@ const Footer = () => {
         const sunsetTime = (new Date(sunset)).getTime();
 
         const setTheme = () => {
-            const actualTime = (new Date()).getTime();
+            const currentTime = (new Date()).getTime();
 
-            if (sunriseTime < actualTime
-                && actualTime < sunsetTime
+            if (sunriseTime < currentTime
+                && currentTime < sunsetTime
             ) {
                 if (!isNormalTheme) {
-                    dispatch(setNormalTheme(true));
+                    dispatch(setIsNormalTheme(true));
                 }
             }
             else {
                 if (isNormalTheme) {
-                    dispatch(setNormalTheme(false));
+                    dispatch(setIsNormalTheme(false));
                 }
             }
         };
@@ -58,7 +58,7 @@ const Footer = () => {
                     <Container>
                         Light theme
                     <SwitchButtonBox
-                            onClick={() => dispatch(setNormalTheme(!isNormalTheme))}
+                            onClick={() => dispatch(setIsNormalTheme(!isNormalTheme))}
                         >
                             <SwitchButton
                                 isAutoTheme={isAutoTheme}
@@ -72,7 +72,7 @@ const Footer = () => {
                     <Container>
                         Auto off
                     <SwitchButtonBox
-                            onClick={() => dispatch(setAutoTheme(!isAutoTheme))}
+                            onClick={() => dispatch(setIsAutoTheme(!isAutoTheme))}
                         >
                             <SwitchAutoThemeButton
                                 isAutoTheme={isAutoTheme}
