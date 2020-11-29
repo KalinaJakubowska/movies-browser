@@ -26,10 +26,10 @@ const sunsetSlice = createSlice({
             state.error = true;
             state.isAutoTheme = false;
         },
-        setNormalTheme: (state, { payload }) => {
+        setIsNormalTheme: (state, { payload }) => {
             state.isNormalTheme = payload;
         },
-        setAutoTheme: (state, { payload }) => {
+        setIsAutoTheme: (state, { payload }) => {
             state.isAutoTheme = payload;
         },
     },
@@ -39,13 +39,13 @@ export const {
     fetchSunset,
     fetchSunsetSuccess,
     fetchSunsetError,
-    setNormalTheme,
-    setAutoTheme,
+    setIsNormalTheme,
+    setIsAutoTheme,
 } = sunsetSlice.actions;
 export const selectSunData = state => state.sunset.sunData;
 export const selectLoading = state => state.sunset.loading;
 export const selectError = state => state.sunset.error;
-export const selectTheme = state => state.sunset.isNormalTheme;
-export const selectAutoTheme = state => state.sunset.isAutoTheme;
+export const selectIsNormalTheme = state => state.sunset.isNormalTheme;
+export const selectIsAutoTheme = state => state.sunset.isAutoTheme;
 
 export default sunsetSlice.reducer;

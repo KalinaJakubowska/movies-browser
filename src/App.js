@@ -26,12 +26,12 @@ import { ThemeProvider } from "styled-components";
 import { theme, darkTheme } from "./theme";
 import { GlobalStyle } from "./GlobalStyle";
 import Checker from "./common/Checker/checker";
-import { selectLoading, selectTheme } from "./common/sunsetSlice";
+import { selectLoading, selectIsNormalTheme } from "./common/sunsetSlice";
 
 function App() {
   const dispatch = useDispatch();
   const isSunsetLoading = useSelector(selectLoading);
-  const isNormalTheme = useSelector(selectTheme);
+  const isNormalTheme = useSelector(selectIsNormalTheme);
   const isOpen = useSelector(selectOpen);
 
   useEffect(() => {
