@@ -28,18 +28,19 @@ export const Container = styled.div`
   }
 `;
 
-export const SwitchButtonBox = styled.div`
+export const SwitchButtonBox = styled.button`
   margin: 0 10px;
   width: 70px;
   min-width: 50px;
   padding: 5px;
+  border: none;
   border-radius: 5px;
   transition: all 0.5s;
   background: ${({ theme }) => theme.colors.text};
   cursor: pointer;
 `;
 
-export const SwitchButton = styled.button`
+export const SwitchButton = styled.div`
   cursor: pointer;
   display: block;
   background: ${({ theme }) => theme.colors.background};
