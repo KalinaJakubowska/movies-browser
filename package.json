@@ -2,7 +2,7 @@
   "name": "movie-browser",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kalinajakubowska.github.io/movie-browser/",
+  "homepage": "https://kalinajakubowska.github.io/movies-browser/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^4.2.4",
