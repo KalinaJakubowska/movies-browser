@@ -2,7 +2,7 @@
 
 This project is a group creation made by Kalina Jakubowska and Kamil Szewczyk for YouCode Frontend Developer Course.
 
-[Live demo](https://kalinajakubowska.github.io/movie-browser/#/movies)
+[Live demo](https://kalinajakubowska.github.io/movies-browser)
 
 ## Tech Stack
 
